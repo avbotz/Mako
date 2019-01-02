@@ -1,0 +1,8 @@
+prefix=/home/davidzhang/Robotics/Octo/install
+
+Name: vision
+Description: Description of vision
+Version: 0.0.0
+Cflags: -I/home/davidzhang/Robotics/Octo/install/include
+Libs: -L/home/davidzhang/Robotics/Octo/install/lib 
+Requires: message_runtime

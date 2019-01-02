@@ -1,0 +1,8 @@
+prefix=/home/davidzhang/Robotics/Octo/devel
+
+Name: control
+Description: Description of control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/davidzhang/Robotics/Octo/devel/lib 
+Requires: 

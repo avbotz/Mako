@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/davidzhang/Robotics/Octo/src/vision/include/vision/filters.hpp
+opencv2/core/core.hpp
+-
+opencv2/imgproc/imgproc.hpp
+-
+
+/home/davidzhang/Robotics/Octo/src/vision/src/filters.cpp
+vision/filters.hpp
+/home/davidzhang/Robotics/Octo/src/vision/src/vision/filters.hpp
+

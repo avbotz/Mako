@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/davidzhang/Robotics/Octo/src/vision/include/vision/camera.hpp
+opencv2/core/core.hpp
+-
+flycapture/FlyCapture2.h
+-
+
+/home/davidzhang/Robotics/Octo/src/vision/src/camera.cpp
+vision/camera.hpp
+/home/davidzhang/Robotics/Octo/src/vision/src/vision/camera.hpp
+

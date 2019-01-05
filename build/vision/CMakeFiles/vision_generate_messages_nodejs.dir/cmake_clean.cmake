@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vision_generate_messages_nodejs"
-  "/home/davidzhang/Robotics/Octo/devel/share/gennodejs/ros/vision/srv/Observation.js"
+  "/home/davidzhang/Robotics/Octotest/devel/share/gennodejs/ros/vision/srv/Observation.js"
 )
 
 # Per-language clean rules from dependency scanning.

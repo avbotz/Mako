@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/davidzhang/Robotics/Octo/src/control/include/control/atmega.hpp
+/home/davidzhang/Robotics/Octotest/src/control/include/control/atmega.hpp
 string
 -
 control/state.hpp
-/home/davidzhang/Robotics/Octo/src/control/include/control/control/state.hpp
+/home/davidzhang/Robotics/Octotest/src/control/include/control/control/state.hpp
 
-/home/davidzhang/Robotics/Octo/src/control/include/control/state.hpp
+/home/davidzhang/Robotics/Octotest/src/control/include/control/state.hpp
 string
 -
 
-/home/davidzhang/Robotics/Octo/src/control/src/atmega.cpp
+/home/davidzhang/Robotics/Octotest/src/control/src/atmega.cpp
 iostream
 -
 cmath
@@ -24,7 +24,7 @@ cmath
 thread
 -
 control/state.hpp
-/home/davidzhang/Robotics/Octo/src/control/src/control/state.hpp
+/home/davidzhang/Robotics/Octotest/src/control/src/control/state.hpp
 control/atmega.hpp
-/home/davidzhang/Robotics/Octo/src/control/src/control/atmega.hpp
+/home/davidzhang/Robotics/Octotest/src/control/src/control/atmega.hpp
 

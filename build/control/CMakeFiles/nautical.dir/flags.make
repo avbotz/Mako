@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -std=c++11
 
 CXX_DEFINES = -DROS_BUILD_SHARED_LIBS=1 -Dnautical_EXPORTS
 
-CXX_INCLUDES = -I/home/davidzhang/Robotics/Octo/src/control/include 
+CXX_INCLUDES = -I/home/davidzhang/Robotics/Octotest/src/control/include 
 

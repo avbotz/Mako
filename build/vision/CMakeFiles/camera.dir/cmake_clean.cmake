@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/camera.dir/src/camera.cpp.o"
-  "/home/davidzhang/Robotics/Octo/devel/lib/libcamera.pdb"
-  "/home/davidzhang/Robotics/Octo/devel/lib/libcamera.so"
+  "CMakeFiles/camera.dir/src/mock_camera.cpp.o"
+  "/home/davidzhang/Robotics/Octotest/devel/lib/vision/camera.pdb"
+  "/home/davidzhang/Robotics/Octotest/devel/lib/vision/camera"
 )
 
 # Per-language clean rules from dependency scanning.

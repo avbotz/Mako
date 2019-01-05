@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octo/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotest/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octo/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotest/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octo/build/CMakeFiles /home/davidzhang/Robotics/Octo/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles /home/davidzhang/Robotics/Octotest/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -311,30 +311,17 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named log
+# Target rules for targets named detect
 
 # Build rule for target.
-log: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 log
-.PHONY : log
+detect: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect
+.PHONY : detect
 
 # fast build rule for target.
-log/fast:
-	$(MAKE) -f vision/CMakeFiles/log.dir/build.make vision/CMakeFiles/log.dir/build
-.PHONY : log/fast
-
-#=============================================================================
-# Target rules for targets named filters
-
-# Build rule for target.
-filters: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 filters
-.PHONY : filters
-
-# fast build rule for target.
-filters/fast:
-	$(MAKE) -f vision/CMakeFiles/filters.dir/build.make vision/CMakeFiles/filters.dir/build
-.PHONY : filters/fast
+detect/fast:
+	$(MAKE) -f vision/CMakeFiles/detect.dir/build.make vision/CMakeFiles/detect.dir/build
+.PHONY : detect/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -452,19 +439,6 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 rosgraph_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named service
-
-# Build rule for target.
-service: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 service
-.PHONY : service
-
-# fast build rule for target.
-service/fast:
-	$(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/build
-.PHONY : service/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
@@ -856,32 +830,6 @@ vision_generate_messages_py/fast:
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/build
 .PHONY : vision_generate_messages_py/fast
 
-#=============================================================================
-# Target rules for targets named mission_node
-
-# Build rule for target.
-mission_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mission_node
-.PHONY : mission_node
-
-# fast build rule for target.
-mission_node/fast:
-	$(MAKE) -f mission/CMakeFiles/mission_node.dir/build.make mission/CMakeFiles/mission_node.dir/build
-.PHONY : mission_node/fast
-
-#=============================================================================
-# Target rules for targets named vision_test_node
-
-# Build rule for target.
-vision_test_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vision_test_node
-.PHONY : vision_test_node
-
-# fast build rule for target.
-vision_test_node/fast:
-	$(MAKE) -f vision_test/CMakeFiles/vision_test_node.dir/build.make vision_test/CMakeFiles/vision_test_node.dir/build
-.PHONY : vision_test_node/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -906,8 +854,7 @@ help:
 	@echo "... gtest"
 	@echo "... nautical"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... log"
-	@echo "... filters"
+	@echo "... detect"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... vision_generate_messages_eus"
@@ -917,7 +864,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... service"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... vision_gencpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
@@ -948,8 +894,6 @@ help:
 	@echo "... vision_genlisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... vision_generate_messages_py"
-	@echo "... mission_node"
-	@echo "... vision_test_node"
 .PHONY : help
 
 

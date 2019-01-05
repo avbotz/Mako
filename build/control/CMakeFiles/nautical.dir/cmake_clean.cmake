@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nautical.dir/src/atmega.cpp.o"
-  "/home/davidzhang/Robotics/Octo/devel/lib/libnautical.pdb"
-  "/home/davidzhang/Robotics/Octo/devel/lib/libnautical.so"
+  "/home/davidzhang/Robotics/Octotest/devel/lib/libnautical.pdb"
+  "/home/davidzhang/Robotics/Octotest/devel/lib/libnautical.so"
 )
 
 # Per-language clean rules from dependency scanning.

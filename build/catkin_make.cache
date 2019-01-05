@@ -1,2 +1,2 @@
-control:mission:vision:vision_test
--DCATKIN_DEVEL_PREFIX=/home/davidzhang/Robotics/Octo/devel -DCMAKE_INSTALL_PREFIX=/home/davidzhang/Robotics/Octo/install -G Unix Makefiles
+control:vision
+-DCATKIN_DEVEL_PREFIX=/home/davidzhang/Robotics/Octotest/devel -DCMAKE_INSTALL_PREFIX=/home/davidzhang/Robotics/Octotest/install -G Unix Makefiles

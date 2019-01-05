@@ -17,9 +17,9 @@ add_custom_target(vision_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" NAME_WE)
+get_filename_component(_filename "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" NAME_WE)
 add_custom_target(_vision_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vision" "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "vision" "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" ""
 )
 
 #
@@ -31,7 +31,7 @@ add_custom_target(_vision_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(vision
-  "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv"
+  "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/vision
@@ -49,7 +49,7 @@ add_custom_target(vision_generate_messages_cpp
 add_dependencies(vision_generate_messages vision_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" NAME_WE)
+get_filename_component(_filename "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" NAME_WE)
 add_dependencies(vision_generate_messages_cpp _vision_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -64,7 +64,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(vision
-  "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv"
+  "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/vision
@@ -82,7 +82,7 @@ add_custom_target(vision_generate_messages_eus
 add_dependencies(vision_generate_messages vision_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" NAME_WE)
+get_filename_component(_filename "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" NAME_WE)
 add_dependencies(vision_generate_messages_eus _vision_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -97,7 +97,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(vision
-  "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv"
+  "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/vision
@@ -115,7 +115,7 @@ add_custom_target(vision_generate_messages_lisp
 add_dependencies(vision_generate_messages vision_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" NAME_WE)
+get_filename_component(_filename "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" NAME_WE)
 add_dependencies(vision_generate_messages_lisp _vision_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,7 +130,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_lisp)
 
 ### Generating Services
 _generate_srv_nodejs(vision
-  "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv"
+  "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/vision
@@ -148,7 +148,7 @@ add_custom_target(vision_generate_messages_nodejs
 add_dependencies(vision_generate_messages vision_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" NAME_WE)
+get_filename_component(_filename "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" NAME_WE)
 add_dependencies(vision_generate_messages_nodejs _vision_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -163,7 +163,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS vision_generate_messages_nodejs)
 
 ### Generating Services
 _generate_srv_py(vision
-  "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv"
+  "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/vision
@@ -181,7 +181,7 @@ add_custom_target(vision_generate_messages_py
 add_dependencies(vision_generate_messages vision_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/davidzhang/Robotics/Octo/src/vision/srv/Observation.srv" NAME_WE)
+get_filename_component(_filename "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv" NAME_WE)
 add_dependencies(vision_generate_messages_py _vision_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

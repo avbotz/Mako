@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octo/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotest/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octo/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotest/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/davidzhang/Robotics/Octo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octo/build/CMakeFiles /home/davidzhang/Robotics/Octo/build/vision/CMakeFiles/progress.marks
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octo/build/CMakeFiles 0
+	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles /home/davidzhang/Robotics/Octotest/build/vision/CMakeFiles/progress.marks
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/clean
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,52 +154,37 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/preinstall
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/preinstall
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/davidzhang/Robotics/Octo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-vision/CMakeFiles/log.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/log.dir/rule
-.PHONY : vision/CMakeFiles/log.dir/rule
+vision/CMakeFiles/detect.dir/rule:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/detect.dir/rule
+.PHONY : vision/CMakeFiles/detect.dir/rule
 
 # Convenience name for target.
-log: vision/CMakeFiles/log.dir/rule
+detect: vision/CMakeFiles/detect.dir/rule
 
-.PHONY : log
+.PHONY : detect
 
 # fast build rule for target.
-log/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/log.dir/build.make vision/CMakeFiles/log.dir/build
-.PHONY : log/fast
-
-# Convenience name for target.
-vision/CMakeFiles/filters.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/filters.dir/rule
-.PHONY : vision/CMakeFiles/filters.dir/rule
-
-# Convenience name for target.
-filters: vision/CMakeFiles/filters.dir/rule
-
-.PHONY : filters
-
-# fast build rule for target.
-filters/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/filters.dir/build.make vision/CMakeFiles/filters.dir/build
-.PHONY : filters/fast
+detect/fast:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/detect.dir/build.make vision/CMakeFiles/detect.dir/build
+.PHONY : detect/fast
 
 # Convenience name for target.
 vision/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : vision/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -209,12 +194,12 @@ std_msgs_generate_messages_py: vision/CMakeFiles/std_msgs_generate_messages_py.d
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -224,12 +209,12 @@ std_msgs_generate_messages_nodejs: vision/CMakeFiles/std_msgs_generate_messages_
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_generate_messages_eus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_eus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_eus.dir/rule
 .PHONY : vision/CMakeFiles/vision_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -239,12 +224,12 @@ vision_generate_messages_eus: vision/CMakeFiles/vision_generate_messages_eus.dir
 
 # fast build rule for target.
 vision_generate_messages_eus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/build
 .PHONY : vision_generate_messages_eus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : vision/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -254,12 +239,12 @@ std_msgs_generate_messages_eus: vision/CMakeFiles/std_msgs_generate_messages_eus
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -269,12 +254,12 @@ rosgraph_msgs_generate_messages_py: vision/CMakeFiles/rosgraph_msgs_generate_mes
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_genpy.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_genpy.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_genpy.dir/rule
 .PHONY : vision/CMakeFiles/vision_genpy.dir/rule
 
 # Convenience name for target.
@@ -284,12 +269,12 @@ vision_genpy: vision/CMakeFiles/vision_genpy.dir/rule
 
 # fast build rule for target.
 vision_genpy/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_genpy.dir/build.make vision/CMakeFiles/vision_genpy.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_genpy.dir/build.make vision/CMakeFiles/vision_genpy.dir/build
 .PHONY : vision_genpy/fast
 
 # Convenience name for target.
 vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -299,12 +284,12 @@ rosgraph_msgs_generate_messages_nodejs: vision/CMakeFiles/rosgraph_msgs_generate
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -314,12 +299,12 @@ std_msgs_generate_messages_cpp: vision/CMakeFiles/std_msgs_generate_messages_cpp
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -329,27 +314,12 @@ rosgraph_msgs_generate_messages_lisp: vision/CMakeFiles/rosgraph_msgs_generate_m
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-vision/CMakeFiles/service.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/service.dir/rule
-.PHONY : vision/CMakeFiles/service.dir/rule
-
-# Convenience name for target.
-service: vision/CMakeFiles/service.dir/rule
-
-.PHONY : service
-
-# fast build rule for target.
-service/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/build
-.PHONY : service/fast
-
-# Convenience name for target.
 vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -359,12 +329,12 @@ sensor_msgs_generate_messages_eus: vision/CMakeFiles/sensor_msgs_generate_messag
 
 # fast build rule for target.
 sensor_msgs_generate_messages_eus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_gencpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_gencpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_gencpp.dir/rule
 .PHONY : vision/CMakeFiles/vision_gencpp.dir/rule
 
 # Convenience name for target.
@@ -374,12 +344,12 @@ vision_gencpp: vision/CMakeFiles/vision_gencpp.dir/rule
 
 # fast build rule for target.
 vision_gencpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_gencpp.dir/build.make vision/CMakeFiles/vision_gencpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_gencpp.dir/build.make vision/CMakeFiles/vision_gencpp.dir/build
 .PHONY : vision_gencpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -389,12 +359,12 @@ rosgraph_msgs_generate_messages_cpp: vision/CMakeFiles/rosgraph_msgs_generate_me
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -404,12 +374,12 @@ roscpp_generate_messages_lisp: vision/CMakeFiles/roscpp_generate_messages_lisp.d
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make vision/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make vision/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 .PHONY : vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -419,12 +389,12 @@ geometry_msgs_generate_messages_nodejs: vision/CMakeFiles/geometry_msgs_generate
 
 # fast build rule for target.
 geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -434,12 +404,12 @@ roscpp_generate_messages_py: vision/CMakeFiles/roscpp_generate_messages_py.dir/r
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_py.dir/build.make vision/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_py.dir/build.make vision/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -449,12 +419,12 @@ roscpp_generate_messages_nodejs: vision/CMakeFiles/roscpp_generate_messages_node
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make vision/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -464,12 +434,12 @@ roscpp_generate_messages_eus: vision/CMakeFiles/roscpp_generate_messages_eus.dir
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_eus.dir/build.make vision/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_eus.dir/build.make vision/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -479,12 +449,12 @@ geometry_msgs_generate_messages_eus: vision/CMakeFiles/geometry_msgs_generate_me
 
 # fast build rule for target.
 geometry_msgs_generate_messages_eus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_generate_messages.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages.dir/rule
 .PHONY : vision/CMakeFiles/vision_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -494,12 +464,12 @@ vision_generate_messages: vision/CMakeFiles/vision_generate_messages.dir/rule
 
 # fast build rule for target.
 vision_generate_messages/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages.dir/build.make vision/CMakeFiles/vision_generate_messages.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages.dir/build.make vision/CMakeFiles/vision_generate_messages.dir/build
 .PHONY : vision_generate_messages/fast
 
 # Convenience name for target.
 vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -509,12 +479,12 @@ sensor_msgs_generate_messages_lisp: vision/CMakeFiles/sensor_msgs_generate_messa
 
 # fast build rule for target.
 sensor_msgs_generate_messages_lisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule
 .PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -524,12 +494,12 @@ vision_generate_messages_nodejs: vision/CMakeFiles/vision_generate_messages_node
 
 # fast build rule for target.
 vision_generate_messages_nodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/build
 .PHONY : vision_generate_messages_nodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -539,12 +509,12 @@ roscpp_generate_messages_cpp: vision/CMakeFiles/roscpp_generate_messages_cpp.dir
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -554,12 +524,12 @@ sensor_msgs_generate_messages_nodejs: vision/CMakeFiles/sensor_msgs_generate_mes
 
 # fast build rule for target.
 sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -569,12 +539,12 @@ std_msgs_generate_messages_lisp: vision/CMakeFiles/std_msgs_generate_messages_li
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_generate_messages_cpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_cpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_cpp.dir/rule
 .PHONY : vision/CMakeFiles/vision_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -584,12 +554,12 @@ vision_generate_messages_cpp: vision/CMakeFiles/vision_generate_messages_cpp.dir
 
 # fast build rule for target.
 vision_generate_messages_cpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/build
 .PHONY : vision_generate_messages_cpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_generate_messages_lisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_lisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_lisp.dir/rule
 .PHONY : vision/CMakeFiles/vision_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -599,12 +569,12 @@ vision_generate_messages_lisp: vision/CMakeFiles/vision_generate_messages_lisp.d
 
 # fast build rule for target.
 vision_generate_messages_lisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/build
 .PHONY : vision_generate_messages_lisp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_node.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_node.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_node.dir/rule
 .PHONY : vision/CMakeFiles/vision_node.dir/rule
 
 # Convenience name for target.
@@ -614,12 +584,12 @@ vision_node: vision/CMakeFiles/vision_node.dir/rule
 
 # fast build rule for target.
 vision_node/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/build
 .PHONY : vision_node/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_gennodejs.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_gennodejs.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_gennodejs.dir/rule
 .PHONY : vision/CMakeFiles/vision_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -629,12 +599,12 @@ vision_gennodejs: vision/CMakeFiles/vision_gennodejs.dir/rule
 
 # fast build rule for target.
 vision_gennodejs/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_gennodejs.dir/build.make vision/CMakeFiles/vision_gennodejs.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_gennodejs.dir/build.make vision/CMakeFiles/vision_gennodejs.dir/build
 .PHONY : vision_gennodejs/fast
 
 # Convenience name for target.
 vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -644,12 +614,12 @@ sensor_msgs_generate_messages_py: vision/CMakeFiles/sensor_msgs_generate_message
 
 # fast build rule for target.
 sensor_msgs_generate_messages_py/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 vision/CMakeFiles/camera.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/camera.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/camera.dir/rule
 .PHONY : vision/CMakeFiles/camera.dir/rule
 
 # Convenience name for target.
@@ -659,12 +629,12 @@ camera: vision/CMakeFiles/camera.dir/rule
 
 # fast build rule for target.
 camera/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/build
 .PHONY : camera/fast
 
 # Convenience name for target.
 vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 .PHONY : vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -674,12 +644,12 @@ geometry_msgs_generate_messages_cpp: vision/CMakeFiles/geometry_msgs_generate_me
 
 # fast build rule for target.
 geometry_msgs_generate_messages_cpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -689,12 +659,12 @@ geometry_msgs_generate_messages_lisp: vision/CMakeFiles/geometry_msgs_generate_m
 
 # fast build rule for target.
 geometry_msgs_generate_messages_lisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -704,12 +674,12 @@ geometry_msgs_generate_messages_py: vision/CMakeFiles/geometry_msgs_generate_mes
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/rule
 .PHONY : vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/rule
 
 # Convenience name for target.
@@ -719,12 +689,12 @@ _vision_generate_messages_check_deps_Observation: vision/CMakeFiles/_vision_gene
 
 # fast build rule for target.
 _vision_generate_messages_check_deps_Observation/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/build
 .PHONY : _vision_generate_messages_check_deps_Observation/fast
 
 # Convenience name for target.
 vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -734,12 +704,12 @@ sensor_msgs_generate_messages_cpp: vision/CMakeFiles/sensor_msgs_generate_messag
 
 # fast build rule for target.
 sensor_msgs_generate_messages_cpp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_geneus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_geneus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_geneus.dir/rule
 .PHONY : vision/CMakeFiles/vision_geneus.dir/rule
 
 # Convenience name for target.
@@ -749,12 +719,12 @@ vision_geneus: vision/CMakeFiles/vision_geneus.dir/rule
 
 # fast build rule for target.
 vision_geneus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_geneus.dir/build.make vision/CMakeFiles/vision_geneus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_geneus.dir/build.make vision/CMakeFiles/vision_geneus.dir/build
 .PHONY : vision_geneus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_genlisp.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_genlisp.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_genlisp.dir/rule
 .PHONY : vision/CMakeFiles/vision_genlisp.dir/rule
 
 # Convenience name for target.
@@ -764,12 +734,12 @@ vision_genlisp: vision/CMakeFiles/vision_genlisp.dir/rule
 
 # fast build rule for target.
 vision_genlisp/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_genlisp.dir/build.make vision/CMakeFiles/vision_genlisp.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_genlisp.dir/build.make vision/CMakeFiles/vision_genlisp.dir/build
 .PHONY : vision_genlisp/fast
 
 # Convenience name for target.
 vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -779,12 +749,12 @@ rosgraph_msgs_generate_messages_eus: vision/CMakeFiles/rosgraph_msgs_generate_me
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make vision/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 vision/CMakeFiles/vision_generate_messages_py.dir/rule:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_py.dir/rule
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_py.dir/rule
 .PHONY : vision/CMakeFiles/vision_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -794,7 +764,7 @@ vision_generate_messages_py: vision/CMakeFiles/vision_generate_messages_py.dir/r
 
 # fast build rule for target.
 vision_generate_messages_py/fast:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/build
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/build
 .PHONY : vision_generate_messages_py/fast
 
 src/camera.o: src/camera.cpp.o
@@ -803,7 +773,7 @@ src/camera.o: src/camera.cpp.o
 
 # target to build an object file
 src/camera.cpp.o:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/src/camera.cpp.o
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/camera.cpp.o
 .PHONY : src/camera.cpp.o
 
 src/camera.i: src/camera.cpp.i
@@ -812,7 +782,7 @@ src/camera.i: src/camera.cpp.i
 
 # target to preprocess a source file
 src/camera.cpp.i:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/src/camera.cpp.i
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/camera.cpp.i
 .PHONY : src/camera.cpp.i
 
 src/camera.s: src/camera.cpp.s
@@ -821,7 +791,7 @@ src/camera.s: src/camera.cpp.s
 
 # target to generate assembly for a file
 src/camera.cpp.s:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/src/camera.cpp.s
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/camera.cpp.s
 .PHONY : src/camera.cpp.s
 
 src/capture.o: src/capture.cpp.o
@@ -830,7 +800,7 @@ src/capture.o: src/capture.cpp.o
 
 # target to build an object file
 src/capture.cpp.o:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/src/capture.cpp.o
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/capture.cpp.o
 .PHONY : src/capture.cpp.o
 
 src/capture.i: src/capture.cpp.i
@@ -839,7 +809,7 @@ src/capture.i: src/capture.cpp.i
 
 # target to preprocess a source file
 src/capture.cpp.i:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/src/capture.cpp.i
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/capture.cpp.i
 .PHONY : src/capture.cpp.i
 
 src/capture.s: src/capture.cpp.s
@@ -848,7 +818,7 @@ src/capture.s: src/capture.cpp.s
 
 # target to generate assembly for a file
 src/capture.cpp.s:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/src/capture.cpp.s
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/capture.cpp.s
 .PHONY : src/capture.cpp.s
 
 src/detect.o: src/detect.cpp.o
@@ -857,7 +827,7 @@ src/detect.o: src/detect.cpp.o
 
 # target to build an object file
 src/detect.cpp.o:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/src/detect.cpp.o
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/detect.cpp.o
 .PHONY : src/detect.cpp.o
 
 src/detect.i: src/detect.cpp.i
@@ -866,7 +836,7 @@ src/detect.i: src/detect.cpp.i
 
 # target to preprocess a source file
 src/detect.cpp.i:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/src/detect.cpp.i
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/detect.cpp.i
 .PHONY : src/detect.cpp.i
 
 src/detect.s: src/detect.cpp.s
@@ -875,7 +845,7 @@ src/detect.s: src/detect.cpp.s
 
 # target to generate assembly for a file
 src/detect.cpp.s:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/service.dir/build.make vision/CMakeFiles/service.dir/src/detect.cpp.s
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/detect.cpp.s
 .PHONY : src/detect.cpp.s
 
 src/filters.o: src/filters.cpp.o
@@ -884,7 +854,7 @@ src/filters.o: src/filters.cpp.o
 
 # target to build an object file
 src/filters.cpp.o:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/filters.dir/build.make vision/CMakeFiles/filters.dir/src/filters.cpp.o
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/filters.cpp.o
 .PHONY : src/filters.cpp.o
 
 src/filters.i: src/filters.cpp.i
@@ -893,7 +863,7 @@ src/filters.i: src/filters.cpp.i
 
 # target to preprocess a source file
 src/filters.cpp.i:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/filters.dir/build.make vision/CMakeFiles/filters.dir/src/filters.cpp.i
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/filters.cpp.i
 .PHONY : src/filters.cpp.i
 
 src/filters.s: src/filters.cpp.s
@@ -902,7 +872,7 @@ src/filters.s: src/filters.cpp.s
 
 # target to generate assembly for a file
 src/filters.cpp.s:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/filters.dir/build.make vision/CMakeFiles/filters.dir/src/filters.cpp.s
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/filters.cpp.s
 .PHONY : src/filters.cpp.s
 
 src/log.o: src/log.cpp.o
@@ -911,7 +881,7 @@ src/log.o: src/log.cpp.o
 
 # target to build an object file
 src/log.cpp.o:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/log.dir/build.make vision/CMakeFiles/log.dir/src/log.cpp.o
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/log.cpp.o
 .PHONY : src/log.cpp.o
 
 src/log.i: src/log.cpp.i
@@ -920,7 +890,7 @@ src/log.i: src/log.cpp.i
 
 # target to preprocess a source file
 src/log.cpp.i:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/log.dir/build.make vision/CMakeFiles/log.dir/src/log.cpp.i
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/log.cpp.i
 .PHONY : src/log.cpp.i
 
 src/log.s: src/log.cpp.s
@@ -929,8 +899,62 @@ src/log.s: src/log.cpp.s
 
 # target to generate assembly for a file
 src/log.cpp.s:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/log.dir/build.make vision/CMakeFiles/log.dir/src/log.cpp.s
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/log.cpp.s
 .PHONY : src/log.cpp.s
+
+src/mock_camera.o: src/mock_camera.cpp.o
+
+.PHONY : src/mock_camera.o
+
+# target to build an object file
+src/mock_camera.cpp.o:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/src/mock_camera.cpp.o
+.PHONY : src/mock_camera.cpp.o
+
+src/mock_camera.i: src/mock_camera.cpp.i
+
+.PHONY : src/mock_camera.i
+
+# target to preprocess a source file
+src/mock_camera.cpp.i:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/src/mock_camera.cpp.i
+.PHONY : src/mock_camera.cpp.i
+
+src/mock_camera.s: src/mock_camera.cpp.s
+
+.PHONY : src/mock_camera.s
+
+# target to generate assembly for a file
+src/mock_camera.cpp.s:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/src/mock_camera.cpp.s
+.PHONY : src/mock_camera.cpp.s
+
+src/mock_detect.o: src/mock_detect.cpp.o
+
+.PHONY : src/mock_detect.o
+
+# target to build an object file
+src/mock_detect.cpp.o:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/detect.dir/build.make vision/CMakeFiles/detect.dir/src/mock_detect.cpp.o
+.PHONY : src/mock_detect.cpp.o
+
+src/mock_detect.i: src/mock_detect.cpp.i
+
+.PHONY : src/mock_detect.i
+
+# target to preprocess a source file
+src/mock_detect.cpp.i:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/detect.dir/build.make vision/CMakeFiles/detect.dir/src/mock_detect.cpp.i
+.PHONY : src/mock_detect.cpp.i
+
+src/mock_detect.s: src/mock_detect.cpp.s
+
+.PHONY : src/mock_detect.s
+
+# target to generate assembly for a file
+src/mock_detect.cpp.s:
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/detect.dir/build.make vision/CMakeFiles/detect.dir/src/mock_detect.cpp.s
+.PHONY : src/mock_detect.cpp.s
 
 src/vision.o: src/vision.cpp.o
 
@@ -938,7 +962,7 @@ src/vision.o: src/vision.cpp.o
 
 # target to build an object file
 src/vision.cpp.o:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/vision.cpp.o
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/vision.cpp.o
 .PHONY : src/vision.cpp.o
 
 src/vision.i: src/vision.cpp.i
@@ -947,7 +971,7 @@ src/vision.i: src/vision.cpp.i
 
 # target to preprocess a source file
 src/vision.cpp.i:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/vision.cpp.i
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/vision.cpp.i
 .PHONY : src/vision.cpp.i
 
 src/vision.s: src/vision.cpp.s
@@ -956,7 +980,7 @@ src/vision.s: src/vision.cpp.s
 
 # target to generate assembly for a file
 src/vision.cpp.s:
-	cd /home/davidzhang/Robotics/Octo/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/vision.cpp.s
+	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/src/vision.cpp.s
 .PHONY : src/vision.cpp.s
 
 # Help Target
@@ -968,8 +992,7 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... log"
-	@echo "... filters"
+	@echo "... detect"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... install/strip"
@@ -980,7 +1003,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... service"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... vision_gencpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
@@ -1029,6 +1051,12 @@ help:
 	@echo "... src/log.o"
 	@echo "... src/log.i"
 	@echo "... src/log.s"
+	@echo "... src/mock_camera.o"
+	@echo "... src/mock_camera.i"
+	@echo "... src/mock_camera.s"
+	@echo "... src/mock_detect.o"
+	@echo "... src/mock_detect.i"
+	@echo "... src/mock_detect.s"
 	@echo "... src/vision.o"
 	@echo "... src/vision.i"
 	@echo "... src/vision.s"
@@ -1043,6 +1071,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/davidzhang/Robotics/Octo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octo/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotest/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octo/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotest/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/davidzhang/Robotics/Octo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octo/src /home/davidzhang/Robotics/Octo/src /home/davidzhang/Robotics/Octo/build /home/davidzhang/Robotics/Octo/build /home/davidzhang/Robotics/Octo/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octotest/src /home/davidzhang/Robotics/Octotest/src /home/davidzhang/Robotics/Octotest/build /home/davidzhang/Robotics/Octotest/build /home/davidzhang/Robotics/Octotest/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

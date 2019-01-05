@@ -1,8 +1,8 @@
-# Install script for directory: /home/davidzhang/Robotics/Octo/src/control
+# Install script for directory: /home/davidzhang/Robotics/Octotest/src/control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/davidzhang/Robotics/Octo/install")
+  set(CMAKE_INSTALL_PREFIX "/home/davidzhang/Robotics/Octotest/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/davidzhang/Robotics/Octo/build/control/catkin_generated/installspace/control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/davidzhang/Robotics/Octotest/build/control/catkin_generated/installspace/control.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control/cmake" TYPE FILE FILES
-    "/home/davidzhang/Robotics/Octo/build/control/catkin_generated/installspace/controlConfig.cmake"
-    "/home/davidzhang/Robotics/Octo/build/control/catkin_generated/installspace/controlConfig-version.cmake"
+    "/home/davidzhang/Robotics/Octotest/build/control/catkin_generated/installspace/controlConfig.cmake"
+    "/home/davidzhang/Robotics/Octotest/build/control/catkin_generated/installspace/controlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control" TYPE FILE FILES "/home/davidzhang/Robotics/Octo/src/control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control" TYPE FILE FILES "/home/davidzhang/Robotics/Octotest/src/control/package.xml")
 endif()
 

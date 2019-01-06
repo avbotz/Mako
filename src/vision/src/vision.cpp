@@ -17,7 +17,7 @@ int main(int argc, char** argv)
     VisionService service;
 
     // Setup observation request (ROS service).
-    ros::ServiceServer server = node.advertiseService("vision/request", &VisionService::detectCallback, &service);
+    ros::ServiceServer server = node.advertiseService("observation", &VisionService::detectCallback, &service);
 
     // Setup front camera to receive images. 
     image_transport::ImageTransport it(node);
@@ -47,10 +47,6 @@ int main(int argc, char** argv)
 
                 // Read down camera.
                 // if (isdown) service.down = down.capture(false);
-
-                // Write images to log.
-                // log(service.front, 'f');
-
                 break;
         }
     }

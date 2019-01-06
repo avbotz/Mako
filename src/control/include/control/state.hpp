@@ -2,27 +2,29 @@
 #define COMMON_STATE_HPP 
 
 #include <string>
+#define X 0
+#define Y 1
+#define Z 2
+#define YAW 3
+#define PITCH 4
+#define ROLL 5
+#define N 6
 
 struct State 
 {
-	/*
-	 * "X" represents direction forward and backward.
-	 * "Y" represents direction left and right.
-	 * "Z" represents direction up and down.
-	 * Yaw/Pitch/Roll should be self-explanatory.
-	 */
+    // N-E-D coordinates.
 	State() {}
-	State(float _x, float _y, float _z, float _yaw, float _pitch, float _roll) :
-		x(_x), y(_y), z(_z), yaw(_yaw), pitch(_pitch), roll(_roll) {}
+    State(float x, float y, float z, float yaw, float pitch, float roll) 
+    {
+        axis[X] = x;
+        axis[Y] = y;
+        axis[Z] = z;
+        axis[YAW] = yaw;
+        axis[PITCH] = pitch;
+        axis[ROLL] = roll;
+    }
 
-	float x, y, z;
-	float yaw, pitch, roll;
+    float axis[N];
 };
-
-inline std::ostream & operator<<(std::ostream &s, const State &state) {
-	s << "s " + std::to_string(state.x) + " " + std::to_string(state.y) + " " + std::to_string(state.z) + " " +
-		std::to_string(state.yaw) + " " + std::to_string(state.pitch) + " " + std::to_string(state.roll);
-	return s;
-}
 
 #endif

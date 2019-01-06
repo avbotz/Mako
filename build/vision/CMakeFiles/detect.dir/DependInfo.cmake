@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/davidzhang/Robotics/Octotest/src/vision/src/mock_detect.cpp" "/home/davidzhang/Robotics/Octotest/build/vision/CMakeFiles/detect.dir/src/mock_detect.cpp.o"
+  "/home/davidzhang/Robotics/Octotendies/src/vision/src/mock_detect.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/detect.dir/src/mock_detect.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/davidzhang/Robotics/Octotest/devel/include"
-  "/home/davidzhang/Robotics/Octotest/src/vision/include"
+  "/home/davidzhang/Robotics/Octotendies/devel/include"
+  "/home/davidzhang/Robotics/Octotendies/src/vision/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/opencv"

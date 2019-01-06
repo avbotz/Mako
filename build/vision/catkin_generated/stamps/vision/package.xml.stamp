@@ -2,7 +2,7 @@
 <package format="2">
   <name>vision</name>
   <version>0.0.0</version>
-  <description>Vision related packages.</description>
+  <description>Camera reading and object detection.</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

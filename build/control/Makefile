@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotest/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotest/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,40 +67,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -135,16 +101,50 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles /home/davidzhang/Robotics/Octotest/build/control/CMakeFiles/progress.marks
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 control/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles 0
+	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles /home/davidzhang/Robotics/Octotendies/build/control/CMakeFiles/progress.marks
+	cd /home/davidzhang/Robotics/Octotendies/build && $(MAKE) -f CMakeFiles/Makefile2 control/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 control/clean
+	cd /home/davidzhang/Robotics/Octotendies/build && $(MAKE) -f CMakeFiles/Makefile2 control/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,37 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
+	cd /home/davidzhang/Robotics/Octotendies/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
+	cd /home/davidzhang/Robotics/Octotendies/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-control/CMakeFiles/nautical.dir/rule:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nautical.dir/rule
-.PHONY : control/CMakeFiles/nautical.dir/rule
-
-# Convenience name for target.
-nautical: control/CMakeFiles/nautical.dir/rule
-
-.PHONY : nautical
-
-# fast build rule for target.
-nautical/fast:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/build
-.PHONY : nautical/fast
-
-# Convenience name for target.
 control/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/_catkin_empty_exported_target.dir/rule
+	cd /home/davidzhang/Robotics/Octotendies/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : control/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
@@ -194,35 +179,8 @@ _catkin_empty_exported_target: control/CMakeFiles/_catkin_empty_exported_target.
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f control/CMakeFiles/_catkin_empty_exported_target.dir/build.make control/CMakeFiles/_catkin_empty_exported_target.dir/build
+	cd /home/davidzhang/Robotics/Octotendies/build && $(MAKE) -f control/CMakeFiles/_catkin_empty_exported_target.dir/build.make control/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
-
-src/atmega.o: src/atmega.cpp.o
-
-.PHONY : src/atmega.o
-
-# target to build an object file
-src/atmega.cpp.o:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.o
-.PHONY : src/atmega.cpp.o
-
-src/atmega.i: src/atmega.cpp.i
-
-.PHONY : src/atmega.i
-
-# target to preprocess a source file
-src/atmega.cpp.i:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.i
-.PHONY : src/atmega.cpp.i
-
-src/atmega.s: src/atmega.cpp.s
-
-.PHONY : src/atmega.s
-
-# target to generate assembly for a file
-src/atmega.cpp.s:
-	cd /home/davidzhang/Robotics/Octotest/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.s
-.PHONY : src/atmega.cpp.s
 
 # Help Target
 help:
@@ -231,17 +189,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... nautical"
-	@echo "... rebuild_cache"
-	@echo "... _catkin_empty_exported_target"
-	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... list_install_components"
-	@echo "... src/atmega.o"
-	@echo "... src/atmega.i"
-	@echo "... src/atmega.s"
+	@echo "... edit_cache"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... rebuild_cache"
+	@echo "... install"
 .PHONY : help
 
 
@@ -253,6 +207,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

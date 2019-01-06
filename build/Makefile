@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotest/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotest/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles /home/davidzhang/Robotics/Octotest/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles /home/davidzhang/Robotics/Octotendies/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotest/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -283,19 +283,6 @@ gtest: cmake_check_build_system
 gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named nautical
-
-# Build rule for target.
-nautical: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nautical
-.PHONY : nautical
-
-# fast build rule for target.
-nautical/fast:
-	$(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/build
-.PHONY : nautical/fast
 
 #=============================================================================
 # Target rules for targets named _catkin_empty_exported_target
@@ -830,6 +817,19 @@ vision_generate_messages_py/fast:
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/build
 .PHONY : vision_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named mission_node
+
+# Build rule for target.
+mission_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mission_node
+.PHONY : mission_node
+
+# fast build rule for target.
+mission_node/fast:
+	$(MAKE) -f mission/CMakeFiles/mission_node.dir/build.make mission/CMakeFiles/mission_node.dir/build
+.PHONY : mission_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -852,7 +852,6 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... nautical"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... detect"
 	@echo "... std_msgs_generate_messages_py"
@@ -894,6 +893,7 @@ help:
 	@echo "... vision_genlisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... vision_generate_messages_py"
+	@echo "... mission_node"
 .PHONY : help
 
 

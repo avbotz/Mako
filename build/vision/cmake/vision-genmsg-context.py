@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/davidzhang/Robotics/Octotest/src/vision/srv/Observation.srv"
+services_str = "/home/davidzhang/Robotics/Octotendies/src/vision/srv/Observation.srv"
 pkg_name = "vision"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

@@ -1,4 +1,4 @@
-#include "ros/ros.h"
+#include <ros/ros.h>
 #include "vision/config.hpp"
 #include "vision/service.hpp"
 #include "vision/log.hpp"
@@ -11,7 +11,7 @@ void VisionService::captureCallback(const sensor_msgs::ImageConstPtr &msg)
     {
         cv::Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
         this->front = image;
-        log(this->front, 'f');
+        if (LOG) log(this->front, 'f');
     }
     catch (cv_bridge::Exception &e)
     {

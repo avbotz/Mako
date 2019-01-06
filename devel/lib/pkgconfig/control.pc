@@ -1,8 +1,8 @@
-prefix=/home/davidzhang/Robotics/Octotest/devel
+prefix=/home/davidzhang/Robotics/Octotendies/devel
 
 Name: control
 Description: Description of control
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/davidzhang/Robotics/Octotest/devel/lib 
+Cflags: -I/home/davidzhang/Robotics/Octotendies/src/control/include
+Libs: -L/home/davidzhang/Robotics/Octotendies/devel/lib 
 Requires: 

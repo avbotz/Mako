@@ -4,4 +4,6 @@
 enum class CameraMode { MOCK, LIVE };
 const CameraMode CAMERA_MODE = CameraMode::LIVE;
 
+const bool LOG = false;
+
 #endif 

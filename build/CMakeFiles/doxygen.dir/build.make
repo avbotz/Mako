@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotest/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotest/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/davidzhang/Robotics/Octotest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octotest/src /home/davidzhang/Robotics/Octotest/src /home/davidzhang/Robotics/Octotest/build /home/davidzhang/Robotics/Octotest/build /home/davidzhang/Robotics/Octotest/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octotendies/src /home/davidzhang/Robotics/Octotendies/src /home/davidzhang/Robotics/Octotendies/build /home/davidzhang/Robotics/Octotendies/build /home/davidzhang/Robotics/Octotendies/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

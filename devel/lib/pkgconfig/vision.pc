@@ -1,8 +1,8 @@
-prefix=/home/davidzhang/Robotics/Octotest/devel
+prefix=/home/davidzhang/Robotics/Octotendies/devel
 
 Name: vision
 Description: Description of vision
 Version: 0.0.0
-Cflags: -I/home/davidzhang/Robotics/Octotest/devel/include
-Libs: -L/home/davidzhang/Robotics/Octotest/devel/lib 
+Cflags: -I/home/davidzhang/Robotics/Octotendies/devel/include
+Libs: -L/home/davidzhang/Robotics/Octotendies/devel/lib 
 Requires: 

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"vision\"
 
-CXX_INCLUDES = -I/home/davidzhang/Robotics/Octotest/devel/include -I/home/davidzhang/Robotics/Octotest/src/vision/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /usr/include/opencv 
+CXX_INCLUDES = -I/home/davidzhang/Robotics/Octotendies/devel/include -I/home/davidzhang/Robotics/Octotendies/src/vision/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /usr/include/opencv 
 

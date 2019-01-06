@@ -1,8 +1,8 @@
-prefix=/home/davidzhang/Robotics/Octotest/install
+prefix=/home/davidzhang/Robotics/Octotendies/install
 
 Name: control
 Description: Description of control
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/davidzhang/Robotics/Octotest/install/lib 
+Cflags: -I/home/davidzhang/Robotics/Octotendies/install/include
+Libs: -L/home/davidzhang/Robotics/Octotendies/install/lib 
 Requires: 

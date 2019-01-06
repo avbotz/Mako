@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "vision_test_camera");
+    ros::init(argc, argv, "vision_mock_camera");
     ros::NodeHandle node;
 
     image_transport::ImageTransport it(node);

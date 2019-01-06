@@ -16,4 +16,6 @@ int main(int argc, char** argv)
     vision::Observation obs;
 
     // Setup original sub state.
+    bool alive = atmega::read_alive();
+    State state = atmega::read_state();
 }

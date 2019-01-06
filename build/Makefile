@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named nautical
+
+# Build rule for target.
+nautical: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nautical
+.PHONY : nautical
+
+# fast build rule for target.
+nautical/fast:
+	$(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/build
+.PHONY : nautical/fast
+
+#=============================================================================
 # Target rules for targets named _catkin_empty_exported_target
 
 # Build rule for target.
@@ -852,6 +865,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... nautical"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... detect"
 	@echo "... std_msgs_generate_messages_py"

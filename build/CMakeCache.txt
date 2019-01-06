@@ -399,6 +399,9 @@ mission_BINARY_DIR:STATIC=/home/davidzhang/Robotics/Octotendies/build/mission
 //Value Computed by CMake
 mission_SOURCE_DIR:STATIC=/home/davidzhang/Robotics/Octotendies/src/mission
 
+//Dependencies for target
+nautical_LIB_DEPENDS:STATIC=
+
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
 

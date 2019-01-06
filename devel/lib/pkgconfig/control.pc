@@ -4,5 +4,5 @@ Name: control
 Description: Description of control
 Version: 0.0.0
 Cflags: -I/home/davidzhang/Robotics/Octotendies/src/control/include
-Libs: -L/home/davidzhang/Robotics/Octotendies/devel/lib 
+Libs: -L/home/davidzhang/Robotics/Octotendies/devel/lib -lnautical
 Requires: 

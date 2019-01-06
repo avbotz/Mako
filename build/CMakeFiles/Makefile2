@@ -408,11 +408,12 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory control
 
 # Convenience name for "all" pass in the directory.
-control/all:
+control/all: control/CMakeFiles/nautical.dir/all
 
 .PHONY : control/all
 
 # Convenience name for "clean" pass in the directory.
+control/clean: control/CMakeFiles/nautical.dir/clean
 control/clean: control/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 .PHONY : control/clean
@@ -421,6 +422,43 @@ control/clean: control/CMakeFiles/_catkin_empty_exported_target.dir/clean
 control/preinstall:
 
 .PHONY : control/preinstall
+
+#=============================================================================
+# Target rules for target control/CMakeFiles/nautical.dir
+
+# All Build rule for target.
+control/CMakeFiles/nautical.dir/all:
+	$(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/depend
+	$(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=18,19 "Built target nautical"
+.PHONY : control/CMakeFiles/nautical.dir/all
+
+# Include target in all.
+all: control/CMakeFiles/nautical.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+control/CMakeFiles/nautical.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nautical.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 0
+.PHONY : control/CMakeFiles/nautical.dir/rule
+
+# Convenience name for target.
+nautical: control/CMakeFiles/nautical.dir/rule
+
+.PHONY : nautical
+
+# clean rule for target.
+control/CMakeFiles/nautical.dir/clean:
+	$(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/clean
+.PHONY : control/CMakeFiles/nautical.dir/clean
+
+# clean rule for target.
+clean: control/CMakeFiles/nautical.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target control/CMakeFiles/_catkin_empty_exported_target.dir
@@ -623,7 +661,7 @@ vision/CMakeFiles/vision_generate_messages_eus.dir/all: vision/CMakeFiles/std_ms
 vision/CMakeFiles/vision_generate_messages_eus.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/all
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/depend
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=19,20 "Built target vision_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=21,22 "Built target vision_generate_messages_eus"
 .PHONY : vision/CMakeFiles/vision_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1209,7 +1247,7 @@ vision/CMakeFiles/vision_generate_messages_nodejs.dir/all: vision/CMakeFiles/std
 vision/CMakeFiles/vision_generate_messages_nodejs.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/all
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/depend
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=22 "Built target vision_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=24 "Built target vision_generate_messages_nodejs"
 .PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1338,7 +1376,7 @@ vision/CMakeFiles/vision_generate_messages_cpp.dir/all: vision/CMakeFiles/std_ms
 vision/CMakeFiles/vision_generate_messages_cpp.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/all
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/depend
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=18 "Built target vision_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=20 "Built target vision_generate_messages_cpp"
 .PHONY : vision/CMakeFiles/vision_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1371,7 +1409,7 @@ vision/CMakeFiles/vision_generate_messages_lisp.dir/all: vision/CMakeFiles/std_m
 vision/CMakeFiles/vision_generate_messages_lisp.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/all
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/depend
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=21 "Built target vision_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=23 "Built target vision_generate_messages_lisp"
 .PHONY : vision/CMakeFiles/vision_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1403,7 +1441,7 @@ clean: vision/CMakeFiles/vision_generate_messages_lisp.dir/clean
 vision/CMakeFiles/vision_node.dir/all: vision/CMakeFiles/vision_gencpp.dir/all
 	$(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/depend
 	$(MAKE) -f vision/CMakeFiles/vision_node.dir/build.make vision/CMakeFiles/vision_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=25,26,27,28,29,30,31 "Built target vision_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=27,28,29,30,31,32,33 "Built target vision_node"
 .PHONY : vision/CMakeFiles/vision_node.dir/all
 
 # Include target in all.
@@ -1798,7 +1836,7 @@ vision/CMakeFiles/vision_generate_messages_py.dir/all: vision/CMakeFiles/std_msg
 vision/CMakeFiles/vision_generate_messages_py.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/all
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/depend
 	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=23,24 "Built target vision_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=25,26 "Built target vision_generate_messages_py"
 .PHONY : vision/CMakeFiles/vision_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1845,7 +1883,7 @@ mission/preinstall:
 # Target rules for target mission/CMakeFiles/mission_node.dir
 
 # All Build rule for target.
-mission/CMakeFiles/mission_node.dir/all:
+mission/CMakeFiles/mission_node.dir/all: control/CMakeFiles/nautical.dir/all
 	$(MAKE) -f mission/CMakeFiles/mission_node.dir/build.make mission/CMakeFiles/mission_node.dir/depend
 	$(MAKE) -f mission/CMakeFiles/mission_node.dir/build.make mission/CMakeFiles/mission_node.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/davidzhang/Robotics/Octotendies/build/CMakeFiles --progress-num=16,17 "Built target mission_node"
@@ -1858,7 +1896,7 @@ all: mission/CMakeFiles/mission_node.dir/all
 
 # Build rule for subdir invocation for target.
 mission/CMakeFiles/mission_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 mission/CMakeFiles/mission_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 0
 .PHONY : mission/CMakeFiles/mission_node.dir/rule

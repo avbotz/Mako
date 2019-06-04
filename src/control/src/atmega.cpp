@@ -25,7 +25,7 @@ namespace atmega
 		fflush(out);
 	}
 
-	bool read_alive()
+	bool alive()
 	{
         // Request for kill. 
         write("a\n");
@@ -37,7 +37,7 @@ namespace atmega
         return kill != 0;			
 	}
 	
-	State read_state()
+	State state()
 	{	
         // Request for state.
         write("c\n");

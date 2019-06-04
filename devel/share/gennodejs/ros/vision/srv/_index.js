@@ -1,8 +1,8 @@
 
 "use strict";
 
-let Observation = require('./Observation.js')
+let Perception = require('./Perception.js')
 
 module.exports = {
-  Observation: Observation,
+  Perception: Perception,
 };

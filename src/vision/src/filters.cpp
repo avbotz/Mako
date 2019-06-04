@@ -1,7 +1,7 @@
 #include "vision/filters.hpp"
 
 
-cv::Mat equalize_hist(bool b, bool g, bool r, const cv::Mat &input)
+cv::Mat equalizeHist(bool b, bool g, bool r, const cv::Mat &input)
 {
 	std::vector<cv::Mat> channels;
 	cv::split(input, channels);
@@ -54,22 +54,21 @@ cv::Mat homomorphic(const cv::Mat &src)
 	cv::split(tmphls, hlsimg);
 	cv::Mat img = hlsimg[0];
 
-	// apply FFT
+	// Apply FFT.
 	cv::Mat fftimg;
 	fft(img, fftimg);
 
-	// apply Butterworth HPS
+	// Apply Butterworth HPS.
 	cv::Mat filter = butterworth(fftimg, 10, 4, 100, 30);
 	cv::Mat bimg;
 	cv::Mat bchannels[] = {cv::Mat_<float>(filter), cv::Mat::zeros(filter.size(), CV_32F)};
 	cv::merge(bchannels, 2, bimg);
 	cv::mulSpectrums(fftimg, bimg, fftimg, 0);
 
-	// apply inverse FFT
+	// Apply inverse FFT.
 	cv::Mat ifftimg;
 	cv::idft(fftimg, ifftimg, 32); // originally CV_HAL_DFT_REAL_OUTPUT but that didn't work, so hardcoded it
 	
-
 	cv::Mat expimg;
 	cv::exp(ifftimg, expimg);
 
@@ -84,18 +83,18 @@ cv::Mat homomorphic(const cv::Mat &src)
 
 void fft(const cv::Mat &src, cv::Mat &dst)
 {
-	// convert to a 32F mat and take log
+	// Convert to a 32F mat and take log.
 	cv::Mat logimg;
 	src.convertTo(logimg, CV_32F);
 	cv::log(logimg+1, logimg);
 
-	// resize to optimal fft size
+	// Resize to optimal fft size.
 	cv::Mat padded;
 	int m = cv::getOptimalDFTSize(src.rows);
 	int n = cv::getOptimalDFTSize(src.cols);
 	cv::copyMakeBorder(logimg, padded, 0, m-logimg.rows, 0, n-logimg.cols, cv::BORDER_CONSTANT, cv::Scalar::all(0));
 
-	// add imaginary column to mat and apply fft
+	// Add imaginary column to mat and apply fft.
 	cv::Mat plane[] = {cv::Mat_<float>(padded), cv::Mat::zeros(padded.size(), CV_32F)};
 	cv::Mat imgComplex;
 	cv::merge(plane, 2, imgComplex);

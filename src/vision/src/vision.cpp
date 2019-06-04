@@ -11,17 +11,19 @@
 
 int main(int argc, char** argv)
 {
-    srand((unsigned)time(0)); 
+    srand((unsigned) time(0)); 
     ros::init(argc, argv, "vision");
     ros::NodeHandle node;
     VisionService service;
 
-    // Setup observation request (ROS service).
-    ros::ServiceServer server = node.advertiseService("observation", &VisionService::detectCallback, &service);
+    // Setup observation request.
+    ros::ServiceServer server = node.advertiseService("perception", 
+            &VisionService::detectCallback, &service);
 
     // Setup front camera to receive images. 
     image_transport::ImageTransport it(node);
-    image_transport::Subscriber sub = it.subscribe("camera_array/cam0/image_raw", 1, &VisionService::captureCallback, &service);
+    image_transport::Subscriber sub = it.subscribe("camera_array/cam0/image_raw", 1, 
+            &VisionService::captureCallback, &service);
 
     // Setup down camera to receive images.
     // Camera down;
@@ -30,8 +32,6 @@ int main(int argc, char** argv)
     // Create directory to log images. 
     init(); 
 
-    // Read camera data based on settings.
-    // TODO Implement different camera settings.
     while (ros::ok())
     {
         switch (CAMERA_MODE)
@@ -42,11 +42,12 @@ int main(int argc, char** argv)
                 break;
             case CameraMode::LIVE:
                 
-                // Update front camera.
+                // Updates front camera.
                 ros::spinOnce();
 
-                // Read down camera.
+                // Read down camera without using ROS.
                 // if (isdown) service.down = down.capture(false);
+                
                 break;
         }
     }

@@ -13,6 +13,8 @@
 struct State 
 {
     // N-E-D coordinates.
+    float axis[N];
+    
 	State() {}
     State(float x, float y, float z, float yaw, float pitch, float roll) 
     {
@@ -23,8 +25,6 @@ struct State
         axis[PITCH] = pitch;
         axis[ROLL] = roll;
     }
-
-    float axis[N];
 };
 
 #endif

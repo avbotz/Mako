@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vision_generate_messages_lisp"
-  "/home/davidzhang/Robotics/Octotendies/devel/share/common-lisp/ros/vision/srv/Observation.lisp"
+  "/home/davidzhang/Robotics/Mako/devel/share/common-lisp/ros/vision/srv/Perception.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

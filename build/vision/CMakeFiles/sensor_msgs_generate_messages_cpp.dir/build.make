@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
 
 # Utility rule file for sensor_msgs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build: sensor_msgs_gener
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 
 vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	cd /home/davidzhang/Robotics/Octotendies/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 
 vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend:
-	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octotendies/src /home/davidzhang/Robotics/Octotendies/src/vision /home/davidzhang/Robotics/Octotendies/build /home/davidzhang/Robotics/Octotendies/build/vision /home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src/vision /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/vision /home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
 

@@ -6,7 +6,6 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED)
 find_package(OpenCV)
 
-
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
 add_library(nautical src/atmega.cpp)

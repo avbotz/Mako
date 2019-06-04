@@ -15,6 +15,6 @@ include_directories(
     ${OpenCV_INCLUDE_DIRS}
 )
 
-add_executable(mission_node src/mission.cpp)
+add_executable(mission_node src/mission.cpp src/functions.cpp)
 target_link_libraries(mission_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(mission_node mission_gencpp)

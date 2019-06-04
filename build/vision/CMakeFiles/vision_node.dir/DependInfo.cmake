@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/davidzhang/Robotics/Octotendies/src/vision/src/camera.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_node.dir/src/camera.cpp.o"
-  "/home/davidzhang/Robotics/Octotendies/src/vision/src/capture.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_node.dir/src/capture.cpp.o"
-  "/home/davidzhang/Robotics/Octotendies/src/vision/src/detect.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_node.dir/src/detect.cpp.o"
-  "/home/davidzhang/Robotics/Octotendies/src/vision/src/filters.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_node.dir/src/filters.cpp.o"
-  "/home/davidzhang/Robotics/Octotendies/src/vision/src/log.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_node.dir/src/log.cpp.o"
-  "/home/davidzhang/Robotics/Octotendies/src/vision/src/vision.cpp" "/home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_node.dir/src/vision.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/camera.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/camera.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/capture.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/capture.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/detect.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/detect.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/filters.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/filters.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/gate.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/gate.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/log.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/log.cpp.o"
+  "/home/davidzhang/Robotics/Mako/src/vision/src/vision.cpp" "/home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/src/vision.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,8 +23,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/davidzhang/Robotics/Octotendies/devel/include"
-  "/home/davidzhang/Robotics/Octotendies/src/vision/include"
+  "/home/davidzhang/Robotics/Mako/devel/include"
+  "/home/davidzhang/Robotics/Mako/src/vision/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/opencv"

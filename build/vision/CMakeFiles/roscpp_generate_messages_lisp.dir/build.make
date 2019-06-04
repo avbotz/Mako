@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
 
 # Utility rule file for roscpp_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ vision/CMakeFiles/roscpp_generate_messages_lisp.dir/build: roscpp_generate_messa
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 
 vision/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	cd /home/davidzhang/Robotics/Octotendies/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 
 vision/CMakeFiles/roscpp_generate_messages_lisp.dir/depend:
-	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octotendies/src /home/davidzhang/Robotics/Octotendies/src/vision /home/davidzhang/Robotics/Octotendies/build /home/davidzhang/Robotics/Octotendies/build/vision /home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src/vision /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/vision /home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
 

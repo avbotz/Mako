@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
 
 # Utility rule file for vision_genlisp.
 
@@ -63,10 +63,10 @@ vision/CMakeFiles/vision_genlisp.dir/build: vision_genlisp
 .PHONY : vision/CMakeFiles/vision_genlisp.dir/build
 
 vision/CMakeFiles/vision_genlisp.dir/clean:
-	cd /home/davidzhang/Robotics/Octotendies/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_genlisp.dir/cmake_clean.cmake
+	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_genlisp.dir/cmake_clean.cmake
 .PHONY : vision/CMakeFiles/vision_genlisp.dir/clean
 
 vision/CMakeFiles/vision_genlisp.dir/depend:
-	cd /home/davidzhang/Robotics/Octotendies/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Octotendies/src /home/davidzhang/Robotics/Octotendies/src/vision /home/davidzhang/Robotics/Octotendies/build /home/davidzhang/Robotics/Octotendies/build/vision /home/davidzhang/Robotics/Octotendies/build/vision/CMakeFiles/vision_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src/vision /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/vision /home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision/CMakeFiles/vision_genlisp.dir/depend
 

@@ -12,9 +12,9 @@ namespace atmega
 	extern FILE *out;
 
 	void write(std::string);
-	void write(const State&);
-	bool read_alive();
-	State read_state();
+	void write(const State &);
+	bool alive();
+	State state();
 }
 
 #endif

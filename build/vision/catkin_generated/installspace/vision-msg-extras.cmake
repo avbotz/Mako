@@ -1,2 +1,2 @@
 set(vision_MESSAGE_FILES "")
-set(vision_SERVICE_FILES "srv/Observation.srv")
+set(vision_SERVICE_FILES "srv/Perception.srv")

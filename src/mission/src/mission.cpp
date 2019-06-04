@@ -2,8 +2,10 @@
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
-#include <vision/Observation.h>
+#include <vision/Perception.h>
 #include "control/atmega.hpp"
+#include "mission/functions.hpp"
+#include "vision/tasks.hpp"
 
 
 int main(int argc, char** argv)
@@ -12,10 +14,11 @@ int main(int argc, char** argv)
     ros::NodeHandle node;   
 
     // Setup observation client.
-    ros::ServiceClient client = node.serviceClient<vision::Observation>("observation");    
-    vision::Observation obs;
+    ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
+    vision::Perception perception;
 
-    // Setup original sub state.
-    bool alive = atmega::read_alive();
-    State state = atmega::read_state();
+    // Run mission functions.
+    gate(perception, client);
+    octagon(perception, client); 
+
 }

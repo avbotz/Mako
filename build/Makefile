@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Octotendies/src
+CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Octotendies/build
+CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles /home/davidzhang/Robotics/Octotendies/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Mako/build/CMakeFiles /home/davidzhang/Robotics/Mako/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Octotendies/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Mako/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -311,17 +311,30 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named detect
+# Target rules for targets named mock_detect
 
 # Build rule for target.
-detect: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 detect
-.PHONY : detect
+mock_detect: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mock_detect
+.PHONY : mock_detect
 
 # fast build rule for target.
-detect/fast:
-	$(MAKE) -f vision/CMakeFiles/detect.dir/build.make vision/CMakeFiles/detect.dir/build
-.PHONY : detect/fast
+mock_detect/fast:
+	$(MAKE) -f vision/CMakeFiles/mock_detect.dir/build.make vision/CMakeFiles/mock_detect.dir/build
+.PHONY : mock_detect/fast
+
+#=============================================================================
+# Target rules for targets named mock_camera
+
+# Build rule for target.
+mock_camera: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mock_camera
+.PHONY : mock_camera
+
+# fast build rule for target.
+mock_camera/fast:
+	$(MAKE) -f vision/CMakeFiles/mock_camera.dir/build.make vision/CMakeFiles/mock_camera.dir/build
+.PHONY : mock_camera/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -597,32 +610,6 @@ vision_generate_messages_nodejs/fast:
 .PHONY : vision_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
-
-# Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_nodejs
-
-# Build rule for target.
-sensor_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -701,17 +688,43 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named camera
+# Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
-camera: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera
-.PHONY : camera
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
 
 # fast build rule for target.
-camera/fast:
-	$(MAKE) -f vision/CMakeFiles/camera.dir/build.make vision/CMakeFiles/camera.dir/build
-.PHONY : camera/fast
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make vision/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _vision_generate_messages_check_deps_Perception
+
+# Build rule for target.
+_vision_generate_messages_check_deps_Perception: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _vision_generate_messages_check_deps_Perception
+.PHONY : _vision_generate_messages_check_deps_Perception
+
+# fast build rule for target.
+_vision_generate_messages_check_deps_Perception/fast:
+	$(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/build
+.PHONY : _vision_generate_messages_check_deps_Perception/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
@@ -751,19 +764,6 @@ geometry_msgs_generate_messages_py: cmake_check_build_system
 geometry_msgs_generate_messages_py/fast:
 	$(MAKE) -f vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named _vision_generate_messages_check_deps_Observation
-
-# Build rule for target.
-_vision_generate_messages_check_deps_Observation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _vision_generate_messages_check_deps_Observation
-.PHONY : _vision_generate_messages_check_deps_Observation
-
-# fast build rule for target.
-_vision_generate_messages_check_deps_Observation/fast:
-	$(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_Observation.dir/build
-.PHONY : _vision_generate_messages_check_deps_Observation/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
@@ -867,7 +867,8 @@ help:
 	@echo "... gtest"
 	@echo "... nautical"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... detect"
+	@echo "... mock_detect"
+	@echo "... mock_camera"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... vision_generate_messages_eus"
@@ -889,19 +890,18 @@ help:
 	@echo "... vision_generate_messages"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... vision_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... vision_generate_messages_cpp"
 	@echo "... vision_generate_messages_lisp"
 	@echo "... vision_node"
 	@echo "... vision_gennodejs"
 	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... camera"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... _vision_generate_messages_check_deps_Perception"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... _vision_generate_messages_check_deps_Observation"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... vision_geneus"
 	@echo "... vision_genlisp"

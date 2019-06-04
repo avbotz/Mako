@@ -1,0 +1,9 @@
+int8 task
+int8 camera
+---
+float32 prob
+float32 r
+float32 c
+float32 dist
+float32 hangle
+float32 vangle

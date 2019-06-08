@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vision_generate_messages_cpp"
-  "/home/davidzhang/Robotics/Mako/devel/include/vision/Perception.h"
+  "/home/user/Mako/devel/include/vision/Perception.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
+CMAKE_SOURCE_DIR = /home/user/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
+CMAKE_BINARY_DIR = /home/user/Mako/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Mako/src /home/user/Mako/src /home/user/Mako/build /home/user/Mako/build /home/user/Mako/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

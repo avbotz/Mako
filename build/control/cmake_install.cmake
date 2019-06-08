@@ -1,8 +1,8 @@
-# Install script for directory: /home/davidzhang/Robotics/Mako/src/control
+# Install script for directory: /home/user/Mako/src/control
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/davidzhang/Robotics/Mako/install")
+  set(CMAKE_INSTALL_PREFIX "/home/user/Mako/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/davidzhang/Robotics/Mako/build/control/catkin_generated/installspace/control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/Mako/build/control/catkin_generated/installspace/control.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control/cmake" TYPE FILE FILES
-    "/home/davidzhang/Robotics/Mako/build/control/catkin_generated/installspace/controlConfig.cmake"
-    "/home/davidzhang/Robotics/Mako/build/control/catkin_generated/installspace/controlConfig-version.cmake"
+    "/home/user/Mako/build/control/catkin_generated/installspace/controlConfig.cmake"
+    "/home/user/Mako/build/control/catkin_generated/installspace/controlConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control" TYPE FILE FILES "/home/davidzhang/Robotics/Mako/src/control/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control" TYPE FILE FILES "/home/user/Mako/src/control/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/control" TYPE DIRECTORY FILES "/home/davidzhang/Robotics/Mako/src/control/include/control/" FILES_MATCHING REGEX "/[^/]*\\.hpp$" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/control" TYPE DIRECTORY FILES "/home/user/Mako/src/control/include/control/" FILES_MATCHING REGEX "/[^/]*\\.hpp$" REGEX "/\\.svn$" EXCLUDE)
 endif()
 

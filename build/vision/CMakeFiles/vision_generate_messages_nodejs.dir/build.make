@@ -43,26 +43,26 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
+CMAKE_SOURCE_DIR = /home/user/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
+CMAKE_BINARY_DIR = /home/user/Mako/build
 
 # Utility rule file for vision_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include vision/CMakeFiles/vision_generate_messages_nodejs.dir/progress.make
 
-vision/CMakeFiles/vision_generate_messages_nodejs: /home/davidzhang/Robotics/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js
+vision/CMakeFiles/vision_generate_messages_nodejs: /home/user/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js
 
 
-/home/davidzhang/Robotics/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
-/home/davidzhang/Robotics/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js: /home/davidzhang/Robotics/Mako/src/vision/srv/Perception.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from vision/Perception.srv"
-	cd /home/davidzhang/Robotics/Mako/build/vision && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/davidzhang/Robotics/Mako/src/vision/srv/Perception.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p vision -o /home/davidzhang/Robotics/Mako/devel/share/gennodejs/ros/vision/srv
+/home/user/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/user/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js: /home/user/Mako/src/vision/srv/Perception.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from vision/Perception.srv"
+	cd /home/user/Mako/build/vision && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/user/Mako/src/vision/srv/Perception.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p vision -o /home/user/Mako/devel/share/gennodejs/ros/vision/srv
 
 vision_generate_messages_nodejs: vision/CMakeFiles/vision_generate_messages_nodejs
-vision_generate_messages_nodejs: /home/davidzhang/Robotics/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js
+vision_generate_messages_nodejs: /home/user/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js
 vision_generate_messages_nodejs: vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make
 
 .PHONY : vision_generate_messages_nodejs
@@ -73,10 +73,10 @@ vision/CMakeFiles/vision_generate_messages_nodejs.dir/build: vision_generate_mes
 .PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/build
 
 vision/CMakeFiles/vision_generate_messages_nodejs.dir/clean:
-	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/user/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/clean
 
 vision/CMakeFiles/vision_generate_messages_nodejs.dir/depend:
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src/vision /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/vision /home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Mako/src /home/user/Mako/src/vision /home/user/Mako/build /home/user/Mako/build/vision /home/user/Mako/build/vision/CMakeFiles/vision_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/depend
 

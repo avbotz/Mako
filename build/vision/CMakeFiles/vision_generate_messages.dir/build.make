@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
+CMAKE_SOURCE_DIR = /home/user/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
+CMAKE_BINARY_DIR = /home/user/Mako/build
 
 # Utility rule file for vision_generate_messages.
 
@@ -63,10 +63,10 @@ vision/CMakeFiles/vision_generate_messages.dir/build: vision_generate_messages
 .PHONY : vision/CMakeFiles/vision_generate_messages.dir/build
 
 vision/CMakeFiles/vision_generate_messages.dir/clean:
-	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_generate_messages.dir/cmake_clean.cmake
+	cd /home/user/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_generate_messages.dir/cmake_clean.cmake
 .PHONY : vision/CMakeFiles/vision_generate_messages.dir/clean
 
 vision/CMakeFiles/vision_generate_messages.dir/depend:
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src/vision /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/vision /home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Mako/src /home/user/Mako/src/vision /home/user/Mako/build /home/user/Mako/build/vision /home/user/Mako/build/vision/CMakeFiles/vision_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision/CMakeFiles/vision_generate_messages.dir/depend
 

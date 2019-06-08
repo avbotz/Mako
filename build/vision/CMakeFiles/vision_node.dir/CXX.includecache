@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/davidzhang/Robotics/Mako/devel/include/vision/Perception.h
+/home/user/Mako/devel/include/vision/Perception.h
 ros/service_traits.h
 -
 vision/PerceptionRequest.h
@@ -14,7 +14,7 @@ vision/PerceptionRequest.h
 vision/PerceptionResponse.h
 -
 
-/home/davidzhang/Robotics/Mako/devel/include/vision/PerceptionRequest.h
+/home/user/Mako/devel/include/vision/PerceptionRequest.h
 string
 -
 vector
@@ -30,7 +30,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/davidzhang/Robotics/Mako/devel/include/vision/PerceptionResponse.h
+/home/user/Mako/devel/include/vision/PerceptionResponse.h
 string
 -
 vector
@@ -46,21 +46,21 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/camera.hpp
+/home/user/Mako/src/vision/include/vision/camera.hpp
 opencv2/core/core.hpp
 -
 flycapture/FlyCapture2.h
 -
 
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/config.hpp
+/home/user/Mako/src/vision/include/vision/config.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/filters.hpp
+/home/user/Mako/src/vision/include/vision/filters.hpp
 opencv2/core/core.hpp
 -
 opencv2/imgproc/imgproc.hpp
 -
 
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/log.hpp
+/home/user/Mako/src/vision/include/vision/log.hpp
 opencv2/core/core.hpp
 -
 opencv2/highgui/highgui.hpp
@@ -68,7 +68,7 @@ opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
 -
 
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/service.hpp
+/home/user/Mako/src/vision/include/vision/service.hpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -84,9 +84,9 @@ opencv2/imgproc/imgproc.hpp
 vision/Perception.h
 -
 vision/tasks.hpp
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/vision/tasks.hpp
+/home/user/Mako/src/vision/include/vision/vision/tasks.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/tasks.hpp
+/home/user/Mako/src/vision/include/vision/tasks.hpp
 opencv2/core/core.hpp
 -
 opencv2/imgproc/imgproc.hpp
@@ -94,43 +94,43 @@ opencv2/imgproc/imgproc.hpp
 opencv2/highgui/highgui.hpp
 -
 vision/config.hpp
-/home/davidzhang/Robotics/Mako/src/vision/include/vision/vision/config.hpp
+/home/user/Mako/src/vision/include/vision/vision/config.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/camera.cpp
+/home/user/Mako/src/vision/src/camera.cpp
 vision/camera.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/camera.hpp
+/home/user/Mako/src/vision/src/vision/camera.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/capture.cpp
+/home/user/Mako/src/vision/src/capture.cpp
 ros/ros.h
 -
 vision/config.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/config.hpp
+/home/user/Mako/src/vision/src/vision/config.hpp
 vision/service.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/service.hpp
+/home/user/Mako/src/vision/src/vision/service.hpp
 vision/log.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/log.hpp
+/home/user/Mako/src/vision/src/vision/log.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/detect.cpp
+/home/user/Mako/src/vision/src/detect.cpp
 vision/service.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/service.hpp
+/home/user/Mako/src/vision/src/vision/service.hpp
 vision/tasks.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/tasks.hpp
+/home/user/Mako/src/vision/src/vision/tasks.hpp
 vision/config.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/config.hpp
+/home/user/Mako/src/vision/src/vision/config.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/filters.cpp
+/home/user/Mako/src/vision/src/filters.cpp
 vision/filters.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/filters.hpp
+/home/user/Mako/src/vision/src/vision/filters.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/gate.cpp
+/home/user/Mako/src/vision/src/gate.cpp
 vision/tasks.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/tasks.hpp
+/home/user/Mako/src/vision/src/vision/tasks.hpp
 vision/filters.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/filters.hpp
+/home/user/Mako/src/vision/src/vision/filters.hpp
 vision/log.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/log.hpp
+/home/user/Mako/src/vision/src/vision/log.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/log.cpp
+/home/user/Mako/src/vision/src/log.cpp
 iostream
 -
 string
@@ -144,9 +144,9 @@ sys/stat.h
 ros/ros.h
 -
 vision/log.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/log.hpp
+/home/user/Mako/src/vision/src/vision/log.hpp
 
-/home/davidzhang/Robotics/Mako/src/vision/src/vision.cpp
+/home/user/Mako/src/vision/src/vision.cpp
 ros/ros.h
 -
 opencv2/core/core.hpp
@@ -156,15 +156,15 @@ opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
 -
 vision/filters.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/filters.hpp
+/home/user/Mako/src/vision/src/vision/filters.hpp
 vision/config.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/config.hpp
+/home/user/Mako/src/vision/src/vision/config.hpp
 vision/service.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/service.hpp
+/home/user/Mako/src/vision/src/vision/service.hpp
 vision/camera.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/camera.hpp
+/home/user/Mako/src/vision/src/vision/camera.hpp
 vision/log.hpp
-/home/davidzhang/Robotics/Mako/src/vision/src/vision/log.hpp
+/home/user/Mako/src/vision/src/vision/log.hpp
 
 /opt/ros/melodic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

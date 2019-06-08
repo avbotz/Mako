@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vision_generate_messages_nodejs"
-  "/home/davidzhang/Robotics/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js"
+  "/home/user/Mako/devel/share/gennodejs/ros/vision/srv/Perception.js"
 )
 
 # Per-language clean rules from dependency scanning.

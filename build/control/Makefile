@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
+CMAKE_SOURCE_DIR = /home/user/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
+CMAKE_BINARY_DIR = /home/user/Mako/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Mako/build/CMakeFiles /home/davidzhang/Robotics/Mako/build/control/CMakeFiles/progress.marks
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/davidzhang/Robotics/Mako/build/CMakeFiles 0
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles /home/user/Mako/build/control/CMakeFiles/progress.marks
+	cd /home/user/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/clean
+	cd /home/user/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
+	cd /home/user/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
+	cd /home/user/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 control/CMakeFiles/nautical.dir/rule:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nautical.dir/rule
+	cd /home/user/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nautical.dir/rule
 .PHONY : control/CMakeFiles/nautical.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ nautical: control/CMakeFiles/nautical.dir/rule
 
 # fast build rule for target.
 nautical/fast:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/build
+	cd /home/user/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/build
 .PHONY : nautical/fast
 
 # Convenience name for target.
 control/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/_catkin_empty_exported_target.dir/rule
+	cd /home/user/Mako/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : control/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
@@ -194,7 +194,7 @@ _catkin_empty_exported_target: control/CMakeFiles/_catkin_empty_exported_target.
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f control/CMakeFiles/_catkin_empty_exported_target.dir/build.make control/CMakeFiles/_catkin_empty_exported_target.dir/build
+	cd /home/user/Mako/build && $(MAKE) -f control/CMakeFiles/_catkin_empty_exported_target.dir/build.make control/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 src/atmega.o: src/atmega.cpp.o
@@ -203,7 +203,7 @@ src/atmega.o: src/atmega.cpp.o
 
 # target to build an object file
 src/atmega.cpp.o:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.o
+	cd /home/user/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.o
 .PHONY : src/atmega.cpp.o
 
 src/atmega.i: src/atmega.cpp.i
@@ -212,7 +212,7 @@ src/atmega.i: src/atmega.cpp.i
 
 # target to preprocess a source file
 src/atmega.cpp.i:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.i
+	cd /home/user/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.i
 .PHONY : src/atmega.cpp.i
 
 src/atmega.s: src/atmega.cpp.s
@@ -221,7 +221,7 @@ src/atmega.s: src/atmega.cpp.s
 
 # target to generate assembly for a file
 src/atmega.cpp.s:
-	cd /home/davidzhang/Robotics/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.s
+	cd /home/user/Mako/build && $(MAKE) -f control/CMakeFiles/nautical.dir/build.make control/CMakeFiles/nautical.dir/src/atmega.cpp.s
 .PHONY : src/atmega.cpp.s
 
 # Help Target
@@ -253,6 +253,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

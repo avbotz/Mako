@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/davidzhang/Robotics/Mako/src
+CMAKE_SOURCE_DIR = /home/user/Mako/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/davidzhang/Robotics/Mako/build
+CMAKE_BINARY_DIR = /home/user/Mako/build
 
 # Include any dependencies generated for this target.
 include vision/CMakeFiles/vision_node.dir/depend.make
@@ -58,17 +58,17 @@ include vision/CMakeFiles/vision_node.dir/progress.make
 include vision/CMakeFiles/vision_node.dir/flags.make
 
 vision/CMakeFiles/vision_node.dir/src/vision.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/vision.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/vision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vision/CMakeFiles/vision_node.dir/src/vision.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/vision.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/vision.cpp
+vision/CMakeFiles/vision_node.dir/src/vision.cpp.o: /home/user/Mako/src/vision/src/vision.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vision/CMakeFiles/vision_node.dir/src/vision.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/vision.cpp.o -c /home/user/Mako/src/vision/src/vision.cpp
 
 vision/CMakeFiles/vision_node.dir/src/vision.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/vision.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/vision.cpp > CMakeFiles/vision_node.dir/src/vision.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/vision.cpp > CMakeFiles/vision_node.dir/src/vision.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/vision.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/vision.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/vision.cpp -o CMakeFiles/vision_node.dir/src/vision.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/vision.cpp -o CMakeFiles/vision_node.dir/src/vision.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/vision.cpp.o.requires:
 
@@ -82,17 +82,17 @@ vision/CMakeFiles/vision_node.dir/src/vision.cpp.o.provides.build: vision/CMakeF
 
 
 vision/CMakeFiles/vision_node.dir/src/camera.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/camera.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object vision/CMakeFiles/vision_node.dir/src/camera.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/camera.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/camera.cpp
+vision/CMakeFiles/vision_node.dir/src/camera.cpp.o: /home/user/Mako/src/vision/src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object vision/CMakeFiles/vision_node.dir/src/camera.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/camera.cpp.o -c /home/user/Mako/src/vision/src/camera.cpp
 
 vision/CMakeFiles/vision_node.dir/src/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/camera.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/camera.cpp > CMakeFiles/vision_node.dir/src/camera.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/camera.cpp > CMakeFiles/vision_node.dir/src/camera.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/camera.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/camera.cpp -o CMakeFiles/vision_node.dir/src/camera.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/camera.cpp -o CMakeFiles/vision_node.dir/src/camera.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/camera.cpp.o.requires:
 
@@ -106,17 +106,17 @@ vision/CMakeFiles/vision_node.dir/src/camera.cpp.o.provides.build: vision/CMakeF
 
 
 vision/CMakeFiles/vision_node.dir/src/capture.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/capture.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/capture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object vision/CMakeFiles/vision_node.dir/src/capture.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/capture.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/capture.cpp
+vision/CMakeFiles/vision_node.dir/src/capture.cpp.o: /home/user/Mako/src/vision/src/capture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object vision/CMakeFiles/vision_node.dir/src/capture.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/capture.cpp.o -c /home/user/Mako/src/vision/src/capture.cpp
 
 vision/CMakeFiles/vision_node.dir/src/capture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/capture.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/capture.cpp > CMakeFiles/vision_node.dir/src/capture.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/capture.cpp > CMakeFiles/vision_node.dir/src/capture.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/capture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/capture.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/capture.cpp -o CMakeFiles/vision_node.dir/src/capture.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/capture.cpp -o CMakeFiles/vision_node.dir/src/capture.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/capture.cpp.o.requires:
 
@@ -130,17 +130,17 @@ vision/CMakeFiles/vision_node.dir/src/capture.cpp.o.provides.build: vision/CMake
 
 
 vision/CMakeFiles/vision_node.dir/src/detect.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/detect.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/detect.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object vision/CMakeFiles/vision_node.dir/src/detect.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/detect.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/detect.cpp
+vision/CMakeFiles/vision_node.dir/src/detect.cpp.o: /home/user/Mako/src/vision/src/detect.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object vision/CMakeFiles/vision_node.dir/src/detect.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/detect.cpp.o -c /home/user/Mako/src/vision/src/detect.cpp
 
 vision/CMakeFiles/vision_node.dir/src/detect.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/detect.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/detect.cpp > CMakeFiles/vision_node.dir/src/detect.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/detect.cpp > CMakeFiles/vision_node.dir/src/detect.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/detect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/detect.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/detect.cpp -o CMakeFiles/vision_node.dir/src/detect.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/detect.cpp -o CMakeFiles/vision_node.dir/src/detect.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/detect.cpp.o.requires:
 
@@ -154,17 +154,17 @@ vision/CMakeFiles/vision_node.dir/src/detect.cpp.o.provides.build: vision/CMakeF
 
 
 vision/CMakeFiles/vision_node.dir/src/filters.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/filters.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/filters.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object vision/CMakeFiles/vision_node.dir/src/filters.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/filters.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/filters.cpp
+vision/CMakeFiles/vision_node.dir/src/filters.cpp.o: /home/user/Mako/src/vision/src/filters.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object vision/CMakeFiles/vision_node.dir/src/filters.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/filters.cpp.o -c /home/user/Mako/src/vision/src/filters.cpp
 
 vision/CMakeFiles/vision_node.dir/src/filters.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/filters.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/filters.cpp > CMakeFiles/vision_node.dir/src/filters.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/filters.cpp > CMakeFiles/vision_node.dir/src/filters.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/filters.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/filters.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/filters.cpp -o CMakeFiles/vision_node.dir/src/filters.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/filters.cpp -o CMakeFiles/vision_node.dir/src/filters.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/filters.cpp.o.requires:
 
@@ -178,17 +178,17 @@ vision/CMakeFiles/vision_node.dir/src/filters.cpp.o.provides.build: vision/CMake
 
 
 vision/CMakeFiles/vision_node.dir/src/log.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/log.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object vision/CMakeFiles/vision_node.dir/src/log.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/log.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/log.cpp
+vision/CMakeFiles/vision_node.dir/src/log.cpp.o: /home/user/Mako/src/vision/src/log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object vision/CMakeFiles/vision_node.dir/src/log.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/log.cpp.o -c /home/user/Mako/src/vision/src/log.cpp
 
 vision/CMakeFiles/vision_node.dir/src/log.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/log.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/log.cpp > CMakeFiles/vision_node.dir/src/log.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/log.cpp > CMakeFiles/vision_node.dir/src/log.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/log.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/log.cpp -o CMakeFiles/vision_node.dir/src/log.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/log.cpp -o CMakeFiles/vision_node.dir/src/log.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/log.cpp.o.requires:
 
@@ -202,17 +202,17 @@ vision/CMakeFiles/vision_node.dir/src/log.cpp.o.provides.build: vision/CMakeFile
 
 
 vision/CMakeFiles/vision_node.dir/src/gate.cpp.o: vision/CMakeFiles/vision_node.dir/flags.make
-vision/CMakeFiles/vision_node.dir/src/gate.cpp.o: /home/davidzhang/Robotics/Mako/src/vision/src/gate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object vision/CMakeFiles/vision_node.dir/src/gate.cpp.o"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/gate.cpp.o -c /home/davidzhang/Robotics/Mako/src/vision/src/gate.cpp
+vision/CMakeFiles/vision_node.dir/src/gate.cpp.o: /home/user/Mako/src/vision/src/gate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object vision/CMakeFiles/vision_node.dir/src/gate.cpp.o"
+	cd /home/user/Mako/build/vision && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vision_node.dir/src/gate.cpp.o -c /home/user/Mako/src/vision/src/gate.cpp
 
 vision/CMakeFiles/vision_node.dir/src/gate.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_node.dir/src/gate.cpp.i"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/davidzhang/Robotics/Mako/src/vision/src/gate.cpp > CMakeFiles/vision_node.dir/src/gate.cpp.i
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Mako/src/vision/src/gate.cpp > CMakeFiles/vision_node.dir/src/gate.cpp.i
 
 vision/CMakeFiles/vision_node.dir/src/gate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_node.dir/src/gate.cpp.s"
-	cd /home/davidzhang/Robotics/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/davidzhang/Robotics/Mako/src/vision/src/gate.cpp -o CMakeFiles/vision_node.dir/src/gate.cpp.s
+	cd /home/user/Mako/build/vision && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Mako/src/vision/src/gate.cpp -o CMakeFiles/vision_node.dir/src/gate.cpp.s
 
 vision/CMakeFiles/vision_node.dir/src/gate.cpp.o.requires:
 
@@ -238,94 +238,94 @@ vision_node_OBJECTS = \
 # External object files for target vision_node
 vision_node_EXTERNAL_OBJECTS =
 
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/vision.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/camera.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/capture.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/detect.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/filters.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/log.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/gate.cpp.o
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/build.make
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libcv_bridge.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libimage_transport.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libmessage_filters.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libclass_loader.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/libPocoFoundation.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libroscpp.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librosconsole.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libroslib.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librospack.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librostime.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libcpp_common.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
-/home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/davidzhang/Robotics/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node"
-	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vision_node.dir/link.txt --verbose=$(VERBOSE)
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/vision.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/camera.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/capture.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/detect.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/filters.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/log.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/src/gate.cpp.o
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/build.make
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libcv_bridge.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libimage_transport.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libmessage_filters.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libclass_loader.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/libPocoFoundation.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libroscpp.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librosconsole.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libroslib.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librospack.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/librostime.so
+/home/user/Mako/devel/lib/vision/vision_node: /opt/ros/melodic/lib/libcpp_common.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: /usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0
+/home/user/Mako/devel/lib/vision/vision_node: vision/CMakeFiles/vision_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/user/Mako/devel/lib/vision/vision_node"
+	cd /home/user/Mako/build/vision && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vision_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-vision/CMakeFiles/vision_node.dir/build: /home/davidzhang/Robotics/Mako/devel/lib/vision/vision_node
+vision/CMakeFiles/vision_node.dir/build: /home/user/Mako/devel/lib/vision/vision_node
 
 .PHONY : vision/CMakeFiles/vision_node.dir/build
 
@@ -340,10 +340,10 @@ vision/CMakeFiles/vision_node.dir/requires: vision/CMakeFiles/vision_node.dir/sr
 .PHONY : vision/CMakeFiles/vision_node.dir/requires
 
 vision/CMakeFiles/vision_node.dir/clean:
-	cd /home/davidzhang/Robotics/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_node.dir/cmake_clean.cmake
+	cd /home/user/Mako/build/vision && $(CMAKE_COMMAND) -P CMakeFiles/vision_node.dir/cmake_clean.cmake
 .PHONY : vision/CMakeFiles/vision_node.dir/clean
 
 vision/CMakeFiles/vision_node.dir/depend:
-	cd /home/davidzhang/Robotics/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/davidzhang/Robotics/Mako/src /home/davidzhang/Robotics/Mako/src/vision /home/davidzhang/Robotics/Mako/build /home/davidzhang/Robotics/Mako/build/vision /home/davidzhang/Robotics/Mako/build/vision/CMakeFiles/vision_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Mako/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Mako/src /home/user/Mako/src/vision /home/user/Mako/build /home/user/Mako/build/vision /home/user/Mako/build/vision/CMakeFiles/vision_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : vision/CMakeFiles/vision_node.dir/depend
 

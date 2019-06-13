@@ -5,6 +5,7 @@
 
 bool VisionService::detectCallback(vision::Perception::Request &req, vision::Perception::Response &res)
 {
+    ROS_INFO("Received detection request for %i.", req.task);
     if (req.task == Task::GATE)
     {
         Observation obs = findGate(this->front);
@@ -16,6 +17,7 @@ bool VisionService::detectCallback(vision::Perception::Request &req, vision::Per
     {
 
     }
+    ROS_INFO("Finished detection request.");
     return false;
 }
 

@@ -1,8 +1,0 @@
-prefix=/home/user/Mako/install
-
-Name: control
-Description: Description of control
-Version: 0.0.0
-Cflags: -I/home/user/Mako/install/include
-Libs: -L/home/user/Mako/install/lib -lnautical
-Requires: 

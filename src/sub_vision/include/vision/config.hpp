@@ -7,7 +7,7 @@ enum Task {
     OCTAGON
 };
 const CameraMode CAMERA_MODE = CameraMode::LIVE;
-const bool LOG = true;
+const bool LOG = false;
 const float HFOV = 135;
 const float VFOV = 90;
 const int FRONT = 0;

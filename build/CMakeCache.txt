@@ -272,8 +272,11 @@ SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 //Name of the computer/site where compile is being run
 SITE:STRING=marlin
 
-//Path to a library.
-SPINNAKER:FILEPATH=SPINNAKER-NOTFOUND
+//Spinnaker Include Directory
+SPINNAKER_INCLUDE_DIR:PATH=/usr/include/spinnaker
+
+//Spinnaker Libs Directory
+SPINNAKER_LIB_DIR:PATH=/usr/lib
 
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE

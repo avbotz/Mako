@@ -19,6 +19,7 @@ int main(int argc, char** argv)
     ros::Rate rate(5);
     while (node.ok()) 
     {
+        ROS_INFO("Published image.");
         pub.publish(msg);
         ros::spinOnce();
     }

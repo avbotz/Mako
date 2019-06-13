@@ -17,6 +17,16 @@ int main(int argc, char** argv)
     ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
     vision::Perception perception;
 
+    // Wait until kill switch is flipped.
+    bool start = false;
+    while (!start)
+    {
+        if (!atmega::alive())
+            ros::Duration(0.5).sleep();
+        else 
+            start = true;
+    }
+
     // Run mission functions.
     gate(perception, client);
     octagon(perception, client); 

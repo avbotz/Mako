@@ -2,13 +2,13 @@
 #define COMMON_STATE_HPP 
 
 #include <string>
-#define X 0
-#define Y 1
-#define Z 2
-#define YAW 3
-#define PITCH 4
-#define ROLL 5
-#define N 6
+const int X = 0;
+const int Y = 1;
+const int Z = 2;
+const int YAW = 3;
+const int PITCH = 4;
+const int ROLL = 5;
+const int N = 6;
 
 struct State 
 {
@@ -24,6 +24,13 @@ struct State
         axis[YAW] = yaw;
         axis[PITCH] = pitch;
         axis[ROLL] = roll;
+    }
+    
+    std::string text() 
+    {
+        return "(" + std::to_string(axis[0]) + " " + std::to_string(axis[1]) + " " + 
+                        std::to_string(axis[2]) + " " + std::to_string(axis[3]) + " " + 
+                        std::to_string(axis[4]) + " " + std::to_string(axis[5]) + ")";
     }
 };
 

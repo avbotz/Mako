@@ -264,7 +264,7 @@ gtest/googlemock/preinstall: gtest/googlemock/gtest/preinstall
 gtest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=4,5,6,7 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=6,7,8,9 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -296,7 +296,7 @@ clean: gtest/googlemock/CMakeFiles/gmock_main.dir/clean
 gtest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=1,2,3 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=3,4,5 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -347,7 +347,7 @@ gtest/googlemock/gtest/preinstall:
 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=10,11 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=12,13 "Built target gtest_main"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -379,7 +379,7 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=8,9 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=10,11 "Built target gtest"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -430,7 +430,7 @@ sub_control/preinstall:
 sub_control/CMakeFiles/nautical.dir/all:
 	$(MAKE) -f sub_control/CMakeFiles/nautical.dir/build.make sub_control/CMakeFiles/nautical.dir/depend
 	$(MAKE) -f sub_control/CMakeFiles/nautical.dir/build.make sub_control/CMakeFiles/nautical.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=19,20 "Built target nautical"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=22,23 "Built target nautical"
 .PHONY : sub_control/CMakeFiles/nautical.dir/all
 
 # Include target in all.
@@ -496,21 +496,23 @@ clean: sub_control/CMakeFiles/_catkin_empty_exported_target.dir/clean
 # Directory level rules for directory sub_vision
 
 # Convenience name for "all" pass in the directory.
-sub_vision/all: sub_vision/CMakeFiles/mock_detect.dir/all
-sub_vision/all: sub_vision/CMakeFiles/mock_camera.dir/all
+sub_vision/all: sub_vision/CMakeFiles/acquisition_node.dir/all
+sub_vision/all: sub_vision/CMakeFiles/mock_detect_node.dir/all
+sub_vision/all: sub_vision/CMakeFiles/mock_camera_node.dir/all
 sub_vision/all: sub_vision/CMakeFiles/vision_generate_messages.dir/all
 sub_vision/all: sub_vision/CMakeFiles/vision_node.dir/all
 
 .PHONY : sub_vision/all
 
 # Convenience name for "clean" pass in the directory.
-sub_vision/clean: sub_vision/CMakeFiles/mock_detect.dir/clean
-sub_vision/clean: sub_vision/CMakeFiles/mock_camera.dir/clean
+sub_vision/clean: sub_vision/CMakeFiles/acquisition_node.dir/clean
+sub_vision/clean: sub_vision/CMakeFiles/mock_detect_node.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/vision_generate_messages_eus.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+sub_vision/clean: sub_vision/CMakeFiles/mock_camera_node.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/vision_genpy.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 sub_vision/clean: sub_vision/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
@@ -553,76 +555,76 @@ sub_vision/preinstall:
 .PHONY : sub_vision/preinstall
 
 #=============================================================================
-# Target rules for target sub_vision/CMakeFiles/mock_detect.dir
+# Target rules for target sub_vision/CMakeFiles/acquisition_node.dir
 
 # All Build rule for target.
-sub_vision/CMakeFiles/mock_detect.dir/all: sub_vision/CMakeFiles/vision_gencpp.dir/all
-	$(MAKE) -f sub_vision/CMakeFiles/mock_detect.dir/build.make sub_vision/CMakeFiles/mock_detect.dir/depend
-	$(MAKE) -f sub_vision/CMakeFiles/mock_detect.dir/build.make sub_vision/CMakeFiles/mock_detect.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=17,18 "Built target mock_detect"
-.PHONY : sub_vision/CMakeFiles/mock_detect.dir/all
+sub_vision/CMakeFiles/acquisition_node.dir/all: sub_vision/CMakeFiles/vision_gencpp.dir/all
+	$(MAKE) -f sub_vision/CMakeFiles/acquisition_node.dir/build.make sub_vision/CMakeFiles/acquisition_node.dir/depend
+	$(MAKE) -f sub_vision/CMakeFiles/acquisition_node.dir/build.make sub_vision/CMakeFiles/acquisition_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=1,2 "Built target acquisition_node"
+.PHONY : sub_vision/CMakeFiles/acquisition_node.dir/all
 
 # Include target in all.
-all: sub_vision/CMakeFiles/mock_detect.dir/all
+all: sub_vision/CMakeFiles/acquisition_node.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-sub_vision/CMakeFiles/mock_detect.dir/rule: cmake_check_build_system
+sub_vision/CMakeFiles/acquisition_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 sub_vision/CMakeFiles/mock_detect.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 sub_vision/CMakeFiles/acquisition_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 0
-.PHONY : sub_vision/CMakeFiles/mock_detect.dir/rule
+.PHONY : sub_vision/CMakeFiles/acquisition_node.dir/rule
 
 # Convenience name for target.
-mock_detect: sub_vision/CMakeFiles/mock_detect.dir/rule
+acquisition_node: sub_vision/CMakeFiles/acquisition_node.dir/rule
 
-.PHONY : mock_detect
-
-# clean rule for target.
-sub_vision/CMakeFiles/mock_detect.dir/clean:
-	$(MAKE) -f sub_vision/CMakeFiles/mock_detect.dir/build.make sub_vision/CMakeFiles/mock_detect.dir/clean
-.PHONY : sub_vision/CMakeFiles/mock_detect.dir/clean
+.PHONY : acquisition_node
 
 # clean rule for target.
-clean: sub_vision/CMakeFiles/mock_detect.dir/clean
+sub_vision/CMakeFiles/acquisition_node.dir/clean:
+	$(MAKE) -f sub_vision/CMakeFiles/acquisition_node.dir/build.make sub_vision/CMakeFiles/acquisition_node.dir/clean
+.PHONY : sub_vision/CMakeFiles/acquisition_node.dir/clean
+
+# clean rule for target.
+clean: sub_vision/CMakeFiles/acquisition_node.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target sub_vision/CMakeFiles/mock_camera.dir
+# Target rules for target sub_vision/CMakeFiles/mock_detect_node.dir
 
 # All Build rule for target.
-sub_vision/CMakeFiles/mock_camera.dir/all: sub_vision/CMakeFiles/vision_gencpp.dir/all
-	$(MAKE) -f sub_vision/CMakeFiles/mock_camera.dir/build.make sub_vision/CMakeFiles/mock_camera.dir/depend
-	$(MAKE) -f sub_vision/CMakeFiles/mock_camera.dir/build.make sub_vision/CMakeFiles/mock_camera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=15,16 "Built target mock_camera"
-.PHONY : sub_vision/CMakeFiles/mock_camera.dir/all
+sub_vision/CMakeFiles/mock_detect_node.dir/all: sub_vision/CMakeFiles/vision_gencpp.dir/all
+	$(MAKE) -f sub_vision/CMakeFiles/mock_detect_node.dir/build.make sub_vision/CMakeFiles/mock_detect_node.dir/depend
+	$(MAKE) -f sub_vision/CMakeFiles/mock_detect_node.dir/build.make sub_vision/CMakeFiles/mock_detect_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=20,21 "Built target mock_detect_node"
+.PHONY : sub_vision/CMakeFiles/mock_detect_node.dir/all
 
 # Include target in all.
-all: sub_vision/CMakeFiles/mock_camera.dir/all
+all: sub_vision/CMakeFiles/mock_detect_node.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-sub_vision/CMakeFiles/mock_camera.dir/rule: cmake_check_build_system
+sub_vision/CMakeFiles/mock_detect_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 sub_vision/CMakeFiles/mock_camera.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 sub_vision/CMakeFiles/mock_detect_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 0
-.PHONY : sub_vision/CMakeFiles/mock_camera.dir/rule
+.PHONY : sub_vision/CMakeFiles/mock_detect_node.dir/rule
 
 # Convenience name for target.
-mock_camera: sub_vision/CMakeFiles/mock_camera.dir/rule
+mock_detect_node: sub_vision/CMakeFiles/mock_detect_node.dir/rule
 
-.PHONY : mock_camera
-
-# clean rule for target.
-sub_vision/CMakeFiles/mock_camera.dir/clean:
-	$(MAKE) -f sub_vision/CMakeFiles/mock_camera.dir/build.make sub_vision/CMakeFiles/mock_camera.dir/clean
-.PHONY : sub_vision/CMakeFiles/mock_camera.dir/clean
+.PHONY : mock_detect_node
 
 # clean rule for target.
-clean: sub_vision/CMakeFiles/mock_camera.dir/clean
+sub_vision/CMakeFiles/mock_detect_node.dir/clean:
+	$(MAKE) -f sub_vision/CMakeFiles/mock_detect_node.dir/build.make sub_vision/CMakeFiles/mock_detect_node.dir/clean
+.PHONY : sub_vision/CMakeFiles/mock_detect_node.dir/clean
+
+# clean rule for target.
+clean: sub_vision/CMakeFiles/mock_detect_node.dir/clean
 
 .PHONY : clean
 
@@ -698,7 +700,7 @@ sub_vision/CMakeFiles/vision_generate_messages_eus.dir/all: sub_vision/CMakeFile
 sub_vision/CMakeFiles/vision_generate_messages_eus.dir/all: sub_vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/all
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_eus.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_eus.dir/depend
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_eus.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=24,25 "Built target vision_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=27,28 "Built target vision_generate_messages_eus"
 .PHONY : sub_vision/CMakeFiles/vision_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -784,6 +786,43 @@ sub_vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: sub_vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target sub_vision/CMakeFiles/mock_camera_node.dir
+
+# All Build rule for target.
+sub_vision/CMakeFiles/mock_camera_node.dir/all: sub_vision/CMakeFiles/vision_gencpp.dir/all
+	$(MAKE) -f sub_vision/CMakeFiles/mock_camera_node.dir/build.make sub_vision/CMakeFiles/mock_camera_node.dir/depend
+	$(MAKE) -f sub_vision/CMakeFiles/mock_camera_node.dir/build.make sub_vision/CMakeFiles/mock_camera_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=18,19 "Built target mock_camera_node"
+.PHONY : sub_vision/CMakeFiles/mock_camera_node.dir/all
+
+# Include target in all.
+all: sub_vision/CMakeFiles/mock_camera_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+sub_vision/CMakeFiles/mock_camera_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 sub_vision/CMakeFiles/mock_camera_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 0
+.PHONY : sub_vision/CMakeFiles/mock_camera_node.dir/rule
+
+# Convenience name for target.
+mock_camera_node: sub_vision/CMakeFiles/mock_camera_node.dir/rule
+
+.PHONY : mock_camera_node
+
+# clean rule for target.
+sub_vision/CMakeFiles/mock_camera_node.dir/clean:
+	$(MAKE) -f sub_vision/CMakeFiles/mock_camera_node.dir/build.make sub_vision/CMakeFiles/mock_camera_node.dir/clean
+.PHONY : sub_vision/CMakeFiles/mock_camera_node.dir/clean
+
+# clean rule for target.
+clean: sub_vision/CMakeFiles/mock_camera_node.dir/clean
 
 .PHONY : clean
 
@@ -1284,7 +1323,7 @@ sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/all: sub_vision/CMakeF
 sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/all: sub_vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/all
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/depend
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=27 "Built target vision_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=30 "Built target vision_generate_messages_nodejs"
 .PHONY : sub_vision/CMakeFiles/vision_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1349,7 +1388,7 @@ sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/all: sub_vision/CMakeFile
 sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/all: sub_vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/all
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/depend
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=23 "Built target vision_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=26 "Built target vision_generate_messages_cpp"
 .PHONY : sub_vision/CMakeFiles/vision_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1382,7 +1421,7 @@ sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/all: sub_vision/CMakeFil
 sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/all: sub_vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/all
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/depend
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=26 "Built target vision_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=29 "Built target vision_generate_messages_lisp"
 .PHONY : sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1414,7 +1453,7 @@ clean: sub_vision/CMakeFiles/vision_generate_messages_lisp.dir/clean
 sub_vision/CMakeFiles/vision_node.dir/all: sub_vision/CMakeFiles/vision_gencpp.dir/all
 	$(MAKE) -f sub_vision/CMakeFiles/vision_node.dir/build.make sub_vision/CMakeFiles/vision_node.dir/depend
 	$(MAKE) -f sub_vision/CMakeFiles/vision_node.dir/build.make sub_vision/CMakeFiles/vision_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=30,31,32,33,34,35,36,37 "Built target vision_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=33,34,35,36,37,38,39,40 "Built target vision_node"
 .PHONY : sub_vision/CMakeFiles/vision_node.dir/all
 
 # Include target in all.
@@ -1836,7 +1875,7 @@ sub_vision/CMakeFiles/vision_generate_messages_py.dir/all: sub_vision/CMakeFiles
 sub_vision/CMakeFiles/vision_generate_messages_py.dir/all: sub_vision/CMakeFiles/_vision_generate_messages_check_deps_Perception.dir/all
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_py.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_py.dir/depend
 	$(MAKE) -f sub_vision/CMakeFiles/vision_generate_messages_py.dir/build.make sub_vision/CMakeFiles/vision_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=28,29 "Built target vision_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=31,32 "Built target vision_generate_messages_py"
 .PHONY : sub_vision/CMakeFiles/vision_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1886,7 +1925,7 @@ sub_mission/preinstall:
 sub_mission/CMakeFiles/mission_node.dir/all: sub_control/CMakeFiles/nautical.dir/all
 	$(MAKE) -f sub_mission/CMakeFiles/mission_node.dir/build.make sub_mission/CMakeFiles/mission_node.dir/depend
 	$(MAKE) -f sub_mission/CMakeFiles/mission_node.dir/build.make sub_mission/CMakeFiles/mission_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=12,13,14 "Built target mission_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=14,15,16,17 "Built target mission_node"
 .PHONY : sub_mission/CMakeFiles/mission_node.dir/all
 
 # Include target in all.
@@ -1896,7 +1935,7 @@ all: sub_mission/CMakeFiles/mission_node.dir/all
 
 # Build rule for subdir invocation for target.
 sub_mission/CMakeFiles/mission_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 sub_mission/CMakeFiles/mission_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Mako/build/CMakeFiles 0
 .PHONY : sub_mission/CMakeFiles/mission_node.dir/rule
@@ -1941,7 +1980,7 @@ sub_remote_control/preinstall:
 sub_remote_control/CMakeFiles/remote_control_node.dir/all: sub_control/CMakeFiles/nautical.dir/all
 	$(MAKE) -f sub_remote_control/CMakeFiles/remote_control_node.dir/build.make sub_remote_control/CMakeFiles/remote_control_node.dir/depend
 	$(MAKE) -f sub_remote_control/CMakeFiles/remote_control_node.dir/build.make sub_remote_control/CMakeFiles/remote_control_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=21,22 "Built target remote_control_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/user/Mako/build/CMakeFiles --progress-num=24,25 "Built target remote_control_node"
 .PHONY : sub_remote_control/CMakeFiles/remote_control_node.dir/all
 
 # Include target in all.

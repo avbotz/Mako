@@ -1,3 +1,4 @@
+#include <ros/ros.h>
 #include "vision/tasks.hpp"
 #include "vision/filters.hpp"
 #include "vision/log.hpp"
@@ -5,6 +6,13 @@
 
 Observation findGate(const cv::Mat &img)
 {
+    // Check that image isn't null.
+    if (!img.data)
+    {
+        ROS_INFO("No image data for gate.");
+        return Observation(0, 0, 0, 0);
+    }
+
     // Illuminate image.
     cv::Mat illum = illumination(img);
     

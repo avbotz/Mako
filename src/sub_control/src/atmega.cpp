@@ -25,6 +25,14 @@ namespace atmega
 		fflush(out);
 	}
 
+    void relative(const State &state)
+    {
+        // Write to pipe(out) with relative data and flush.
+		fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
+                state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
+        fflush(out);
+    }
+
 	bool alive()
 	{
         // Request for kill. 

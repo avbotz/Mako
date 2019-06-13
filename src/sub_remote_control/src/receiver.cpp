@@ -12,8 +12,7 @@
 #include "control/atmega.hpp"
 #include "control/state.hpp"
 
-#define REMOTE_PORT 8080 
-
+const int REMOTE_PORT = 8080;
 
 int main(int argc, char **argv)
 {

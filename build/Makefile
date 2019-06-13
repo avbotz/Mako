@@ -311,30 +311,30 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
-# Target rules for targets named mock_detect
+# Target rules for targets named acquisition_node
 
 # Build rule for target.
-mock_detect: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mock_detect
-.PHONY : mock_detect
+acquisition_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 acquisition_node
+.PHONY : acquisition_node
 
 # fast build rule for target.
-mock_detect/fast:
-	$(MAKE) -f sub_vision/CMakeFiles/mock_detect.dir/build.make sub_vision/CMakeFiles/mock_detect.dir/build
-.PHONY : mock_detect/fast
+acquisition_node/fast:
+	$(MAKE) -f sub_vision/CMakeFiles/acquisition_node.dir/build.make sub_vision/CMakeFiles/acquisition_node.dir/build
+.PHONY : acquisition_node/fast
 
 #=============================================================================
-# Target rules for targets named mock_camera
+# Target rules for targets named mock_detect_node
 
 # Build rule for target.
-mock_camera: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mock_camera
-.PHONY : mock_camera
+mock_detect_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mock_detect_node
+.PHONY : mock_detect_node
 
 # fast build rule for target.
-mock_camera/fast:
-	$(MAKE) -f sub_vision/CMakeFiles/mock_camera.dir/build.make sub_vision/CMakeFiles/mock_camera.dir/build
-.PHONY : mock_camera/fast
+mock_detect_node/fast:
+	$(MAKE) -f sub_vision/CMakeFiles/mock_detect_node.dir/build.make sub_vision/CMakeFiles/mock_detect_node.dir/build
+.PHONY : mock_detect_node/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -400,6 +400,19 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 rosgraph_msgs_generate_messages_py/fast:
 	$(MAKE) -f sub_vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make sub_vision/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named mock_camera_node
+
+# Build rule for target.
+mock_camera_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mock_camera_node
+.PHONY : mock_camera_node
+
+# fast build rule for target.
+mock_camera_node/fast:
+	$(MAKE) -f sub_vision/CMakeFiles/mock_camera_node.dir/build.make sub_vision/CMakeFiles/mock_camera_node.dir/build
+.PHONY : mock_camera_node/fast
 
 #=============================================================================
 # Target rules for targets named vision_genpy
@@ -880,13 +893,14 @@ help:
 	@echo "... gtest"
 	@echo "... nautical"
 	@echo "... _catkin_empty_exported_target"
-	@echo "... mock_detect"
-	@echo "... mock_camera"
+	@echo "... acquisition_node"
+	@echo "... mock_detect_node"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... vision_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... mock_camera_node"
 	@echo "... vision_genpy"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"

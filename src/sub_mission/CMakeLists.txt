@@ -18,3 +18,7 @@ include_directories(
 add_executable(mission_node src/mission.cpp src/functions.cpp src/commands.cpp)
 target_link_libraries(mission_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(mission_node mission_gencpp)
+
+add_executable(prelim_node src/prelim.cpp src/functions.cpp src/commands.cpp)
+target_link_libraries(prelim_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_dependencies(prelim_node mission_gencpp)

@@ -285,32 +285,6 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named nautical
-
-# Build rule for target.
-nautical: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nautical
-.PHONY : nautical
-
-# fast build rule for target.
-nautical/fast:
-	$(MAKE) -f sub_control/CMakeFiles/nautical.dir/build.make sub_control/CMakeFiles/nautical.dir/build
-.PHONY : nautical/fast
-
-#=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
-
-# Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f sub_control/CMakeFiles/_catkin_empty_exported_target.dir/build.make sub_control/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-#=============================================================================
 # Target rules for targets named acquisition_node
 
 # Build rule for target.
@@ -844,6 +818,32 @@ vision_generate_messages_py/fast:
 .PHONY : vision_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named nautical
+
+# Build rule for target.
+nautical: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nautical
+.PHONY : nautical
+
+# fast build rule for target.
+nautical/fast:
+	$(MAKE) -f sub_control/CMakeFiles/nautical.dir/build.make sub_control/CMakeFiles/nautical.dir/build
+.PHONY : nautical/fast
+
+#=============================================================================
+# Target rules for targets named prelim_node
+
+# Build rule for target.
+prelim_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prelim_node
+.PHONY : prelim_node
+
+# fast build rule for target.
+prelim_node/fast:
+	$(MAKE) -f sub_mission/CMakeFiles/prelim_node.dir/build.make sub_mission/CMakeFiles/prelim_node.dir/build
+.PHONY : prelim_node/fast
+
+#=============================================================================
 # Target rules for targets named mission_node
 
 # Build rule for target.
@@ -891,8 +891,6 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... nautical"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... acquisition_node"
 	@echo "... mock_detect_node"
 	@echo "... std_msgs_generate_messages_py"
@@ -934,6 +932,8 @@ help:
 	@echo "... vision_genlisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... vision_generate_messages_py"
+	@echo "... nautical"
+	@echo "... prelim_node"
 	@echo "... mission_node"
 	@echo "... remote_control_node"
 .PHONY : help

@@ -3,6 +3,7 @@
 #include <thread>
 #include "control/state.hpp"
 #include "control/atmega.hpp"
+#include "vision/config.hpp"
 
 
 namespace atmega 
@@ -13,28 +14,39 @@ namespace atmega
 	void write(std::string command)
 	{
 		// Don't forget to add a \n to a command sent to this function.
-		fprintf(out, command.c_str());
-		fflush(out);
+        if (!SIM) 
+        {
+            fprintf(out, command.c_str());
+            fflush(out);
+        }
 	}
 
 	void write(const State &state) 
 	{
 		// Write to pipe(out) with state data and flush.
-		fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
-                state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
-		fflush(out);
+        if (!SIM) 
+        {
+            fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
+                    state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
+            fflush(out);
+        }
 	}
 
     void relative(const State &state)
     {
         // Write to pipe(out) with relative data and flush.
-		fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
-                state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
-        fflush(out);
+        if (!SIM)
+        {
+            fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
+                    state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
+            fflush(out);
+        }
     }
 
 	bool alive()
 	{
+        if (SIM) return true;
+
         // Request for kill. 
         write("a\n");
         
@@ -47,6 +59,8 @@ namespace atmega
 	
 	State state()
 	{	
+        if (SIM) return State(0, 0, 0, 0, 0, 0);
+
         // Request for state.
         write("c\n");
         

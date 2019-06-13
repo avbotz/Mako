@@ -4,18 +4,15 @@
 #include <cv_bridge/cv_bridge.h>
 #include <vision/Perception.h>
 #include "control/atmega.hpp"
-#include "mission/functions.hpp"
+#include "mission/commands.hpp"
+#include "vision/config.hpp"
 #include "vision/tasks.hpp"
 
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "mission_node");
+    ros::init(argc, argv, "mission_prelim_node");
     ros::NodeHandle node;   
-
-    // Setup observation client.
-    ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
-    vision::Perception perception;
 
     // Wait until kill switch is flipped.
     bool start = false;
@@ -28,7 +25,8 @@ int main(int argc, char** argv)
     }
 
     // Run mission functions.
-    gate(perception, client);
-    octagon(perception, client); 
-
+    move(State(8, -2, 0, 0, 0, 0));
+    move(State(8, 2, 0, 0, 0, 0));
+    move(State(4, 0, 0, 0, 0, 0));
+    move(State(-1, 0, 0, 0, 0, 0));
 }

@@ -12,7 +12,7 @@
 int main(int argc, char** argv)
 {
     srand((unsigned) time(0)); 
-    ros::init(argc, argv, "vision");
+    ros::init(argc, argv, "vision_node");
     ros::NodeHandle node;
     VisionService service;
 

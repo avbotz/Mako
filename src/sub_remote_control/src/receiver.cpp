@@ -16,7 +16,7 @@ const int REMOTE_PORT = 8080;
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "remote");
+    ros::init(argc, argv, "remote_control_node");
     ros::NodeHandle n;
     ros::Publisher chatter_pub = n.advertise<std_msgs::String>("wiimote", 1000);
     ros::Rate loop_rate(10);

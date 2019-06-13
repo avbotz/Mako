@@ -8,7 +8,7 @@
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "vision_mock_detect");
+    ros::init(argc, argv, "vision_mock_detect_node");
     ros::NodeHandle node;   
     ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
     

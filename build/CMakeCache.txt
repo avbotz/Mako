@@ -454,6 +454,12 @@ sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //Value Computed by CMake
+sub_control_BINARY_DIR:STATIC=/home/user/Mako/build/sub_control
+
+//Value Computed by CMake
+sub_control_SOURCE_DIR:STATIC=/home/user/Mako/src/sub_control
+
+//Value Computed by CMake
 vision_BINARY_DIR:STATIC=/home/user/Mako/build/sub_vision
 
 //The directory containing a CMake configuration file for vision.

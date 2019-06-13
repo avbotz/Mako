@@ -131,8 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/user/Mako/build/gtest/cmake_install.cmake")
-  include("/home/user/Mako/build/sub_control/cmake_install.cmake")
   include("/home/user/Mako/build/sub_vision/cmake_install.cmake")
+  include("/home/user/Mako/build/sub_control/cmake_install.cmake")
   include("/home/user/Mako/build/sub_mission/cmake_install.cmake")
   include("/home/user/Mako/build/sub_remote_control/cmake_install.cmake")
 

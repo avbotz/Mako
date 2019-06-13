@@ -13,6 +13,7 @@ namespace atmega
 
 	void write(std::string);
 	void write(const State &);
+	void relative(const State &);
 	bool alive();
 	State state();
 }

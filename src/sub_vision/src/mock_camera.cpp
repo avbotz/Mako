@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "vision_mock_camera");
+    ros::init(argc, argv, "vision_mock_camera_node");
     ros::NodeHandle node;
 
     // Rather than using Spinnaker to publish an image, read test_image.png and

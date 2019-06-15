@@ -61,14 +61,14 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
             return -1;
         }
 
-        Spinnaker::GenApi::CEnumerationPtr exposureAuto = pCam->GetNodeMap().GetNode("ExposureAuto");
-        exposureAuto->SetIntValue(exposureAuto->GetEntryByName("Off")->GetValue());
+        CEnumerationPtr ptrExposureAuto = nodeMap.GetNode("ExposureAuto");
+        CEnumEntryPtr ptrExposureAutoCts = ptrExposureAuto->GetEntryByName("Continuous");
+        ptrExposureAuto->SetIntValue(ptrExposureAutoCts->GetValue());
 
-        Spinnaker::GenApi::CEnumerationPtr exposureMode = pCam->GetNodeMap().GetNode("ExposureMode");
-        exposureMode->SetIntValue(exposureMode->GetEntryByName("Timed")->GetValue());
+        CEnumerationPtr ptrGainAuto = nodeMap.GetNode("GainAuto");
+        CEnumEntryPtr ptrGainAutoCts = ptrGainAuto->GetEntryByName("Continuous");
+        ptrGainAuto->SetIntValue(ptrGainAutoCts->GetValue());
 
-        Spinnaker::GenApi::CFloatPtr exposureTime = pCam->GetNodeMap().GetNode("ExposureTime");
-        exposureTime->SetValue(1300);
 
         // Retrieve integer value from entry node
         int64_t acquisitionModeContinuous = ptrAcquisitionModeContinuous->GetValue();

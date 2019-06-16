@@ -20,6 +20,7 @@ int main(int argc, char** argv)
     while (node.ok()) 
     {
         ROS_INFO("Published image.");
+        ros::Duration(0.5).sleep();
         pub.publish(msg);
         ros::spinOnce();
     }

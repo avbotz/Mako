@@ -10,8 +10,8 @@ float align(vision::Perception &per, ros::ServiceClient &client, int attempts)
     {
         client.call(per);
         printResponse(per);
-
-        average += atmega::state().axis[YAW] + per.response.hangle; 
+        if (per.response.prob > 0.5)
+            average += atmega::state().axis[YAW] + per.response.hangle; 
     }
     
     average /= attempts;
@@ -20,6 +20,7 @@ float align(vision::Perception &per, ros::ServiceClient &client, int attempts)
 
 void move(const State &dest)
 {
+    atmega::write(dest);
     bool quit = false;
     while (!quit)
     {

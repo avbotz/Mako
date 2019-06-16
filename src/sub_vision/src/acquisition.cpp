@@ -68,7 +68,7 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
         exposureMode->SetIntValue(exposureMode->GetEntryByName("Timed")->GetValue());
 
         Spinnaker::GenApi::CFloatPtr exposureTime = pCam->GetNodeMap().GetNode("ExposureTime");
-        exposureTime->SetValue(1300);
+        exposureTime->SetValue(1305);
 
         // Retrieve integer value from entry node
         int64_t acquisitionModeContinuous = ptrAcquisitionModeContinuous->GetValue();

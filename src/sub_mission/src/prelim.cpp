@@ -18,15 +18,17 @@ int main(int argc, char** argv)
     bool start = false;
     while (!start && !SIM)
     {
+        ROS_INFO("Waiting to start PRELIM.");
         if (!atmega::alive())
             ros::Duration(0.5).sleep();
         else 
             start = true;
     }
+    atmega::write("p 0.2\n");
 
     // Run mission functions.
-    move(State(8, -2, 0, 0, 0, 0));
-    move(State(8, 2, 0, 0, 0, 0));
-    move(State(4, 0, 0, 0, 0, 0));
+    move(State(3, -1, 0, 0, 0, 0));
+    move(State(3, 1, 0, 0, 0, 0));
+    move(State(1, 0, 0, 0, 0, 0));
     move(State(-1, 0, 0, 0, 0, 0));
 }

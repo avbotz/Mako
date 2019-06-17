@@ -9,13 +9,13 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <vision/Perception.h>
 #include "vision/tasks.hpp"
-	
+
 class VisionService 
 {
-public:
-    cv::Mat front, down;
-    bool detectCallback(vision::Perception::Request &, vision::Perception::Response &);
-    void captureCallback(const sensor_msgs::ImageConstPtr &);
+	public:
+		cv::Mat front, down;
+		bool detectCallback(vision::Perception::Request &, vision::Perception::Response &);
+		void captureCallback(const sensor_msgs::ImageConstPtr &);
 };
 
 void setResponse(const Observation &, vision::Perception::Response &);

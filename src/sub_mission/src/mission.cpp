@@ -10,26 +10,25 @@
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "mission_node");
-    ros::NodeHandle node;   
+	ros::init(argc, argv, "mission_node");
+	ros::NodeHandle node;   
 
-    // Setup observation client.
-    ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
-    vision::Perception perception;
+	// Setup observation client.
+	ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
+	vision::Perception perception;
 
-    // Wait until kill switch is flipped.
-    bool start = false;
-    while (!start && !SIM)
-    {
-        if (!atmega::alive())
-            ros::Duration(0.5).sleep();
-        else 
-            start = true;
-    }
-    atmega::write("p 0.2\n");
+	// Wait until kill switch is flipped.
+	bool start = false;
+	while (!start && !SIM)
+	{
+		if (!atmega::alive())
+			ros::Duration(0.5).sleep();
+		else 
+			start = true;
+	}
+	atmega::write("p 0.2\n");
 
-    // Run mission functions.
-    gate(perception, client);
-    octagon(perception, client); 
-
+	// Run mission functions.
+	gate(perception, client);
+	octagon(perception, client); 
 }

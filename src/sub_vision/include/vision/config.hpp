@@ -3,8 +3,8 @@
 
 enum class CameraMode { MOCK, LIVE };
 enum Task { 
-    GATE,
-    OCTAGON
+	GATE,
+	OCTAGON
 };
 const CameraMode CAMERA_MODE = CameraMode::LIVE;
 const bool LOG = true;

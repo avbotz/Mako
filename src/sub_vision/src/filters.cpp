@@ -69,7 +69,7 @@ cv::Mat homomorphic(const cv::Mat &src)
 	// Apply inverse FFT.
 	cv::Mat ifftimg;
 	cv::idft(fftimg, ifftimg, 32); // originally CV_HAL_DFT_REAL_OUTPUT but that didn't work, so hardcoded it
-	
+
 	cv::Mat expimg;
 	cv::exp(ifftimg, expimg);
 

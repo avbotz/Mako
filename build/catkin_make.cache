@@ -1,2 +1,0 @@
-sub_control:sub_mission:sub_remote_control:sub_vision
--DCATKIN_DEVEL_PREFIX=/home/user/Mako/devel -DCMAKE_INSTALL_PREFIX=/home/user/Mako/install -G Unix Makefiles

@@ -1,8 +1,0 @@
-prefix=/home/user/Mako/devel
-
-Name: control
-Description: Description of control
-Version: 0.0.0
-Cflags: -I/home/user/Mako/src/sub_control/include
-Libs: -L/home/user/Mako/devel/lib -lnautical
-Requires: 

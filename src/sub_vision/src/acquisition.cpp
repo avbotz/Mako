@@ -17,7 +17,7 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
 
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
-	image_transport::Publisher pub = it.advertise("camera_array/cam0/image_raw", 1);
+	image_transport::Publisher pub = it.advertise("front_camera", 1);
 
 	try
 	{

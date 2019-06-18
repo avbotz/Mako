@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 	// Rather than using Spinnaker to publish an image, read test_image.png and
 	// publish that instead.
 	image_transport::ImageTransport it(node);
-	image_transport::Publisher pub = it.advertise("camera_array/cam0/image_raw", 1);
+	image_transport::Publisher pub = it.advertise("front_camera", 1);
 	cv::Mat image = cv::imread("test_image.png", CV_LOAD_IMAGE_COLOR);
 	sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
 

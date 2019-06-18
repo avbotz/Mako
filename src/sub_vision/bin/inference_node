@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+from tf_vision import inference
+
+if __name__ == "__main__":
+    inference.main()
+

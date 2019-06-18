@@ -22,7 +22,7 @@ void move(const State &dest)
 {
 	atmega::write(dest);
 	bool quit = false;
-	while (!quit)
+	while (!quit && ros::ok())
 	{
 		State state = atmega::state();
 		if (std::fabs(dest.axis[X]-state.axis[X]) > 1.0f)

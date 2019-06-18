@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	char buffer[1024] = {0};
-	while (true) 
+	while (ros::ok()) 
 	{
 		valread = read(new_socket, buffer, 1024);
 		if (buffer[18] == '1') break;

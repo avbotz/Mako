@@ -5,9 +5,10 @@ set(SPINNAKER_INCLUDE_DIR "/usr/include/spinnaker" CACHE PATH "Spinnaker Include
 set(SPINNAKER_LIB_DIR "/usr/lib" CACHE PATH "Spinnaker Libs Directory")
 
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg cv_bridge
-    image_transport)
+    image_transport message_generation geometry_msgs)
 find_package(OpenCV)
 find_library(FLYCAPTURE2 flycapture)
+catkin_python_setup()
 
 add_service_files(FILES Perception.srv)
 
@@ -40,3 +41,6 @@ add_executable(acquisition_node src/acquisition.cpp)
 target_link_libraries(acquisition_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
     Spinnaker)
 add_dependencies(acquisition_node vision_gencpp)
+
+catkin_install_python(PROGRAMS bin/inference_node 
+                      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

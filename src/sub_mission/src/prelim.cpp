@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 
 	// Wait until kill switch is flipped.
 	bool start = false;
-	while (!start && !SIM)
+	while (!start && !SIM && ros::ok())
 	{
 		ROS_INFO("Waiting to start PRELIM.");
 		if (!atmega::alive())

@@ -1,4 +1,8 @@
 logs/*
 build/*
 devel/*
+install/*
 models/*
+
+*.pyc
+*.swp

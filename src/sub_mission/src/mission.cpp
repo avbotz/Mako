@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 
 	// Wait until kill switch is flipped.
 	bool start = false;
-	while (!start && !SIM)
+	while (!start && !SIM && ros::ok())
 	{
 		if (!atmega::alive())
 			ros::Duration(0.5).sleep();

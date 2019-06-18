@@ -114,7 +114,7 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
 		const unsigned int k_numImages = 10;
 
 		// for (unsigned int imageCnt = 0; imageCnt < k_numImages; imageCnt++)
-		while (true)
+		while (ros::ok())
 		{
 			try
 			{

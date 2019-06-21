@@ -1,0 +1,55 @@
+ __  __       _         
+|  \/  | __ _| | _____  
+| |\/| |/ _` | |/ / _ \ 
+| |  | | (_| |   < (_) |
+|_|  |_|\__,_|_|\_\___/ 
+
+Mission code for the autonomous submarine, Marlin.
+Copyright (C) 2019 AVBotz
+
+
+REQUIREMENTS
+
+	Ubuntu 18.04 (best for ROS melodic)
+	ROS (sudo apt-get install ros-melodic-desktop-full)
+	OpenCV (sudo apt-get install libopencv-dev python3-opencv)
+	Tensorflow (sudo pip3 install tensorflow)
+	Spinnaker/FlyCapture SDK (contact David Zhang if needed)
+	Tmux (recommended, sudo apt-get install tmux)
+	Nautical (check Nautical README for setup instructions)
+
+COMPILING
+
+	(download TF models)
+	./tf.sh
+		
+	(build ROS nodes)
+	source workspace.sh && catkin_make 
+
+STARTUP
+
+	Follow the instructions under the Nautical README. Close the Nautical
+	DISPLAY pane as Mako will be using the stream to read control data. Keep the
+	COMMAND pane open.
+
+	Open tmux panes as needed. Each session will require that "roscore" is
+	running in one of the panes the entire time. In the other panes, run nodes
+	as needed. Before running the node startup command, "source workspace.sh"
+	needs to be invoked. The nodes are described below, under COMMANDS.
+
+CONFIG 
+
+	"src/sub_vision/include/vision/config.hpp" (rosed vision config.hpp)
+	contains the main config and explanations for vision and mission
+	definitions.
+
+	"src/sub_control/include/control/atmega.hpp" (rosed control atmega.hpp)
+	contains the port that Mako will use to connect to the control code.
+
+COMMANDS
+
+	(vision)
+	
+	rosrun vision acquisition_node
+	Starts taking images from front camera and publishing them to topic
+	'front_camera'

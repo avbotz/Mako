@@ -1,0 +1,115 @@
+ __  __       _         
+|  \/  | __ _| | _____  
+| |\/| |/ _` | |/ / _ \ 
+| |  | | (_| |   < (_) |
+|_|  |_|\__,_|_|\_\___/ 
+
+Mission code for the autonomous submarine, Marlin.
+Copyright (C) 2019 AVBotz
+
+
+REQUIREMENTS
+
+	Ubuntu 18.04 (best for ROS melodic)
+	ROS (sudo apt-get install ros-melodic-desktop-full)
+	OpenCV (sudo apt-get install libopencv-dev python3-opencv)
+	Tensorflow (sudo pip3 install tensorflow)
+	Spinnaker/FlyCapture SDK (contact David Zhang if needed)
+	Tmux (recommended, sudo apt-get install tmux)
+	Nautical (check Nautical README for setup instructions)
+
+COMPILING
+
+	(download TF models)
+	./tf.sh
+		
+	(build ROS nodes)
+	source workspace.sh && catkin_make 
+
+STARTUP
+
+	Follow the instructions under the Nautical README. Close the Nautical
+	DISPLAY pane as Mako will be using the stream to read control data. Keep the
+	COMMAND pane open.
+
+	Open tmux panes as needed. Each session will require that "roscore" is
+	running in one of the panes the entire time. In the other panes, run nodes
+	as needed. Before running the node startup command, "source workspace.sh"
+	needs to be invoked. The nodes are described below, under COMMANDS.
+
+CONFIG 
+
+	"src/sub_vision/include/vision/config.hpp" (rosed vision config.hpp)
+	contains the main config and explanations for vision and mission
+	definitions.
+
+	"src/sub_control/include/control/atmega.hpp" (rosed control atmega.hpp)
+	contains the port that Mako will use to connect to the control code.
+
+COMMANDS
+
+	(vision)
+	
+	"rosrun vision acquisition_node"
+	Starts taking images from front camera and publishing them to topic
+	'front_camera'.
+
+	"rosrun vision mock_camera_node"
+	Publishes the test image, "test_image.png", to the topic 'front_camera'. 
+
+	"rosrun vision inference_node"
+	Runs inference on the TF models and publishes the observations. This
+	requires that either acquisition_node or mock_camera_node is running.
+
+	"rosrun vision vision_node"
+	The main vision node. Will either request observations from the TF model if
+	indicated in the config, or handle object detection itself with OpenCV. Also
+	logs images and captures images from down camera. This requires that either
+	acquisition_node or mock_camera_node is running.
+
+	"rosrun vision mock_detect_node"
+	Simulates a mission request for an observation from vision. This requires
+	that vision_node is running. 
+
+	(mission)
+
+	"rosrun mission prelim_node"
+	Runs the prelim using the states in prelim.cpp (rosed mission prelim.cpp). 
+	
+	"rosrun mission mission_node"
+	Runs the overall mission, including path planning, object manipulation, sub
+	movement, etc. This requires that vision_node is running.
+
+	(common combinations)
+
+	prelim_node (run prelim)
+	acquisition_node + vision_node (log images)
+	acquisition_node + inference_node + vision_node + mission_node (full mission)
+
+SUMMARY
+
+	Most runs should look like this:
+	1. Setup sub, turn on, and connect sub to router. Ensure kill is OFF.
+	2. Connect own computer to AVBotz network.
+	3. SSH into sub, "ssh user@192.168.2.50". 
+	4. Put sub into water without breaking a motor.
+	5. Follow Nautical README instructions. Pray that the DVL doesn't hang.  
+	6. Follow Mako README instructions with one of the common node combinations.
+	7. Unplug tether if this is an autonomous run.
+	8. Turn kill switch ON to begin mission if that is running.
+
+ADDITIONAL
+
+	Mako sends image data between nodes through the built-in ROS method. A
+	(better?) option would be to write the images to V-shm, and have both
+	inference_node and vision_node read from shm. If attempting to implement the
+	method, don't forget to avoid exceeding the memory stack limit, as the front
+	camera images are large. The other issue is that Python doesn't interface
+	well with shm.
+
+	Mako also needs a method of automating common startup runs so a person
+	doesn't need to manually type in each node activation command.
+
+	If someone ever creates a C++ method of running the object detection API,
+	that would integrate into Mako much smoother.
+

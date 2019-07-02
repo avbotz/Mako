@@ -1,6 +1,7 @@
 #include "mission/commands.hpp"
 #include "mission/functions.hpp"
 #include "control/atmega.hpp"
+#include "vision/config.hpp"
 
 
 float align(vision::Perception &per, ros::ServiceClient &client, int attempts)
@@ -11,7 +12,10 @@ float align(vision::Perception &per, ros::ServiceClient &client, int attempts)
 		client.call(per);
 		printResponse(per);
 		if (per.response.prob > 0.5)
-			average += atmega::state().axis[YAW] + per.response.hangle; 
+		{
+			average += atmega::state().axis[YAW];
+			average += per.response.hangle; 
+		}
 	}
 
 	average /= attempts;
@@ -29,7 +33,7 @@ void move(const State &dest)
 			ros::Duration(3.0).sleep();
 		else if (std::fabs(dest.axis[Y]-state.axis[Y]) > 1.0f)
 			ros::Duration(3.0).sleep();
-		else if (std::fabs(dest.axis[YAW]-state.axis[YAW]) > 10.0f)
+		else if (std::fabs(dest.axis[YAW]-state.axis[YAW]) > 5.0f)
 			ros::Duration(3.0).sleep();
 		else
 		{

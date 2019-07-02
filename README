@@ -14,6 +14,7 @@ REQUIREMENTS
 	ROS (sudo apt-get install ros-melodic-desktop-full)
 	OpenCV (sudo apt-get install libopencv-dev python3-opencv)
 	Tensorflow (sudo pip3 install tensorflow)
+	Tensorflow for C (instructions at https://www.tensorflow.org/install/lang_c)
 	Spinnaker/FlyCapture SDK (contact David Zhang if needed)
 	Tmux (recommended, sudo apt-get install tmux)
 	Nautical (check Nautical README for setup instructions)
@@ -100,6 +101,8 @@ SUMMARY
 
 ADDITIONAL
 
+	Thanks to Sergio Izquierdo (serizba) for writing CPPFLOW.
+
 	Mako sends image data between nodes through the built-in ROS method. A
 	(better?) option would be to write the images to V-shm, and have both
 	inference_node and vision_node read from shm. If attempting to implement the
@@ -109,7 +112,4 @@ ADDITIONAL
 
 	Mako also needs a method of automating common startup runs so a person
 	doesn't need to manually type in each node activation command.
-
-	If someone ever creates a C++ method of running the object detection API,
-	that would integrate into Mako much smoother.
 

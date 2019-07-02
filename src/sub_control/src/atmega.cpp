@@ -10,6 +10,7 @@ namespace atmega
 {    
 	FILE* in = fopen(PORT, "r+");
 	FILE* out = fopen(PORT, "w+");
+	State sim_state(0, 0, 0, 0, 0, 0);
 
 	void write(std::string command)
 	{
@@ -29,6 +30,10 @@ namespace atmega
 			fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
 					state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
 			fflush(out);
+		}
+		else 
+		{
+			sim_state = state;	
 		}
 	}
 
@@ -59,7 +64,7 @@ namespace atmega
 
 	State state()
 	{	
-		if (SIM) return State(0, 0, 0, 0, 0, 0);
+		if (SIM) return sim_state;
 
 		// Request for state.
 		write("c\n");

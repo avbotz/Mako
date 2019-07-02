@@ -10,6 +10,7 @@ namespace atmega
 {
 	extern FILE *in;
 	extern FILE *out;
+	extern State sim_state;
 
 	void write(std::string);
 	void write(const State &);

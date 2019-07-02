@@ -13,37 +13,62 @@ Observation findGate(const cv::Mat &img)
 		return Observation(0, 0, 0, 0);
 	}
 
-	// Illuminate image.
-	cv::Mat illum = illumination(img);
-
-	// Light blur.
+    // Illuminate image using filter.
+    // cv::Mat illum = illumination(img);
+    
+	// Strong blur to remove noise from image.
 	cv::Mat blur;
-	cv::blur(illum, blur, cv::Size(5, 5));
+	cv::blur(img, blur, cv::Size(17, 17));
 
-	// Canny edge detection.
+	// Canny edge detection with low threshold.
 	cv::Mat can, cdst;
-	cv::Canny(blur, can, 150, 200, 3);
-	cv::cvtColor(can, cdst, cv::COLOR_GRAY2BGR);
-
-	// Get lines with HoughLinesP
-	std::vector<cv::Vec4i> lines;
-	cv::HoughLinesP(can, lines, 1, CV_PI/180, 35, 20, 20);
-	for (int i = 0; i < lines.size(); i++) 
-	{
-		cv::Vec4i line = lines[i];
+    cv::Canny(blur, can, 20, 60, 3);
+    cv::cvtColor(can, cdst, cv::COLOR_GRAY2BGR);
+	
+    // Get lines using OpenCV Hough Lines algorithm, and store probable lines to
+	// use later. The last three parameters for HoughLinesP are threshold,
+	// minLength, and maxGap.
+    std::vector<cv::Vec4i> lines;
+	std::vector<cv::Vec4i> probable_lines;
+	int ax=0, bx=0, ay=0, by=0;
+	cv::Vec4i a_line, b_line;
+    cv::HoughLinesP(can, lines, 2, CV_PI/180, 50, 80, 30);
+    for (int i = 0; i < lines.size(); i++) 
+    {
+        cv::Vec4i line = lines[i];
 		int x1=line[0],y1=line[1],x2=line[2],y2=line[3];
-		float dist = std::sqrt(std::pow(std::abs(x1 - x2), 2) + std::pow(std::abs(y1 - y2), 2));
-		float rotation = std::acos(std::abs(y1 - y2) / dist) * 180/CV_PI;
-		if (std::abs(rotation) <= 15)
+    	float dist = std::sqrt(std::pow(std::abs(x1-x2), 2) + std::pow(std::abs(y1-y2), 2));
+    	float rotation = std::abs(std::acos(std::abs(y1-y2)/dist)*180/CV_PI);
+        cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0, 0, 255), 3, CV_AA);		
+        if (rotation <= 30 && dist > 100. && y1 < 2500 && y2 < 2500)
 		{
-			cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0, 0, 255), 3, CV_AA);		
-			int xmid = (x1+x2)/2;
-			int ymid = (y1+y2)/2;	
-			log(cdst, 'e');
+			if (ax == 0)
+			{
+				ax = (x1+x2)/2;
+				ay = (y1+y2)/2;
+				a_line = cv::Vec4i(x1, y1, x2, y2);
+			}
+			else if (std::abs(x1-ax) > 150 && by == 0)
+			{
+				bx = (x1+x2)/2;
+				by = (y1+y2)/2;
+				b_line = cv::Vec4i(x1, y1, x2, y2);
+			}
+			else 
+			{
+				cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0, 255, 255), 3, CV_AA);		
+			}
+        }
+    }
+	cv::line(cdst, cv::Point(a_line[0], a_line[1]), cv::Point(a_line[2], a_line[3]), 
+			cv::Scalar(255, 255, 255), 3, CV_AA);
+	cv::line(cdst, cv::Point(b_line[0], b_line[1]), cv::Point(b_line[2], b_line[3]), 
+			cv::Scalar(255, 255, 255), 3, CV_AA);
+	cv::circle(cdst, cv::Point((ax+bx)/2, (ay+by)/2), 50, cv::Scalar(255, 255, 255), CV_FILLED, 8, 0);
+	log(cdst, 'e');
 
-			return Observation(1.0, xmid, ymid, 0.0);
-		}
-	}
-
-	return Observation(0, 0, 0, 0);
+	// Calculate midpoint and return observation if valid.
+	if (ax == 0 && bx == 0)
+		return Observation(0, 0, 0, 0);
+	return Observation(0.8, (ax+bx)/2, (ay+by)/2, 0);
 }

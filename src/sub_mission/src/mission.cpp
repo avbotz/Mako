@@ -30,5 +30,5 @@ int main(int argc, char** argv)
 
 	// Run mission functions.
 	gate(perception, client);
-	octagon(perception, client); 
+	octagon(); 
 }

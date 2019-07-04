@@ -30,7 +30,7 @@ Observation findGate(const cv::Mat &img)
 	// minLength, and maxGap.
     std::vector<cv::Vec4i> lines;
 	std::vector<cv::Vec4i> probable_lines;
-	int ax=0, bx=0, ay=0, by=0;
+	int ac=0, bc=0, ar=0, br=0;
 	cv::Vec4i a_line, b_line;
     cv::HoughLinesP(can, lines, 2, CV_PI/180, 50, 80, 30);
     for (int i = 0; i < lines.size(); i++) 
@@ -42,16 +42,16 @@ Observation findGate(const cv::Mat &img)
         cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0, 0, 255), 3, CV_AA);		
         if (rotation <= 30 && dist > 100. && y1 < 2500 && y2 < 2500)
 		{
-			if (ax == 0)
+			if (ac == 0)
 			{
-				ax = (x1+x2)/2;
-				ay = (y1+y2)/2;
+				ac = (x1+x2)/2;
+				ar = (y1+y2)/2;
 				a_line = cv::Vec4i(x1, y1, x2, y2);
 			}
-			else if (std::abs(x1-ax) > 150 && by == 0)
+			else if (std::abs(x1-ac) > 150 && br == 0)
 			{
-				bx = (x1+x2)/2;
-				by = (y1+y2)/2;
+				bc = (x1+x2)/2;
+				br = (y1+y2)/2;
 				b_line = cv::Vec4i(x1, y1, x2, y2);
 			}
 			else 
@@ -64,11 +64,11 @@ Observation findGate(const cv::Mat &img)
 			cv::Scalar(255, 255, 255), 3, CV_AA);
 	cv::line(cdst, cv::Point(b_line[0], b_line[1]), cv::Point(b_line[2], b_line[3]), 
 			cv::Scalar(255, 255, 255), 3, CV_AA);
-	cv::circle(cdst, cv::Point((ax+bx)/2, (ay+by)/2), 50, cv::Scalar(255, 255, 255), CV_FILLED, 8, 0);
+	cv::circle(cdst, cv::Point((ac+bc)/2, (ar+br)/2), 50, cv::Scalar(255, 255, 255), CV_FILLED, 8, 0);
 	log(cdst, 'e');
 
 	// Calculate midpoint and return observation if valid.
-	if (ax == 0 && bx == 0)
+	if (ac == 0 && bc == 0)
 		return Observation(0, 0, 0, 0);
-	return Observation(0.8, (ax+bx)/2, (ay+by)/2, 0);
+	return Observation(0.8, (ar+br)/2, (ac+bc)/2, 0);
 }

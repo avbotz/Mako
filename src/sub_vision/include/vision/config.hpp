@@ -9,11 +9,11 @@ enum Task {
 const CameraMode CAMERA_MODE = CameraMode::LIVE;
 const bool LOG = false;
 const bool SIM = true;
-const float HFOV = 135;
+const float HFOV = 83;
 const float VFOV = 90;
 const int FRONT = 0;
 const int DOWN = 1;
-const float FIMG_DIM[2] = { 5472, 3648 };
-const float DIMG_DIM[2] = { 640, 480 };
+const float FIMG_DIM[2] = { 3648, 5472 };
+const float DIMG_DIM[2] = { 480, 640 };
 
 #endif 

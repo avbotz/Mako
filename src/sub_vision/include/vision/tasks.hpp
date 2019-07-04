@@ -35,8 +35,8 @@ struct Observation
 	{
 		if (camera == FRONT)
 		{   
-			this->hangle = (c-FIMG_DIM[0]/2.0)/FIMG_DIM[0]*HFOV;
-			this->vangle = (r-FIMG_DIM[1]/2.0)/FIMG_DIM[1]*VFOV;
+			this->vangle = (r-FIMG_DIM[0]/2.0)/FIMG_DIM[0]*VFOV;
+			this->hangle = (c-FIMG_DIM[1]/2.0)/FIMG_DIM[1]*HFOV;
 		}
 	}
 };

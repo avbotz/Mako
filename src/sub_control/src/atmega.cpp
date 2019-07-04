@@ -33,7 +33,8 @@ namespace atmega
 		}
 		else 
 		{
-			sim_state = state;	
+			for (int i = 0; i < N; i++)
+				sim_state.axis[i] = state.axis[i];
 		}
 	}
 

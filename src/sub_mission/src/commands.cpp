@@ -16,6 +16,7 @@ float align(vision::Perception &per, ros::ServiceClient &client, int attempts)
 			average += atmega::state().axis[YAW];
 			average += per.response.hangle; 
 		}
+		ros::Duration(2.0).sleep();
 	}
 
 	average /= attempts;

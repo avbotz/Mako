@@ -26,7 +26,7 @@ int main(int argc, char** argv)
 		else 
 			start = true;
 	}
-	atmega::write("p 0.2\n");
+	atmega::write("p 0.20\n");
 
 	// Run mission functions.
 	gate(perception, client);

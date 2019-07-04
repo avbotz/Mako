@@ -8,22 +8,34 @@
 void gate(vision::Perception &per, ros::ServiceClient &client)
 {
 	ROS_INFO("Beginning GATE function.");
-	std::cout << atmega::state().text() << std::endl;
+	
+	ROS_INFO("Set initial state.");
+	ROS_INFO("State @ %s.", atmega::state().text().c_str());
+	// State initial(3., 2., 0., 28., 0., 0.);
+	State initial = atmega::state();
+	ROS_INFO("New State @ %s.", initial.text().c_str());
+	move(initial);
 	per.request.task = Task::GATE;
 	per.request.camera = FRONT;
+	ros::Duration(6.0).sleep();
 
+	ROS_INFO("Turn towards gate.");
+	ROS_INFO("State @ %s.", atmega::state().text().c_str());
 	float angle = align(per, client, 5);
 	ROS_INFO("Angle @ %f.", angle);
 	State move1 = atmega::state();
 	move1.axis[YAW] = angle;
+	ROS_INFO("New State @ %s.", move1.text().c_str());
 	move(move1);
+	ros::Duration(2.0).sleep();
 
-	float dist = 10.;
+	ROS_INFO("Go through gate.");
+	ROS_INFO("State @ %s.", atmega::state().text().c_str());
+	float dist = 8.;
 	State move2 = atmega::state();
-	move2.axis[X] += std::sin(angle)*dist;
-	move2.axis[Y] += std::cos(angle)*dist;
-	ROS_INFO("State @ (%f, %f, %f, %f, %f, %f).", move2.axis[0], move2.axis[1], 
-			move2.axis[2], move2.axis[3], move2.axis[4], move2.axis[5]);
+	move2.axis[X] += std::cos(angle*M_PI/180.)*dist;
+	move2.axis[Y] += std::sin(angle*M_PI/180.)*dist;
+	ROS_INFO("New State @ %s", move2.text().c_str());
 	move(move2);
 }
 
@@ -34,7 +46,6 @@ void octagon()
 
 void printResponse(vision::Perception &per)
 {
-	ROS_INFO("%i observation @ %f H-deg, %f V-deg, and %f meters. Image location @ (%f, %f).", 
-			per.request.task, per.response.hangle, per.response.vangle, per.response.dist,
-			per.response.r, per.response.c);
+	ROS_INFO("%i observation @ %0.2f H-deg, %0.2f V-deg, and %0.2f meters.", 
+			per.request.task, per.response.hangle, per.response.vangle, per.response.dist);
 }

@@ -2,6 +2,8 @@
 #define COMMON_STATE_HPP 
 
 #include <string>
+#include <sstream>
+
 const int X = 0;
 const int Y = 1;
 const int Z = 2;
@@ -28,9 +30,13 @@ struct State
 
 	std::string text() 
 	{
-		return "(" + std::to_string(axis[0]) + " " + std::to_string(axis[1]) + " " + 
-			std::to_string(axis[2]) + " " + std::to_string(axis[3]) + " " + 
-			std::to_string(axis[4]) + " " + std::to_string(axis[5]) + ")";
+		std::ostringstream os;
+		os.precision(2);
+		os << std::fixed;
+		os << "(";
+		for (int i = 0; i < N-1; i++) os << axis[i] << " "; os << axis[N-1];
+		os << ")";
+		return os.str();
 	}
 };
 

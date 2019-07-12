@@ -14,6 +14,6 @@ include_directories(
     ${OpenCV_INCLUDE_DIRS}
 )
 
-add_executable(remote_control_node src/receiver.cpp)
+add_executable(remote_control_node src/remote_control.cpp)
 target_link_libraries(remote_control_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(remote_control_node remote_control_gencpp)

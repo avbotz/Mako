@@ -21,7 +21,6 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
 	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("wiimote", 1000);
 	ros::Rate loop_rate(10);
-    State current_state = atmega::state();
 
 	int server_fd, new_socket, valread, valsend;
 	struct sockaddr_in address;
@@ -42,8 +41,7 @@ int main(int argc, char **argv)
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY;
 	address.sin_port = htons(REMOTE_PORT);
-	if (bind(server_fd, (struct sockaddr *)&address,
-				sizeof(address))<0)
+	if (bind(server_fd, (struct sockaddr*) &address, sizeof(address)) < 0)
 	{
 		perror("bind failed");
 	}
@@ -52,7 +50,8 @@ int main(int argc, char **argv)
 		perror("listen");
 		exit(EXIT_FAILURE);
 	}
-	if ((new_socket = accept(server_fd, (struct sockaddr *) &address, (socklen_t*) &addrlen)) < 0)
+	if ((new_socket = accept(server_fd, (struct sockaddr*) &address, 
+					(socklen_t*) &addrlen)) < 0)
 	{
 		perror("accept");
 		exit(EXIT_FAILURE);
@@ -63,15 +62,17 @@ int main(int argc, char **argv)
 		valread = read(new_socket, buffer, 1024);
 		if (buffer[18] == '1') break;
 
-        if (buffer[20] == '1')
-        {
-            // Return current state
-            state = atmega::state();
-            valsend = send(new_socket, state.text(), sizeof(state.text()), 0)
-        }
-		ROS_INFO("Command: %s", buffer);
-
-        // If logging was turned on, get the state
+		/*
+		 * Technically, Nautical isn't setup to read 20 characters from the
+		 * buffer, but it will just ignore the extra and wait for the next
+		 * command to show up.
+		 */
+		if (buffer[20] == '1')
+		{
+			State state = atmega::state();
+			valsend = send(new_socket, state.text().c_str(), sizeof(state.text().c_str()), 0);
+			ROS_INFO("Logged State: %s", state.text());
+		}
 
 		atmega::write(buffer);
 	}

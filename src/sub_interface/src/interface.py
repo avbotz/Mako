@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 from flask import *
 import cv2
 import glob
@@ -9,7 +8,7 @@ import time
 app = Flask(__name__)
 
 # set this to the path (including glob) of front camera images
-FRONT_GLOB = "/home/kalyan/mako/src/sub_interface/src/*.jpg"
+FRONT_GLOB = "/*.jpg"
 # set this to the resolution of the front camera images
 FRONTX_RAW = 1920
 FRONTY_RAW = 1080
@@ -92,3 +91,4 @@ def main():
 
 if __name__ == "__main__":
     app.run()
+

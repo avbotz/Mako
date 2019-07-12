@@ -46,7 +46,7 @@ def generate_front_stream():
         frame = frame.tobytes()
         # '--frame' is the boundary that marks replacing the existing content
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
 # generates a flask stream of content with yield, special MIME type used
@@ -64,7 +64,7 @@ def generate_down_stream():
         frame = frame.tobytes()
         # '--frame' is the boundary that marks replacing the existing content
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
 # creates a response wrapper around the stream and routes to localhost:PORT/front_stream

@@ -9,7 +9,7 @@ import time
 app = Flask(__name__)
 
 # set this to the path (including glob) of front camera images
-FRONT_GLOB = "/*.jpg"
+FRONT_GLOB = "logs/2019_07_29/*.jpg"
 # set this to the resolution of the front camera images
 FRONTX_RAW = 1920
 FRONTY_RAW = 1080
@@ -19,8 +19,8 @@ FRONTY_GOAL = 720
 FRONTX_SCALE = FRONTX_GOAL/FRONTX_RAW
 FRONTY_SCALE = FRONTY_GOAL/FRONTY_RAW
 
-# set this to the path (including glob) of front camera images
-FRONT_GLOB = "/home/kalyan/mako/src/sub_interface/src/*.jpg"
+# set this to the path (including glob) of down camera images
+DOWN_GLOB = "logs/*.jpg"
 # set this to the resolution of the down camera images
 DOWNX_RAW = 1920
 DOWNY_RAW = 1080
@@ -94,4 +94,3 @@ def index():
 def main():
     ros.init_node('inference_node')
     app.run()
-

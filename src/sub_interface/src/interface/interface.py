@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from flask import *
+import rospy as ros
 import cv2
 import glob
 import os
@@ -86,9 +87,11 @@ def down_stream():
 
 # index.html references both the streams
 @app.route("/")
-def main():
+def index():
+    print("Beginning interfacing server.")
     return render_template("index.html")
 
-if __name__ == "__main__":
+def main():
+    ros.init_node('inference_node')
     app.run()
 

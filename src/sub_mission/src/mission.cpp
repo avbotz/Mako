@@ -2,7 +2,7 @@
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
-#include <vision/Perception.h>
+#include <vision/Vision.h>
 #include "control/atmega.hpp"
 #include "mission/functions.hpp"
 #include "vision/tasks.hpp"
@@ -14,8 +14,9 @@ int main(int argc, char** argv)
 	ros::NodeHandle node;   
 
 	// Setup observation client.
-	ros::ServiceClient client = node.serviceClient<vision::Perception>("perception");    
-	vision::Perception perception;
+	ros::ServiceClient client = 
+		node.serviceClient<vision::Vision>("vision");    
+	vision::Vision vision;
 
 	// Wait until kill switch is flipped.
 	bool start = false;
@@ -29,6 +30,6 @@ int main(int argc, char** argv)
 	atmega::write("p 0.20\n");
 
 	// Run mission functions.
-	gate(perception, client);
+	gate(vision, client);
 	octagon(); 
 }

@@ -37,9 +37,11 @@ Observation findGate(const cv::Mat &img)
     {
         cv::Vec4i line = lines[i];
 		int x1=line[0],y1=line[1],x2=line[2],y2=line[3];
-    	float dist = std::sqrt(std::pow(std::abs(x1-x2), 2) + std::pow(std::abs(y1-y2), 2));
+    	float dist = std::sqrt(std::pow(std::abs(x1-x2), 2) + 
+				std::pow(std::abs(y1-y2), 2));
     	float rotation = std::abs(std::acos(std::abs(y1-y2)/dist)*180/CV_PI);
-        cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0, 0, 255), 3, CV_AA);		
+        cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), 
+				cv::Scalar(0, 0, 255), 3, CV_AA);		
         if (rotation <= 30 && dist > 100. && y1 < 2500 && y2 < 2500)
 		{
 			if (ac == 0)
@@ -56,7 +58,8 @@ Observation findGate(const cv::Mat &img)
 			}
 			else 
 			{
-				cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0, 255, 255), 3, CV_AA);		
+				cv::line(cdst, cv::Point(x1, y1), cv::Point(x2, y2), 
+						cv::Scalar(0, 255, 255), 3, CV_AA);		
 			}
         }
     }

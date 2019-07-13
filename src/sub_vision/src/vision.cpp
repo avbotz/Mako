@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 	VisionService service;
 
 	// Setup observation request.
-	ros::ServiceServer server = node.advertiseService("perception", 
+	ros::ServiceServer server = node.advertiseService("vision", 
 			&VisionService::detectCallback, &service);
 
 	// Setup front camera to receive images. 

@@ -3,7 +3,8 @@
 #include "vision/config.hpp"
 
 
-bool VisionService::detectCallback(vision::Perception::Request &req, vision::Perception::Response &res)
+bool VisionService::detectCallback(vision::Vision::Request &req, 
+		vision::Vision::Response &res)
 {
 	ROS_INFO("Received detection request for %i.", req.task);
 	if (req.task == Task::GATE)
@@ -21,7 +22,7 @@ bool VisionService::detectCallback(vision::Perception::Request &req, vision::Per
 	return false;
 }
 
-void setResponse(const Observation &obs, vision::Perception::Response &res)
+void setResponse(const Observation &obs, vision::Vision::Response &res)
 {
 	res.prob = obs.prob;
 	res.r = obs.r;

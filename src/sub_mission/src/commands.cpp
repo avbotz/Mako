@@ -4,17 +4,17 @@
 #include "vision/config.hpp"
 
 
-float align(vision::Perception &per, ros::ServiceClient &client, int attempts)
+float align(vision::Vision &vision, ros::ServiceClient &client, int attempts)
 {
 	float average = 0.0f;
 	for (int i = 0; i < attempts; i++)
 	{
-		client.call(per);
-		printResponse(per);
-		if (per.response.prob > 0.5)
+		client.call(vision);
+		printResponse(vision);
+		if (vision.response.prob > 0.5)
 		{
 			average += atmega::state().axis[YAW];
-			average += per.response.hangle; 
+			average += vision.response.hangle; 
 		}
 		ros::Duration(2.0).sleep();
 	}

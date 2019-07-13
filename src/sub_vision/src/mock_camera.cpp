@@ -14,7 +14,8 @@ int main(int argc, char** argv)
 	image_transport::ImageTransport it(node);
 	image_transport::Publisher pub = it.advertise("front_camera", 1);
 	cv::Mat image = cv::imread("test_image.png", CV_LOAD_IMAGE_COLOR);
-	sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
+	sensor_msgs::ImagePtr msg = 
+		cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
 
 	ros::Rate rate(5);
 	while (node.ok()) 

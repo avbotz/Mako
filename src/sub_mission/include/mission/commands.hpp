@@ -2,10 +2,10 @@
 #define MISSION_COMMANDS_HPP
 
 #include <ros/ros.h>
-#include <vision/Perception.h>
+#include <vision/Vision.h>
 #include "control/atmega.hpp"
 
-float align(vision::Perception &, ros::ServiceClient &, int);
+float align(vision::Vision &, ros::ServiceClient &, int);
 void move(const State &); 
 
 #endif

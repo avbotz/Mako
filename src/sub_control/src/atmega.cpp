@@ -28,7 +28,8 @@ namespace atmega
 		if (!SIM) 
 		{
 			fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
-					state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
+					state.axis[Z], state.axis[YAW], state.axis[PITCH], 
+					state.axis[ROLL]);
 			fflush(out);
 		}
 		else 
@@ -44,7 +45,8 @@ namespace atmega
 		if (!SIM)
 		{
 			fprintf(out, "s %f %f %f %f %f %f\n", state.axis[X], state.axis[Y], 
-					state.axis[Z], state.axis[YAW], state.axis[PITCH], state.axis[ROLL]);
+					state.axis[Z], state.axis[YAW], state.axis[PITCH], 
+					state.axis[ROLL]);
 			fflush(out);
 		}
 	}

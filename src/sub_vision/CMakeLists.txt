@@ -9,7 +9,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg cv_bridge
 find_package(OpenCV)
 find_library(FLYCAPTURE2 flycapture)
 
-add_service_files(FILES Perception.srv)
+add_service_files(FILES Vision.srv)
 
 generate_messages(DEPENDENCIES std_msgs)
 

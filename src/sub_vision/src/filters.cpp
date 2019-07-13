@@ -68,8 +68,7 @@ cv::Mat homomorphic(const cv::Mat &src)
 
 	// Apply inverse FFT.
 	cv::Mat ifftimg;
-	cv::idft(fftimg, ifftimg, 32); // originally CV_HAL_DFT_REAL_OUTPUT but that didn't work, so hardcoded it
-
+	cv::idft(fftimg, ifftimg, 32); 
 	cv::Mat expimg;
 	cv::exp(ifftimg, expimg);
 
@@ -93,10 +92,12 @@ void fft(const cv::Mat &src, cv::Mat &dst)
 	cv::Mat padded;
 	int m = cv::getOptimalDFTSize(src.rows);
 	int n = cv::getOptimalDFTSize(src.cols);
-	cv::copyMakeBorder(logimg, padded, 0, m-logimg.rows, 0, n-logimg.cols, cv::BORDER_CONSTANT, cv::Scalar::all(0));
+	cv::copyMakeBorder(logimg, padded, 0, m-logimg.rows, 0, n-logimg.cols, 
+			cv::BORDER_CONSTANT, cv::Scalar::all(0));
 
 	// Add imaginary column to mat and apply fft.
-	cv::Mat plane[] = {cv::Mat_<float>(padded), cv::Mat::zeros(padded.size(), CV_32F)};
+	cv::Mat plane[] = {cv::Mat_<float>(padded), cv::Mat::zeros(padded.size(), 
+			CV_32F)};
 	cv::Mat imgComplex;
 	cv::merge(plane, 2, imgComplex);
 	cv::dft(imgComplex, dst);
@@ -114,8 +115,9 @@ cv::Mat butterworth(const cv::Mat &img, int d0, int n, int high, int low)
 	{
 		for (int j = 0; j < img.cols; j++)
 		{
-			float radius = sqrt(pow(i - cx, 2) + pow(j - cy, 2));
-			single.at<float>(i, j) = ((upper - lower) * (1 / pow(d0 / radius, 2 * n))) + lower;
+			float radius = sqrt(pow(i-cx, 2) + pow(j-cy, 2));
+			single.at<float>(i, j) = (upper-lower)*(1/pow(d0/radius, 2*n))
+				+ lower;
 		}
 	}
 	return single;

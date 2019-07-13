@@ -5,7 +5,7 @@
 #include "control/atmega.hpp"
 
 
-void gate(vision::Perception &per, ros::ServiceClient &client)
+void gate(vision::Vision &vision, ros::ServiceClient &client)
 {
 	ROS_INFO("Beginning GATE function.");
 	
@@ -15,13 +15,13 @@ void gate(vision::Perception &per, ros::ServiceClient &client)
 	State initial = atmega::state();
 	ROS_INFO("New State @ %s.", initial.text().c_str());
 	move(initial);
-	per.request.task = Task::GATE;
-	per.request.camera = FRONT;
+	vision.request.task = Task::GATE;
+	vision.request.camera = FRONT;
 	ros::Duration(6.0).sleep();
 
 	ROS_INFO("Turn towards gate.");
 	ROS_INFO("State @ %s.", atmega::state().text().c_str());
-	float angle = align(per, client, 5);
+	float angle = align(vision, client, 5);
 	ROS_INFO("Angle @ %f.", angle);
 	State move1 = atmega::state();
 	move1.axis[YAW] = angle;
@@ -44,8 +44,9 @@ void octagon()
 	
 }
 
-void printResponse(vision::Perception &per)
+void printResponse(vision::Vision &vision)
 {
 	ROS_INFO("%i observation @ %0.2f H-deg, %0.2f V-deg, and %0.2f meters.", 
-			per.request.task, per.response.hangle, per.response.vangle, per.response.dist);
+			vision.request.task, vision.response.hangle, vision.response.vangle, 
+			vision.response.dist);
 }

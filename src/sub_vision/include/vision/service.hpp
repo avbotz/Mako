@@ -7,17 +7,18 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include <vision/Perception.h>
+#include <vision/Vision.h>
 #include "vision/tasks.hpp"
 
 class VisionService 
 {
 	public:
 		cv::Mat front, down;
-		bool detectCallback(vision::Perception::Request &, vision::Perception::Response &);
+		bool detectCallback(vision::Vision::Request &, 
+				vision::Vision::Response &);
 		void captureCallback(const sensor_msgs::ImageConstPtr &);
 };
 
-void setResponse(const Observation &, vision::Perception::Response &);
+void setResponse(const Observation &, vision::Vision::Response &);
 
 #endif 

@@ -13,8 +13,8 @@
 
 namespace vision_client 
 {
-	static vision::Vision srv;
-	static ros::ServiceClient client;
+	extern vision::Vision srv;
+	extern ros::ServiceClient client;
 
 	void setTask(Task);
 	void setCamera(int);
@@ -23,16 +23,15 @@ namespace vision_client
 
 namespace control_client
 {
-	static ros::ServiceClient alive_client;
-	static ros::ServiceClient state_client;
-	static ros::ServiceClient write_client;
-	static ros::ServiceClient write_state_client;
+	extern ros::ServiceClient alive_client;
+	extern ros::ServiceClient state_client;
+	extern ros::ServiceClient write_client;
+	extern ros::ServiceClient write_state_client;
 
 	bool alive();
 	State state();
 	void write(std::string);
 	void writeState(const State &);
 };
-
 
 #endif

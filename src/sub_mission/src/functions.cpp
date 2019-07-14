@@ -36,6 +36,7 @@ void gate()
 	move2.axis[Y] += std::sin(angle*M_PI/180.)*dist;
 	ROS_INFO("New State @ %s", move2.text().c_str());
 	move(move2);
+	ROS_INFO("Final State @ %s", control_client::state().text().c_str());
 }
 
 void octagon()

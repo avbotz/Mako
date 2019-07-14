@@ -3,6 +3,9 @@
 
 namespace vision_client 
 {
+	vision::Vision srv;
+	ros::ServiceClient client;
+
 	void setTask(Task task)
 	{
 		srv.request.task = task;
@@ -15,14 +18,21 @@ namespace vision_client
 
 	Observation vision()
 	{
+		srv.request.task = 0;
+		srv.request.camera = FRONT;
 		client.call(srv);
 		return Observation(srv.response.prob, srv.response.r, srv.response.c, 
-				srv.response.hangle, srv.response.vangle);
+				srv.response.dist, srv.response.hangle, srv.response.vangle);
 	}
 };
 
 namespace control_client
 {
+	ros::ServiceClient alive_client;
+	ros::ServiceClient state_client;
+	ros::ServiceClient write_client;
+	ros::ServiceClient write_state_client;
+
 	bool alive()
 	{
 		control::ControlAlive::Request req;

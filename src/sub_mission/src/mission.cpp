@@ -12,6 +12,8 @@ int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "mission_node");
 	ros::NodeHandle node;   
+	
+	ROS_INFO("Setting up clients.");
 
 	// Setup observation client.
 	vision_client::client = node.serviceClient<vision::Vision>("vision"); 

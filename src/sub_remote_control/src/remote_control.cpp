@@ -68,7 +68,8 @@ int main(int argc, char **argv)
 		if (buffer[20] == '1')
 		{
 			State state = atmega::state();
-			valsend = send(new_socket, state.text().c_str(), sizeof(state.text().c_str()), 0);
+			valsend = send(new_socket, state.text().c_str(), 
+					sizeof(state.text().c_str()), 0);
 			ROS_INFO("Logged State: %s", state.text());
 		}
 

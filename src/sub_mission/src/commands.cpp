@@ -10,6 +10,8 @@ float align(int attempts)
 	for (int i = 0; i < attempts; i++)
 	{
 		Observation obs = vision_client::vision();
+		ROS_INFO("Observation @ %s", obs.text().c_str());
+		
 		if (obs.prob > 0.5)
 		{
 			average += control_client::state().axis[YAW];

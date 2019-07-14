@@ -31,6 +31,14 @@ struct Observation
 		this->valid = _valid;
 	}
 
+	Observation(float _prob, float _r, float _c, float _dist, float _hangle, 
+			float _vangle) 
+	{
+		Observation(_prob, _r, _c, _dist);
+		this->hangle = _hangle;
+		this->vangle = _vangle;
+	}
+	
 	void calcAngles(int camera) 
 	{
 		if (camera == FRONT)
@@ -38,6 +46,16 @@ struct Observation
 			this->vangle = (r-FIMG_DIM[0]/2.0)/FIMG_DIM[0]*VFOV;
 			this->hangle = (c-FIMG_DIM[1]/2.0)/FIMG_DIM[1]*HFOV;
 		}
+	}
+
+	std::string text()
+	{
+		std::ostringstream os;
+		os.precision(2);
+		os << std::fixed;
+		os << "(" << hangle << " " << vangle << ", " << r << " " << c << ", " <<
+			dist << ", " << prob << ")";
+		return os.str();
 	}
 };
 

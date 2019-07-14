@@ -22,8 +22,8 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS}
 link_directories(${SPINNAKER_LIB_DIR})
 
 # Executables
-add_executable(vision_node src/vision.cpp src/camera.cpp src/capture.cpp
-    src/detect.cpp src/filters.cpp src/log.cpp src/gate.cpp)
+add_executable(vision_node src/vision.cpp src/camera.cpp src/service.cpp
+    src/filters.cpp src/log.cpp src/gate.cpp)
 target_link_libraries(vision_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
     flycapture)
 add_dependencies(vision_node vision_gencpp)

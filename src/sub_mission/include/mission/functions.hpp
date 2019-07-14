@@ -4,8 +4,7 @@
 #include <ros/ros.h>
 #include <vision/Vision.h>
 
-void gate(vision::Vision &, ros::ServiceClient &);
+void gate();
 void octagon();
-void printResponse(vision::Vision &);
 
 #endif

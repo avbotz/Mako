@@ -15,10 +15,12 @@ include_directories(
     ${OpenCV_INCLUDE_DIRS}
 )
 
-add_executable(mission_node src/mission.cpp src/functions.cpp src/commands.cpp)
+add_executable(mission_node src/mission.cpp src/functions.cpp src/commands.cpp
+	src/client.cpp)
 target_link_libraries(mission_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-add_dependencies(mission_node mission_gencpp)
+add_dependencies(mission_node mission_gencpp vision_gencpp)
 
-add_executable(prelim_node src/prelim.cpp src/functions.cpp src/commands.cpp)
+add_executable(prelim_node src/prelim.cpp src/functions.cpp src/commands.cpp
+	src/client.cpp)
 target_link_libraries(prelim_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(prelim_node mission_gencpp)

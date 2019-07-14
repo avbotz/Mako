@@ -3,9 +3,9 @@
 
 #include <ros/ros.h>
 #include <vision/Vision.h>
-#include "control/atmega.hpp"
+#include "control/state.hpp"
 
-float align(vision::Vision &, ros::ServiceClient &, int);
+float align(int);
 void move(const State &); 
 
 #endif

@@ -1,6 +1,9 @@
 #ifndef VISION_CONFIG_HPP
 #define VISION_CONFIG_HPP 
 
+/*
+ * TODO Rewrite config using parameters.
+ */
 enum class CameraMode { MOCK, LIVE };
 enum Task { 
 	GATE,

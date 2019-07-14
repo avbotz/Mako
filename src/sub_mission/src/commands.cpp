@@ -1,20 +1,19 @@
 #include "mission/commands.hpp"
 #include "mission/functions.hpp"
-#include "control/atmega.hpp"
+#include "mission/client.hpp"
 #include "vision/config.hpp"
 
 
-float align(vision::Vision &vision, ros::ServiceClient &client, int attempts)
+float align(int attempts)
 {
 	float average = 0.0f;
 	for (int i = 0; i < attempts; i++)
 	{
-		client.call(vision);
-		printResponse(vision);
-		if (vision.response.prob > 0.5)
+		Observation obs = vision_client::vision();
+		if (obs.prob > 0.5)
 		{
-			average += atmega::state().axis[YAW];
-			average += vision.response.hangle; 
+			average += control_client::state().axis[YAW];
+			average += obs.hangle; 
 		}
 		ros::Duration(2.0).sleep();
 	}
@@ -25,16 +24,16 @@ float align(vision::Vision &vision, ros::ServiceClient &client, int attempts)
 
 void move(const State &dest)
 {
-	atmega::write(dest);
+	control_client::writeState(dest);
 	bool quit = false;
 	while (!quit && ros::ok())
 	{
-		State state = atmega::state();
-		if (std::fabs(dest.axis[X]-state.axis[X]) > 1.0f)
+		State now = control_client::state();
+		if (std::fabs(dest.axis[X]-now.axis[X]) > 1.0f)
 			ros::Duration(3.0).sleep();
-		else if (std::fabs(dest.axis[Y]-state.axis[Y]) > 1.0f)
+		else if (std::fabs(dest.axis[Y]-now.axis[Y]) > 1.0f)
 			ros::Duration(3.0).sleep();
-		else if (std::fabs(dest.axis[YAW]-state.axis[YAW]) > 5.0f)
+		else if (std::fabs(dest.axis[YAW]-now.axis[YAW]) > 5.0f)
 			ros::Duration(3.0).sleep();
 		else
 		{

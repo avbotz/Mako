@@ -3,26 +3,19 @@
 
 namespace vision_client 
 {
-	vision::Vision srv;
 	ros::ServiceClient client;
 
-	void setTask(Task task)
+	Observation vision(Task task, int camera)
 	{
-		srv.request.task = task;
-	}
-
-	void setCamera(int camera)
-	{
-		srv.request.camera = camera;
-	}
-
-	Observation vision()
-	{
-		srv.request.task = 0;
-		srv.request.camera = FRONT;
-		client.call(srv);
-		return Observation(srv.response.prob, srv.response.r, srv.response.c, 
-				srv.response.dist, srv.response.hangle, srv.response.vangle);
+		vision::Vision::Request req;
+		vision::Vision::Response rep;
+		req.task = task;
+		req.camera = camera;
+		client.call(req, rep);
+		Observation obs(rep.prob, rep.r, rep.c, rep.dist, rep.hangle, 
+				rep.vangle); 
+		// ROS_INFO("%s", obs.text().c_str());
+		return obs;
 	}
 };
 

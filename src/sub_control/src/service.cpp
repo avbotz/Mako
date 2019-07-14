@@ -15,8 +15,8 @@ bool alive(control::ControlAlive::Request &request,
 bool state(control::ControlState::Request &request, 
 		control::ControlState::Response &response)
 {
-	ROS_INFO("Received state request.");
 	State state = atmega::state();	
+	ROS_INFO("Received state request. State @ %s", state.text().c_str());
 	response.F = state.axis[X];
 	response.H = state.axis[Y];
 	response.V = state.axis[Z];
@@ -29,8 +29,8 @@ bool state(control::ControlState::Request &request,
 bool write(control::ControlWrite::Request &request, 
 		control::ControlWrite::Response &response)
 {
-	ROS_INFO("Received write request.");
 	std::string data = request.data;
+	ROS_INFO("Received write request. Data @ %s", data.c_str());
 	atmega::write(data);
 	return true;
 }
@@ -38,9 +38,9 @@ bool write(control::ControlWrite::Request &request,
 bool writeState(control::ControlWriteState::Request &request,
 		control::ControlWriteState::Response &response)
 {
-	ROS_INFO("Received write state request.");
 	State state(request.F, request.H, request.V, request.Y, request.P, 
 			request.R);
+	ROS_INFO("Received write state request. State @ %s", state.text().c_str());
 	atmega::write(state);
 	return true;
 }

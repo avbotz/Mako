@@ -13,12 +13,9 @@
 
 namespace vision_client 
 {
-	extern vision::Vision srv;
 	extern ros::ServiceClient client;
 
-	void setTask(Task);
-	void setCamera(int);
-	Observation vision(); 
+	Observation vision(Task, int); 
 };
 
 namespace control_client

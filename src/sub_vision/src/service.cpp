@@ -34,6 +34,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 	{
 		Observation obs = findGate(this->front);
 		obs.calcAngles(FRONT);
+		ROS_INFO("Sending observation @ %s", obs.text().c_str());
 		setResponse(obs, res);
 		return true;
 	}

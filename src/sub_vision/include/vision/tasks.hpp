@@ -34,7 +34,10 @@ struct Observation
 	Observation(float _prob, float _r, float _c, float _dist, float _hangle, 
 			float _vangle) 
 	{
-		Observation(_prob, _r, _c, _dist);
+		this->prob = _prob;
+		this->r = _r;
+		this->c = _c;
+		this->dist = _dist;
 		this->hangle = _hangle;
 		this->vangle = _vangle;
 	}

@@ -9,7 +9,7 @@ float align(int attempts)
 	float average = 0.0f;
 	for (int i = 0; i < attempts; i++)
 	{
-		Observation obs = vision_client::vision();
+		Observation obs = vision_client::vision(Task::GATE, FRONT);
 		ROS_INFO("Observation @ %s", obs.text().c_str());
 		
 		if (obs.prob > 0.5)

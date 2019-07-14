@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 		else 
 			start = true;
 	}
-	control_client::write("p 0.20\n");
+	control_client::write("p 0.25\n");
 
 	// Run mission functions.
 	gate();

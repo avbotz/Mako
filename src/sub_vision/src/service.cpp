@@ -38,6 +38,14 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 		setResponse(obs, res);
 		return true;
 	}
+	if (req.task == Task::GATE_ML)
+	{
+		Observation obs = findGateML(this->front);
+		obs.calcAngles(FRONT);
+		ROS_INFO("Sending observation @ %s", obs.text().c_str());
+		setResponse(obs, res);
+		return true;
+	}
 	if (req.task == Task::OCTAGON) 
 	{
 

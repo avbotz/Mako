@@ -10,8 +10,8 @@ void gate()
 	ROS_INFO("Beginning GATE function.");
 	
 	ROS_INFO("Set initial state.");
-	State initial(3.28, 2.95, 1.37, 28.12, 5.12, 3.12);
-	// State initial = control_client::state();
+	// State initial(3.28, 2.95, 1.37, 28.12, 5.12, 3.12);
+	State initial = control_client::state();
 	ROS_INFO("State @ %s.", initial.text().c_str());
 	move(initial);
 	ros::Duration(6.0).sleep();

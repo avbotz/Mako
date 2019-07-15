@@ -63,5 +63,6 @@ struct Observation
 };
 
 Observation findGate(const cv::Mat &);
+Observation findGateML(cv::Mat);
 
 #endif

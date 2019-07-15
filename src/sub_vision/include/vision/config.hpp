@@ -7,6 +7,7 @@
 enum class CameraMode { MOCK, LIVE };
 enum Task { 
 	GATE,
+	GATE_ML,
 	OCTAGON
 };
 const CameraMode CAMERA_MODE = CameraMode::LIVE;

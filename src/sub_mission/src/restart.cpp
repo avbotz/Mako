@@ -23,7 +23,7 @@ int main(int argc, char** argv)
 		if (!prev && alive)
 		{
 			ROS_INFO("Beginning mission node.");
-			system("rosrun mission mission_node");
+			system("rosrun mission mission_node &");
 		}
 
 		// Previous state was alive, now killed. End mission.

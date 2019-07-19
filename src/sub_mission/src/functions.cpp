@@ -22,7 +22,7 @@ void gate()
 
 	ROS_INFO("Turn towards gate.");
 	ROS_INFO("State @ %s.", control_client::state().text().c_str());
-	float angle = align(5, Task::GATE_ML, FRONT);
+	float angle = align(5, Task::GATE, FRONT);
 	ROS_INFO("Angle @ %f.", angle);
 	State move1 = control_client::state();
 	move1.axis[YAW] = angle;

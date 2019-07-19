@@ -1,3 +1,8 @@
+/** @file control.cpp
+ *  @brief Main node runner for control.
+ *
+ *  @author David Zhang
+ */
 #include <ros/ros.h>
 #include "control/service.hpp"
 

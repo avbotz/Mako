@@ -1,3 +1,9 @@
+/** @file vision/src/service.cpp
+ *  @brief Wrapper definitions to handle the different vision callbacks.
+ *
+ *  @author David Zhang
+ *  @author Emil Tu
+ */
 #include <ros/ros.h>
 #include "vision/config.hpp"
 #include "vision/service.hpp"

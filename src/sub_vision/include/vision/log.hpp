@@ -1,5 +1,5 @@
 /** @file log.hpp
- *  @brief Logging functions for images or text.
+ *  @brief Logging function definitions for images or text.
  *  
  *  @author David Zhang
  */

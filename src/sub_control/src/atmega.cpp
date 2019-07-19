@@ -1,3 +1,8 @@
+/** @file atmega.cpp
+ *  @brief Functions for interfacing with the code on the atmega.
+ *
+ *  @author David Zhang
+ */
 #include <iostream>
 #include <cmath>
 #include <thread>

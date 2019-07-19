@@ -1,3 +1,12 @@
+/** @file filters.cpp
+ *  @brief Vision filtering functions.
+ *  
+ *  These are meant for standard OpenCV vision, but could be good for
+ *  preprocessing for ML too.
+ *  
+ *  @author David Zhang
+ *  @author Arnav Garg
+ */
 #include <ros/ros.h>
 #include "vision/filters.hpp"
 

@@ -1,0 +1,43 @@
+\hypertarget{acquisition_8cpp}{}\section{src/sub\+\_\+vision/src/acquisition.cpp File Reference}
+\label{acquisition_8cpp}\index{src/sub\+\_\+vision/src/acquisition.\+cpp@{src/sub\+\_\+vision/src/acquisition.\+cpp}}
+
+
+Main node runner for acquiring front camera images with Spinnaker.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$image\+\_\+transport/image\+\_\+transport.\+h$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$cv\+\_\+bridge/cv\+\_\+bridge.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Spinnaker.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Spin\+Gen\+Api/\+Spinnaker\+Gen\+Api.\+h\char`\"{}}\newline
+Include dependency graph for acquisition.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{acquisition_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{acquisition_8cpp_a61189e26cc308ab1b011192ee383da85}\label{acquisition_8cpp_a61189e26cc308ab1b011192ee383da85}} 
+int {\bfseries acquire\+Images} (Camera\+Ptr p\+Cam, I\+Node\+Map \&node\+Map, I\+Node\+Map \&node\+Map\+T\+L\+Device)
+\item 
+\mbox{\Hypertarget{acquisition_8cpp_afa49a1fb2b0681d9666d3696e4be6faf}\label{acquisition_8cpp_afa49a1fb2b0681d9666d3696e4be6faf}} 
+int {\bfseries print\+Device\+Info} (I\+Node\+Map \&node\+Map)
+\item 
+\mbox{\Hypertarget{acquisition_8cpp_ae355f57ecaefa7d9647dca209d3cb4a2}\label{acquisition_8cpp_ae355f57ecaefa7d9647dca209d3cb4a2}} 
+int {\bfseries run\+Single\+Camera} (Camera\+Ptr p\+Cam)
+\item 
+\mbox{\Hypertarget{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main node runner for acquiring front camera images with Spinnaker. 
+
+\begin{DoxyAuthor}{Author}
+Point Grey Research, Inc. 
+\end{DoxyAuthor}

@@ -1,4 +1,9 @@
 <map id="src/sub_vision/include/vision/model.hpp" name="src/sub_vision/include/vision/model.hpp">
-<area shape="rect" id="node2" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="5,184,156,225"/>
-<area shape="rect" id="node3" href="$tensor_8hpp.html" title="TF Object Detection API C++ wrapper for tensors. " alt="" coords="63,95,213,136"/>
+<area shape="rect" id="node2" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="259,184,410,225"/>
+<area shape="rect" id="node3" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="5,273,133,315"/>
+<area shape="rect" id="node6" href="$tensor_8hpp.html" title="TF Object Detection API C++ wrapper for tensors. " alt="" coords="95,95,246,136"/>
+<area shape="rect" id="node8" href="$model_8cpp.html" title="TF Object Detection API C++ wrapper for models. " alt="" coords="321,95,449,136"/>
+<area shape="rect" id="node4" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="213,273,341,315"/>
+<area shape="rect" id="node5" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="365,273,493,315"/>
+<area shape="rect" id="node7" href="$tensor_8cpp.html" title="TF Object Detection API C++ wrapper for tensors. " alt="" coords="107,184,235,225"/>
 </map>

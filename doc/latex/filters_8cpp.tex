@@ -1,0 +1,46 @@
+\hypertarget{filters_8cpp}{}\section{src/sub\+\_\+vision/src/filters.cpp File Reference}
+\label{filters_8cpp}\index{src/sub\+\_\+vision/src/filters.\+cpp@{src/sub\+\_\+vision/src/filters.\+cpp}}
+
+
+Vision filtering functions.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vision/filters.\+hpp\char`\"{}}\newline
+Include dependency graph for filters.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{filters_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{filters_8cpp_a60573f9452f74e57a03b4f6073c24122}\label{filters_8cpp_a60573f9452f74e57a03b4f6073c24122}} 
+cv\+::\+Mat {\bfseries equalize\+Hist} (bool b, bool g, bool r, const cv\+::\+Mat \&input)
+\item 
+\mbox{\Hypertarget{filters_8cpp_a5d487afd3191b4802d850983bfb33d45}\label{filters_8cpp_a5d487afd3191b4802d850983bfb33d45}} 
+cv\+::\+Mat {\bfseries illumination} (const cv\+::\+Mat \&input)
+\item 
+\mbox{\Hypertarget{filters_8cpp_ac10fdcad3378911f94e71155376b4f40}\label{filters_8cpp_ac10fdcad3378911f94e71155376b4f40}} 
+cv\+::\+Mat {\bfseries homomorphic} (const cv\+::\+Mat \&src)
+\item 
+\mbox{\Hypertarget{filters_8cpp_aceeb23c0c25c8322daeb7b91a7d77e1f}\label{filters_8cpp_aceeb23c0c25c8322daeb7b91a7d77e1f}} 
+void {\bfseries fft} (const cv\+::\+Mat \&src, cv\+::\+Mat \&dst)
+\item 
+\mbox{\Hypertarget{filters_8cpp_acff1b2ca161381c59db6fb3a47540fd3}\label{filters_8cpp_acff1b2ca161381c59db6fb3a47540fd3}} 
+cv\+::\+Mat {\bfseries butterworth} (const cv\+::\+Mat \&img, int d0, int n, int high, int low)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Vision filtering functions. 
+
+These are meant for standard Open\+CV vision, but could be good for preprocessing for ML too.
+
+\begin{DoxyAuthor}{Author}
+David Zhang 
+
+Arnav Garg 
+\end{DoxyAuthor}

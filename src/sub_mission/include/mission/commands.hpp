@@ -1,6 +1,5 @@
 /** @file commands.hpp
- *  @brief Generic actions done during a competition run, not specific to a
- *         certain task.
+ *  @brief Function definitions for generic competition actions.
  *
  *  @author David Zhang
  */

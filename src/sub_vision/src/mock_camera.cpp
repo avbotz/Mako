@@ -1,3 +1,8 @@
+/** @file mock_camera.cpp
+ *  @brief Main node runner to simulate acquisition_node with a test image.
+ *  
+ *  @author David Zhang
+ */
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>

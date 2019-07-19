@@ -1,3 +1,8 @@
+/** @file camera.cpp
+ *  @brief Camera function definitions for FlyCapture based cameras.
+ *
+ *  @author Surya Ramesh
+ */
 #include "vision/camera.hpp"
 
 

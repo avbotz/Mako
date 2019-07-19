@@ -1,3 +1,9 @@
+/** @file remote_control.cpp
+ *  @brief Allows Nautical to be run with WASD or another controller.
+ *
+ *  @author Jeremy Li
+ *  @author David Zhang
+ */
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 #include <unistd.h>

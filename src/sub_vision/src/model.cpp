@@ -21,6 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+/** @file model.cpp
+ *  @brief TF Object Detection API C++ wrapper for models.
+ *
+ *  @author Sergio Izquierdo
+ */
 #include <cstring>
 #include <algorithm>
 #include "vision/model.hpp"

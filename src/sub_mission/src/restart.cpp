@@ -1,3 +1,8 @@
+/** @file restart.cpp
+ *  @brief Main runner node for mission that can be restarted with kill switch.
+ *
+ *  @author David Zhang
+ */
 #include <ros/ros.h>
 #include <control/ControlAlive.h>
 

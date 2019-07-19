@@ -1,3 +1,8 @@
+/** @file functions.cpp
+ *  @brief Functions for each task process during competition.
+ *
+ *  @author David Zhang
+ */
 #include "mission/functions.hpp"
 #include "mission/commands.hpp"
 #include "mission/client.hpp"

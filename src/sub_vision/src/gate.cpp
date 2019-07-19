@@ -1,3 +1,9 @@
+/** @file gate.cpp
+ *  @brief Vision functions to detect the gate.
+ *
+ *  @author David Zhang
+ *  @author Emil Tu
+ */
 #include <ros/ros.h>
 #include "vision/observation.hpp"
 #include "vision/filters.hpp"

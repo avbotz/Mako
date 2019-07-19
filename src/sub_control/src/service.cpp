@@ -1,3 +1,8 @@
+/** @file control/src/service.cpp
+ *  @brief Wrapper functions for ROS services.
+ *
+ *  @author David Zhang
+ */
 #include <iostream>
 #include <ros/ros.h>
 #include "control/service.hpp"

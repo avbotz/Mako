@@ -1,3 +1,8 @@
+/** @file client.cpp
+ *  @brief Wrapper definitions for using ROS clients.
+ *
+ *  @author David Zhang
+ */
 #include "mission/client.hpp"
 
 

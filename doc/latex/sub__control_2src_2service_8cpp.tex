@@ -1,0 +1,41 @@
+\hypertarget{sub__control_2src_2service_8cpp}{}\section{src/sub\+\_\+control/src/service.cpp File Reference}
+\label{sub__control_2src_2service_8cpp}\index{src/sub\+\_\+control/src/service.\+cpp@{src/sub\+\_\+control/src/service.\+cpp}}
+
+
+Wrapper functions for R\+OS services.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}control/service.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}control/atmega.\+hpp\char`\"{}}\newline
+Include dependency graph for service.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sub__control_2src_2service_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sub__control_2src_2service_8cpp_a35877f0d4dc320812a8cc786641011ed}\label{sub__control_2src_2service_8cpp_a35877f0d4dc320812a8cc786641011ed}} 
+bool {\bfseries alive} (control\+::\+Control\+Alive\+::\+Request \&request, control\+::\+Control\+Alive\+::\+Response \&response)
+\item 
+\mbox{\Hypertarget{sub__control_2src_2service_8cpp_a521b4c032fa3d93d088b1e022022b586}\label{sub__control_2src_2service_8cpp_a521b4c032fa3d93d088b1e022022b586}} 
+bool {\bfseries state} (control\+::\+Control\+State\+::\+Request \&request, control\+::\+Control\+State\+::\+Response \&response)
+\item 
+\mbox{\Hypertarget{sub__control_2src_2service_8cpp_a2b94889340763ca9f65c80a576da48c6}\label{sub__control_2src_2service_8cpp_a2b94889340763ca9f65c80a576da48c6}} 
+bool {\bfseries write} (control\+::\+Control\+Write\+::\+Request \&request, control\+::\+Control\+Write\+::\+Response \&response)
+\item 
+\mbox{\Hypertarget{sub__control_2src_2service_8cpp_a2461e16c2408a286397bec006bb37bf1}\label{sub__control_2src_2service_8cpp_a2461e16c2408a286397bec006bb37bf1}} 
+bool {\bfseries write\+State} (control\+::\+Control\+Write\+State\+::\+Request \&request, control\+::\+Control\+Write\+State\+::\+Response \&response)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper functions for R\+OS services. 
+
+\begin{DoxyAuthor}{Author}
+David Zhang 
+\end{DoxyAuthor}

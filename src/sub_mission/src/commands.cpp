@@ -1,3 +1,8 @@
+/** @file commands.cpp
+ *  @brief Functions for generic competition actions.
+ *
+ *  @author David Zhang
+ */
 #include "mission/commands.hpp"
 #include "mission/functions.hpp"
 #include "mission/client.hpp"

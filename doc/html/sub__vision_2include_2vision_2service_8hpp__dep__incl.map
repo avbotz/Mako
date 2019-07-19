@@ -1,0 +1,5 @@
+<map id="src/sub_vision/include/vision/service.hpp" name="src/sub_vision/include/vision/service.hpp">
+<area shape="rect" id="node2" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="5,95,133,136"/>
+<area shape="rect" id="node3" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="157,95,285,136"/>
+<area shape="rect" id="node4" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="309,95,437,136"/>
+</map>

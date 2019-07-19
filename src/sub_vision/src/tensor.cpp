@@ -21,6 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+/** @file tensor.cpp
+ *  @brief TF Object Detection API C++ wrapper for tensors.
+ *
+ *  @author Sergio Izquierdo
+ */
 #include <utility>
 
 #include "vision/tensor.hpp"

@@ -1,3 +1,8 @@
+/** @file log.cpp
+ *  @brief Logging functions for images or text.
+ *  
+ *  @author David Zhang
+ */
 #include <iostream>
 #include <string>
 #include <ctime>

@@ -1,0 +1,5 @@
+<map id="src/sub_control/include/control/atmega.hpp" name="src/sub_control/include/control/atmega.hpp">
+<area shape="rect" id="node2" href="$atmega_8cpp.html" title="Functions for interfacing with the code on the atmega. " alt="" coords="5,95,139,136"/>
+<area shape="rect" id="node3" href="$sub__control_2src_2service_8cpp.html" title="Wrapper functions for ROS services. " alt="" coords="163,95,296,136"/>
+<area shape="rect" id="node4" href="$remote__control_8cpp.html" title="Allows Nautical to be run with WASD or another controller. " alt="" coords="321,95,479,136"/>
+</map>

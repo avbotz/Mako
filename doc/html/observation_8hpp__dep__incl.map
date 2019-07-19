@@ -1,13 +1,13 @@
 <map id="src/sub_vision/include/vision/observation.hpp" name="src/sub_vision/include/vision/observation.hpp">
-<area shape="rect" id="node2" href="$client_8hpp.html" title="Wrapper namespaces for using ROS clients. " alt="" coords="464,95,627,136"/>
-<area shape="rect" id="node5" href="$functions_8cpp.html" title="Functions for each task process during competition. " alt="" coords="5,184,144,225"/>
-<area shape="rect" id="node6" href="$mission_8cpp.html" title="Main node runner for mission. " alt="" coords="656,184,795,225"/>
-<area shape="rect" id="node7" href="$prelim_8cpp.html" title="Main node runner for prelim. " alt="" coords="168,184,307,225"/>
-<area shape="rect" id="node8" href="$commands_8hpp.html" title="Function definitions for generic competition actions. " alt="" coords="275,95,439,136"/>
-<area shape="rect" id="node9" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="830,95,981,136"/>
-<area shape="rect" id="node10" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="819,184,947,225"/>
-<area shape="rect" id="node3" href="$client_8cpp.html" title="Wrapper definitions for using ROS clients. " alt="" coords="493,184,632,225"/>
+<area shape="rect" id="node2" href="$client_8hpp.html" title="Wrapper namespaces for using ROS clients. " alt="" coords="321,95,484,136"/>
+<area shape="rect" id="node5" href="$functions_8cpp.html" title="Functions for each task process during competition. " alt="" coords="656,184,795,225"/>
+<area shape="rect" id="node8" href="$commands_8hpp.html" title="Function definitions for generic competition actions. " alt="" coords="513,95,677,136"/>
+<area shape="rect" id="node9" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="883,95,1034,136"/>
+<area shape="rect" id="node3" href="$client_8cpp.html" title="Wrapper definitions for using ROS clients. " alt="" coords="5,184,144,225"/>
 <area shape="rect" id="node4" href="$commands_8cpp.html" title="Functions for generic competition actions. " alt="" coords="331,184,469,225"/>
+<area shape="rect" id="node6" href="$mission_8cpp.html" title="Main node runner for mission. " alt="" coords="168,184,307,225"/>
+<area shape="rect" id="node7" href="$prelim_8cpp.html" title="Main node runner for prelim. " alt="" coords="493,184,632,225"/>
+<area shape="rect" id="node10" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="819,184,947,225"/>
 <area shape="rect" id="node11" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="971,184,1099,225"/>
 <area shape="rect" id="node12" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="1123,184,1251,225"/>
 </map>

@@ -5,9 +5,7 @@
  *  @author Emil Tu
  */
 #include <ros/ros.h>
-#include "vision/config.hpp"
 #include "vision/service.hpp"
-#include "vision/log.hpp"
 
 
 void VisionService::captureCallback(const sensor_msgs::ImageConstPtr &msg)

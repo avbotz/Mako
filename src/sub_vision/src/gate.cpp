@@ -5,12 +5,6 @@
  *  @author Emil Tu
  */
 #include <ros/ros.h>
-#include "vision/observation.hpp"
-#include "vision/filters.hpp"
-#include "vision/log.hpp"
-#include "vision/config.hpp"
-#include "vision/model.hpp"
-#include "vision/tensor.hpp"
 #include "vision/service.hpp"
 
 

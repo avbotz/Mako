@@ -6,7 +6,6 @@
 #include <iostream>
 #include <cmath>
 #include <thread>
-#include "control/state.hpp"
 #include "control/atmega.hpp"
 #include "vision/config.hpp"
 

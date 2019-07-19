@@ -1,7 +1,7 @@
 <map id="src/sub_mission/src/prelim.cpp" name="src/sub_mission/src/prelim.cpp">
-<area shape="rect" id="node7" href="$commands_8hpp.html" title="Function definitions for generic competition actions. " alt="" coords="292,102,452,129"/>
-<area shape="rect" id="node11" href="$observation_8hpp.html" title="Observation struct definition that represents the results from an object detection function..." alt="" coords="456,184,608,211"/>
-<area shape="rect" id="node14" href="$config_8hpp.html" title="Vision configuration that is used in other packages as well. " alt="" coords="1308,259,1428,285"/>
-<area shape="rect" id="node15" href="$client_8hpp.html" title="Wrapper namespaces for using ROS clients. " alt="" coords="607,102,734,129"/>
-<area shape="rect" id="node8" href="$state_8hpp.html" title="State struct and constant definitions. " alt="" coords="313,184,431,211"/>
+<area shape="rect" id="node6" href="$commands_8hpp.html" title="Function definitions for generic competition actions. " alt="" coords="161,102,321,129"/>
+<area shape="rect" id="node15" href="$client_8hpp.html" title="Wrapper namespaces for using ROS clients. " alt="" coords="345,102,472,129"/>
+<area shape="rect" id="node8" href="$state_8hpp.html" title="State struct and constant definitions. " alt="" coords="120,184,239,211"/>
+<area shape="rect" id="node11" href="$observation_8hpp.html" title="Observation struct definition that represents the results from an object detection function..." alt="" coords="394,184,546,211"/>
+<area shape="rect" id="node14" href="$config_8hpp.html" title="Vision configuration that is used in other packages as well. " alt="" coords="793,259,913,285"/>
 </map>

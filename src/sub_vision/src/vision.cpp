@@ -4,14 +4,8 @@
  *  @author David Zhang
  */
 #include <ros/ros.h>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include "vision/filters.hpp"
-#include "vision/config.hpp"
 #include "vision/service.hpp"
 #include "vision/camera.hpp"
-#include "vision/log.hpp"
 
 
 int main(int argc, char** argv)

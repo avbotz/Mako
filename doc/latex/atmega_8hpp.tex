@@ -5,13 +5,12 @@
 Function definitions for interfacing with the code on the atmega.  
 
 
-{\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include \char`\"{}control/state.\+hpp\char`\"{}}\newline
 Include dependency graph for atmega.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=220pt]{atmega_8hpp__incl}
+\includegraphics[width=198pt]{atmega_8hpp__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -24,7 +23,8 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}~\char`\"{}/dev/tty\+A\+C\+M0\char`\"{}
+\mbox{\Hypertarget{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}\label{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}} 
+\#define {\bfseries P\+O\+RT}~\char`\"{}/dev/tty\+A\+C\+M0\char`\"{}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -48,10 +48,10 @@ bool {\bfseries atmega\+::alive} ()
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{atmega_8hpp_a5e34b501678d80ab91465e65389c9749}\label{atmega_8hpp_a5e34b501678d80ab91465e65389c9749}} 
-F\+I\+LE $\ast$ {\bfseries atmega\+::in} = fopen(\hyperlink{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}, \char`\"{}r+\char`\"{})
+F\+I\+LE $\ast$ {\bfseries atmega\+::in} = fopen(P\+O\+RT, \char`\"{}r+\char`\"{})
 \item 
 \mbox{\Hypertarget{atmega_8hpp_ae69d979ccfad9a05f9ae8e6c1370585e}\label{atmega_8hpp_ae69d979ccfad9a05f9ae8e6c1370585e}} 
-F\+I\+LE $\ast$ {\bfseries atmega\+::out} = fopen(\hyperlink{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}, \char`\"{}w+\char`\"{})
+F\+I\+LE $\ast$ {\bfseries atmega\+::out} = fopen(P\+O\+RT, \char`\"{}w+\char`\"{})
 \item 
 \mbox{\Hypertarget{atmega_8hpp_afa2561d0008822ad2f9a906ab9c7e445}\label{atmega_8hpp_afa2561d0008822ad2f9a906ab9c7e445}} 
 \hyperlink{structState}{State} {\bfseries atmega\+::sim\+\_\+state}
@@ -61,16 +61,8 @@ F\+I\+LE $\ast$ {\bfseries atmega\+::out} = fopen(\hyperlink{atmega_8hpp_a614217
 \subsection{Detailed Description}
 Function definitions for interfacing with the code on the atmega. 
 
+Nothing from mission or vision should depend on this file. Instead, use the control service to ensure that there aren\textquotesingle{}t multiple clients writing to Nautical at the same time.
+
 \begin{DoxyAuthor}{Author}
 David Zhang 
 \end{DoxyAuthor}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}\label{atmega_8hpp_a614217d263be1fb1a5f76e2ff7be19a2}} 
-\index{atmega.\+hpp@{atmega.\+hpp}!P\+O\+RT@{P\+O\+RT}}
-\index{P\+O\+RT@{P\+O\+RT}!atmega.\+hpp@{atmega.\+hpp}}
-\subsubsection{\texorpdfstring{P\+O\+RT}{PORT}}
-{\footnotesize\ttfamily \#define P\+O\+RT~\char`\"{}/dev/tty\+A\+C\+M0\char`\"{}}
-
-Port where atmega is connected. 

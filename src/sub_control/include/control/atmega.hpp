@@ -1,15 +1,17 @@
 /** @file atmega.hpp
  *  @brief Function definitions for interfacing with the code on the atmega.
  *
+ *  Nothing from mission or vision should depend on this file. Instead, use the
+ *  control service to ensure that there aren't multiple clients writing to
+ *  Nautical at the same time.
+ *
  *  @author David Zhang
  */
 #ifndef CONTROL_ATMEGA_HPP
 #define CONTROL_ATMEGA_HPP 
 
-#include <string>
 #include "control/state.hpp"
 
-/** Port where atmega is connected. */
 #define PORT "/dev/ttyACM0"
 
 namespace atmega 

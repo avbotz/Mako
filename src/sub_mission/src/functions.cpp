@@ -7,7 +7,6 @@
 #include "mission/commands.hpp"
 #include "mission/client.hpp"
 #include "vision/observation.hpp"
-#include "vision/config.hpp"
 
 
 void gate()

@@ -73,14 +73,13 @@ $(function() {
 
 <p>Function definitions for interfacing with the code on the atmega.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="state_8hpp_source.html">control/state.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="state_8hpp_source.html">control/state.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for atmega.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="atmega_8hpp__incl.png" border="0" usemap="#src_2sub__control_2include_2control_2atmega_8hpp" alt=""/></div>
 <map name="src_2sub__control_2include_2control_2atmega_8hpp" id="src_2sub__control_2include_2control_2atmega_8hpp">
-<area shape="rect" id="node3" href="state_8hpp.html" title="State struct and constant definitions. " alt="" coords="73,95,192,121"/>
+<area shape="rect" id="node2" href="state_8hpp.html" title="State struct and constant definitions. " alt="" coords="24,95,143,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -98,7 +97,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atmega_8hpp.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>&#160;&#160;&#160;&quot;/dev/ttyACM0&quot;</td></tr>
+<tr class="memitem:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memItemLeft" align="right" valign="top"><a id="a614217d263be1fb1a5f76e2ff7be19a2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PORT</b>&#160;&#160;&#160;&quot;/dev/ttyACM0&quot;</td></tr>
 <tr class="separator:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -122,10 +122,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::alive</b> ()<
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a5e34b501678d80ab91465e65389c9749"><td class="memItemLeft" align="right" valign="top"><a id="a5e34b501678d80ab91465e65389c9749"></a>
-FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::in</b> = fopen(<a class="el" href="atmega_8hpp.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>, &quot;r+&quot;)</td></tr>
+FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::in</b> = fopen(PORT, &quot;r+&quot;)</td></tr>
 <tr class="separator:a5e34b501678d80ab91465e65389c9749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae69d979ccfad9a05f9ae8e6c1370585e"><td class="memItemLeft" align="right" valign="top"><a id="ae69d979ccfad9a05f9ae8e6c1370585e"></a>
-FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::out</b> = fopen(<a class="el" href="atmega_8hpp.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>, &quot;w+&quot;)</td></tr>
+FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::out</b> = fopen(PORT, &quot;w+&quot;)</td></tr>
 <tr class="separator:ae69d979ccfad9a05f9ae8e6c1370585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa2561d0008822ad2f9a906ab9c7e445"><td class="memItemLeft" align="right" valign="top"><a id="afa2561d0008822ad2f9a906ab9c7e445"></a>
 <a class="el" href="structState.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::sim_state</b></td></tr>
@@ -133,24 +133,9 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>atmega::out</b> = f
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function definitions for interfacing with the code on the atmega. </p>
+<p>Nothing from mission or vision should depend on this file. Instead, use the control service to ensure that there aren't multiple clients writing to Nautical at the same time.</p>
 <dl class="section author"><dt>Author</dt><dd>David Zhang </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a614217d263be1fb1a5f76e2ff7be19a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a614217d263be1fb1a5f76e2ff7be19a2">&#9670;&nbsp;</a></span>PORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PORT&#160;&#160;&#160;&quot;/dev/ttyACM0&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Port where atmega is connected. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

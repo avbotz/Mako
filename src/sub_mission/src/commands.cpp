@@ -6,7 +6,6 @@
 #include "mission/commands.hpp"
 #include "mission/functions.hpp"
 #include "mission/client.hpp"
-#include "vision/config.hpp"
 
 
 float align(int attempts, Task task, int camera)

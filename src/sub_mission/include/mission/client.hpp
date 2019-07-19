@@ -14,7 +14,6 @@
 #include <vision/Vision.h>
 #include "control/state.hpp"
 #include "vision/observation.hpp"
-#include "vision/config.hpp"
 
 namespace vision_client 
 {

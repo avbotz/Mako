@@ -14,7 +14,10 @@ int main(int argc, char** argv)
 	srand((unsigned) time(0)); 
 	ros::init(argc, argv, "vision_node");
 	ros::NodeHandle node;
+
+	// Set no task in the beginning so the first model is loaded.
 	VisionService service;
+	service.task = -1;
 
 	// Setup observation request.
 	ros::ServiceServer server = node.advertiseService("vision", 

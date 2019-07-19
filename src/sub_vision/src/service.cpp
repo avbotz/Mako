@@ -32,7 +32,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 	ROS_INFO("Received detection request for %i.", req.task);
 	if (req.task == Task::GATE)
 	{
-		Observation obs = findGate(this->front);
+		Observation obs = this->findGate(this->front);
 		obs.calcAngles(FRONT);
 		ROS_INFO("Sending observation @ %s", obs.text().c_str());
 		setResponse(obs, res);
@@ -40,7 +40,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 	}
 	if (req.task == Task::GATE_ML)
 	{
-		Observation obs = findGateML(this->front);
+		Observation obs = this->findGateML(this->front);
 		obs.calcAngles(FRONT);
 		ROS_INFO("Sending observation @ %s", obs.text().c_str());
 		setResponse(obs, res);

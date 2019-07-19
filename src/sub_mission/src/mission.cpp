@@ -5,7 +5,7 @@
 #include <vision/Vision.h>
 #include "mission/functions.hpp"
 #include "mission/client.hpp"
-#include "vision/tasks.hpp"
+#include "vision/observation.hpp"
 
 
 int main(int argc, char** argv)

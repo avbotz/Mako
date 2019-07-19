@@ -1,5 +1,5 @@
-#ifndef TASKS_HPP
-#define TASKS_HPP 
+#ifndef OBSERVATION_HPP
+#define OBSERVATION_HPP
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -61,8 +61,5 @@ struct Observation
 		return os.str();
 	}
 };
-
-Observation findGate(const cv::Mat &);
-Observation findGateML(cv::Mat);
 
 #endif

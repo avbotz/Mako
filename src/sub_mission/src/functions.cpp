@@ -1,7 +1,7 @@
 #include "mission/functions.hpp"
 #include "mission/commands.hpp"
 #include "mission/client.hpp"
-#include "vision/tasks.hpp"
+#include "vision/observation.hpp"
 #include "vision/config.hpp"
 
 
@@ -18,7 +18,7 @@ void gate()
 
 	ROS_INFO("Turn towards gate.");
 	ROS_INFO("State @ %s.", control_client::state().text().c_str());
-	float angle = align(5);
+	float angle = align(5, Task::GATE_ML, FRONT);
 	ROS_INFO("Angle @ %f.", angle);
 	State move1 = control_client::state();
 	move1.axis[YAW] = angle;

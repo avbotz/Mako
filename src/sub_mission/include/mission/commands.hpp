@@ -4,8 +4,9 @@
 #include <ros/ros.h>
 #include <vision/Vision.h>
 #include "control/state.hpp"
+#include "vision/observation.hpp"
 
-float align(int);
+float align(int, Task, int);
 void move(const State &); 
 
 #endif

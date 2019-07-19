@@ -8,15 +8,22 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <vision/Vision.h>
-#include "vision/tasks.hpp"
+#include "vision/observation.hpp"
+#include "vision/model.hpp"
+#include "vision/tensor.hpp"
 
 class VisionService 
 {
 	public:
 		cv::Mat front, down;
+		Model model;
+		Task task;
+
 		bool detectCallback(vision::Vision::Request &, 
 				vision::Vision::Response &);
 		void captureCallback(const sensor_msgs::ImageConstPtr &);
+		Observation findGate(const cv::Mat &);
+		Observation findGateML(cv::Mat);
 };
 
 void setResponse(const Observation &, vision::Vision::Response &);

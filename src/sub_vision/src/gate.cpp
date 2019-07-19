@@ -1,13 +1,14 @@
 #include <ros/ros.h>
-#include "vision/tasks.hpp"
+#include "vision/observation.hpp"
 #include "vision/filters.hpp"
 #include "vision/log.hpp"
 #include "vision/config.hpp"
 #include "vision/model.hpp"
 #include "vision/tensor.hpp"
+#include "vision/service.hpp"
 
 
-Observation findGate(const cv::Mat &img)
+Observation VisionService::findGate(const cv::Mat &img)
 {
 	// Check that image isn't null.
 	if (!img.data)
@@ -80,7 +81,7 @@ Observation findGate(const cv::Mat &img)
 	return Observation(0.8, (ar+br)/2, (ac+bc)/2, 0);
 }
 
-Observation findGateML(cv::Mat img)
+Observation VisionService::findGateML(cv::Mat img)
 {
 	Model model("models/cpu_gate.pb");
     auto outNames1 = new Tensor(model, "num_detections");

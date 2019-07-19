@@ -6,7 +6,7 @@
 #include "mission/commands.hpp"
 #include "mission/client.hpp"
 #include "vision/config.hpp"
-#include "vision/tasks.hpp"
+#include "vision/observation.hpp"
 
 
 int main(int argc, char** argv)

@@ -1,3 +1,8 @@
+/** @file camera.hpp
+ *  @brief Camera struct for FlyCapture based cameras.
+ *
+ *  @author Surya Ramesh
+ */
 #ifndef CAPTURE_CAMERA_HPP
 #define CAPTURE_CAMERA_HPP
 

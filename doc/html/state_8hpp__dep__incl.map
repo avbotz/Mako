@@ -1,0 +1,5 @@
+<map id="src/sub_control/include/control/state.hpp" name="src/sub_control/include/control/state.hpp">
+<area shape="rect" id="node2" href="$atmega_8hpp.html" title="Function definitions for interfacing with the code on the atmega. " alt="" coords="5,95,161,136"/>
+<area shape="rect" id="node3" href="$client_8hpp.html" title="Wrapper namespaces for using ROS clients. " alt="" coords="186,95,349,136"/>
+<area shape="rect" id="node4" href="$commands_8hpp.html" title="Generic actions done during a competition run, not specific to a certain task. " alt="" coords="373,95,537,136"/>
+</map>

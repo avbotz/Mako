@@ -1,3 +1,8 @@
+/** @file state.hpp
+ *  @brief State struct and constant definitions.
+ *
+ *  @author David Zhang
+ */
 #ifndef COMMON_STATE_HPP 
 #define COMMON_STATE_HPP 
 

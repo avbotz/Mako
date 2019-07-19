@@ -1,3 +1,9 @@
+/** @file filters.hpp
+ *  @brief Vision filtering function definitions.
+ *  
+ *  @author David Zhang
+ *  @author Arnav Garg
+ */
 #ifndef VISION_FILTERS_HPP
 #define VISION_FILTERS_HPP
 

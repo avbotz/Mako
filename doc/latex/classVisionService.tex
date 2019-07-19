@@ -1,0 +1,48 @@
+\hypertarget{classVisionService}{}\section{Vision\+Service Class Reference}
+\label{classVisionService}\index{Vision\+Service@{Vision\+Service}}
+
+
+Collaboration diagram for Vision\+Service\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classVisionService__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVisionService_a40b83115dc945cfa9ed16fdfa3c99ba5}\label{classVisionService_a40b83115dc945cfa9ed16fdfa3c99ba5}} 
+bool {\bfseries detect\+Callback} (vision\+::\+Vision\+::\+Request \&, vision\+::\+Vision\+::\+Response \&)
+\item 
+\mbox{\Hypertarget{classVisionService_a02a14fd32cf867b31c7d711a7b64691f}\label{classVisionService_a02a14fd32cf867b31c7d711a7b64691f}} 
+void {\bfseries capture\+Callback} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&)
+\item 
+\mbox{\Hypertarget{classVisionService_a1395f4513469c69074c2f7e16da68c13}\label{classVisionService_a1395f4513469c69074c2f7e16da68c13}} 
+\hyperlink{structObservation}{Observation} {\bfseries find\+Gate} (const cv\+::\+Mat \&)
+\item 
+\mbox{\Hypertarget{classVisionService_aa294fde48d52b528ca2082910f7cce2f}\label{classVisionService_aa294fde48d52b528ca2082910f7cce2f}} 
+\hyperlink{structObservation}{Observation} {\bfseries find\+Gate\+ML} (cv\+::\+Mat)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVisionService_aab2728718c9697f322dc84914a670484}\label{classVisionService_aab2728718c9697f322dc84914a670484}} 
+cv\+::\+Mat {\bfseries front}
+\item 
+\mbox{\Hypertarget{classVisionService_aea4889f5af8acdf4b6e222f67c58477b}\label{classVisionService_aea4889f5af8acdf4b6e222f67c58477b}} 
+cv\+::\+Mat {\bfseries down}
+\item 
+\mbox{\Hypertarget{classVisionService_aa0b7cb339423b293d576e69759a754bc}\label{classVisionService_aa0b7cb339423b293d576e69759a754bc}} 
+\hyperlink{classModel}{Model} {\bfseries model}
+\item 
+\mbox{\Hypertarget{classVisionService_a6089969c6dc3a41dc384b4963f6bd37a}\label{classVisionService_a6089969c6dc3a41dc384b4963f6bd37a}} 
+Task {\bfseries task}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sub\+\_\+vision/include/vision/\hyperlink{sub__vision_2include_2vision_2service_8hpp}{service.\+hpp}\item 
+src/sub\+\_\+vision/src/gate.\+cpp\item 
+src/sub\+\_\+vision/src/service.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+\hypertarget{client_8hpp}{}\section{src/sub\+\_\+mission/include/mission/client.hpp File Reference}
+\label{client_8hpp}\index{src/sub\+\_\+mission/include/mission/client.\+hpp@{src/sub\+\_\+mission/include/mission/client.\+hpp}}
+
+
+Wrapper namespaces for using R\+OS clients.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$control/\+Control\+Alive.\+h$>$}\newline
+{\ttfamily \#include $<$control/\+Control\+State.\+h$>$}\newline
+{\ttfamily \#include $<$control/\+Control\+Write.\+h$>$}\newline
+{\ttfamily \#include $<$control/\+Control\+Write\+State.\+h$>$}\newline
+{\ttfamily \#include $<$vision/\+Vision.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}control/state.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vision/observation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vision/config.\+hpp\char`\"{}}\newline
+Include dependency graph for client.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{client_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{client_8hpp_afcc2ae7b458f182fb618080fb06e8221}\label{client_8hpp_afcc2ae7b458f182fb618080fb06e8221}} 
+\hyperlink{structObservation}{Observation} {\bfseries vision\+\_\+client\+::vision} (Task, int)
+\item 
+\mbox{\Hypertarget{client_8hpp_a3ded3efee9af8fa3b086be935dd60342}\label{client_8hpp_a3ded3efee9af8fa3b086be935dd60342}} 
+bool {\bfseries control\+\_\+client\+::alive} ()
+\item 
+\mbox{\Hypertarget{client_8hpp_a75378d18ff05eaadffa1c9a2c3a5ec59}\label{client_8hpp_a75378d18ff05eaadffa1c9a2c3a5ec59}} 
+\hyperlink{structState}{State} {\bfseries control\+\_\+client\+::state} ()
+\item 
+\mbox{\Hypertarget{client_8hpp_a115f3dde3379c8578b98935367722193}\label{client_8hpp_a115f3dde3379c8578b98935367722193}} 
+void {\bfseries control\+\_\+client\+::write} (std\+::string)
+\item 
+\mbox{\Hypertarget{client_8hpp_ae5b5378396735164a81dfb5650332d56}\label{client_8hpp_ae5b5378396735164a81dfb5650332d56}} 
+void {\bfseries control\+\_\+client\+::write\+State} (const \hyperlink{structState}{State} \&)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{client_8hpp_a4e91512e5fb519f996fc33db995ce976}\label{client_8hpp_a4e91512e5fb519f996fc33db995ce976}} 
+ros\+::\+Service\+Client {\bfseries vision\+\_\+client\+::client}
+\item 
+\mbox{\Hypertarget{client_8hpp_ac0be764f14f7a4154db3baf1c77f887c}\label{client_8hpp_ac0be764f14f7a4154db3baf1c77f887c}} 
+ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::alive\+\_\+client}
+\item 
+\mbox{\Hypertarget{client_8hpp_a49c5331ba74813000221f2cafaca72f7}\label{client_8hpp_a49c5331ba74813000221f2cafaca72f7}} 
+ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::state\+\_\+client}
+\item 
+\mbox{\Hypertarget{client_8hpp_a919659ad17d351d0066a8cc3e1b90d45}\label{client_8hpp_a919659ad17d351d0066a8cc3e1b90d45}} 
+ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::write\+\_\+client}
+\item 
+\mbox{\Hypertarget{client_8hpp_a86f1dd68b90c714865ec38c5ffe4e367}\label{client_8hpp_a86f1dd68b90c714865ec38c5ffe4e367}} 
+ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::write\+\_\+state\+\_\+client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper namespaces for using R\+OS clients. 
+
+\begin{DoxyAuthor}{Author}
+David Zhang 
+\end{DoxyAuthor}

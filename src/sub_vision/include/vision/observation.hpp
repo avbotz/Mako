@@ -1,3 +1,9 @@
+/** @file observation.hpp
+ *  @brief Observation struct definition that represents the results from an
+ *         object detection function.
+ *
+ *  @author David Zhang
+ */
 #ifndef OBSERVATION_HPP
 #define OBSERVATION_HPP
 

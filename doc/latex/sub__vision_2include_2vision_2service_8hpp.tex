@@ -1,0 +1,47 @@
+\hypertarget{sub__vision_2include_2vision_2service_8hpp}{}\section{src/sub\+\_\+vision/include/vision/service.hpp File Reference}
+\label{sub__vision_2include_2vision_2service_8hpp}\index{src/sub\+\_\+vision/include/vision/service.\+hpp@{src/sub\+\_\+vision/include/vision/service.\+hpp}}
+
+
+Wrapper class to handle the different vision callbacks.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$image\+\_\+transport/image\+\_\+transport.\+h$>$}\newline
+{\ttfamily \#include $<$cv\+\_\+bridge/cv\+\_\+bridge.\+h$>$}\newline
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$vision/\+Vision.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vision/observation.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vision/model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vision/tensor.\+hpp\char`\"{}}\newline
+Include dependency graph for service.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sub__vision_2include_2vision_2service_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVisionService}{Vision\+Service}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sub__vision_2include_2vision_2service_8hpp_a8b924381d418d87721ce459c31bc8860}\label{sub__vision_2include_2vision_2service_8hpp_a8b924381d418d87721ce459c31bc8860}} 
+void {\bfseries set\+Response} (const \hyperlink{structObservation}{Observation} \&, vision\+::\+Vision\+::\+Response \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper class to handle the different vision callbacks. 
+
+The main purpose of this class is to ensure that the images read from the R\+OS image publisher can be used for object detection. It keeps the images in one location and allows ros\+::spin() to update them as needed.
+
+\begin{DoxyAuthor}{Author}
+David Zhang 
+
+Emil Tu 
+\end{DoxyAuthor}

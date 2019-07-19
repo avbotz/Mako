@@ -21,6 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+/** @file model.hpp
+ *  @brief TF Object Detection API C++ wrapper for models.
+ *
+ *  @author Sergio Izquierdo
+ */
 #ifndef CPPFLOW_MODEL_H
 #define CPPFLOW_MODEL_H
 

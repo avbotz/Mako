@@ -1,3 +1,8 @@
+/** @file client.hpp
+ *  @brief Wrapper namespaces for using ROS clients.
+ *
+ *  @author David Zhang
+ */
 #ifndef MISSION_SERVICE_HPP
 #define MISSION_SERVICE_HPP
 

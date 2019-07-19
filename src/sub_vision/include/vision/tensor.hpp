@@ -21,6 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+/** @file tensor.hpp
+ *  @brief TF Object Detection API C++ wrapper for tensors.
+ *
+ *  @author Sergio Izquierdo
+ */
 #ifndef CPPFLOW_TENSOR_H
 #define CPPFLOW_TENSOR_H
 

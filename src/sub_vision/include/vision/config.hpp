@@ -1,3 +1,8 @@
+/** @file config.hpp
+ *  @brief Vision configuration that is used in other packages as well.
+ *
+ *  @author David Zhang
+ */
 #ifndef VISION_CONFIG_HPP
 #define VISION_CONFIG_HPP 
 

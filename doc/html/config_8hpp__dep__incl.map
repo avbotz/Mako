@@ -1,0 +1,6 @@
+<map id="src/sub_vision/include/vision/config.hpp" name="src/sub_vision/include/vision/config.hpp">
+<area shape="rect" id="node2" href="$client_8hpp.html" title="Wrapper namespaces for using ROS clients. " alt="" coords="5,184,168,225"/>
+<area shape="rect" id="node3" href="$observation_8hpp.html" title="Observation struct definition that represents the results from an object detection function..." alt="" coords="178,95,334,136"/>
+<area shape="rect" id="node4" href="$commands_8hpp.html" title="Generic actions done during a competition run, not specific to a certain task. " alt="" coords="193,184,357,225"/>
+<area shape="rect" id="node5" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="381,184,531,225"/>
+</map>

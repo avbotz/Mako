@@ -1,3 +1,13 @@
+/** @file vision/service.hpp
+ *  @brief Wrapper class to handle the different vision callbacks.
+ *
+ *  The main purpose of this class is to ensure that the images read from the
+ *  ROS image publisher can be used for object detection. It keeps the images in
+ *  one location and allows ros::spin() to update them as needed.
+ *
+ *  @author David Zhang
+ *  @author Emil Tu
+ */
 #ifndef VISION_SERVICE_HPP
 #define VISION_SERVICE_HPP 
 

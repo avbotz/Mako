@@ -1,3 +1,8 @@
+/** @file control/service.hpp
+ *  @brief Wrapper function definitions for ROS services.
+ *
+ *  @author David Zhang
+ */
 #ifndef CONTROL_SERVICE_HPP
 #define CONTROL_SERVICE_HPP
 

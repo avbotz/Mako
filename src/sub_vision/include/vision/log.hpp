@@ -1,3 +1,8 @@
+/** @file log.hpp
+ *  @brief Logging functions for images or text.
+ *  
+ *  @author David Zhang
+ */
 #ifndef VISION_LOG_HPP
 #define VISION_LOG_HPP 
 

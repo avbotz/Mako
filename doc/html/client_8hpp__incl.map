@@ -1,0 +1,5 @@
+<map id="src/sub_mission/include/mission/client.hpp" name="src/sub_mission/include/mission/client.hpp">
+<area shape="rect" id="node8" href="$state_8hpp.html" title="State struct and constant definitions. " alt="" coords="957,95,1076,121"/>
+<area shape="rect" id="node11" href="$observation_8hpp.html" title="Observation struct definition that represents the results from an object detection function..." alt="" coords="1189,95,1341,121"/>
+<area shape="rect" id="node15" href="$config_8hpp.html" title="Vision configuration that is used in other packages as well. " alt="" coords="1598,169,1718,196"/>
+</map>

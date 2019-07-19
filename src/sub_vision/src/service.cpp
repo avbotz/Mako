@@ -29,6 +29,19 @@ void VisionService::captureCallback(const sensor_msgs::ImageConstPtr &msg)
 bool VisionService::detectCallback(vision::Vision::Request &req, 
 		vision::Vision::Response &res)
 {
+	// Load new vision model if new task is different and requires a machine
+	// learning model.
+	if (req.task != this->task)
+	{
+		if (req.task == Task::GATE_ML)
+		{
+			ROS_INFO("Starting to setup gate model.");
+			this->model.setup("models/cpu_gate.pb");
+			ROS_INFO("Done setting up gate model.");
+		}
+	}
+
+	// Get new observation from vision functions. 
 	ROS_INFO("Received detection request for %i.", req.task);
 	if (req.task == Task::GATE)
 	{

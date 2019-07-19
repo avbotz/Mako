@@ -6,6 +6,7 @@
  */
 enum class CameraMode { MOCK, LIVE };
 enum Task { 
+	NONE,
 	GATE,
 	GATE_ML,
 	OCTAGON

@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 
 	// Set no task in the beginning so the first model is loaded.
 	VisionService service;
-	service.task = -1;
+	service.task = Task::NONE;
 
 	// Setup observation request.
 	ros::ServiceServer server = node.advertiseService("vision", 

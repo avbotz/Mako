@@ -83,7 +83,6 @@ Observation VisionService::findGate(const cv::Mat &img)
 
 Observation VisionService::findGateML(cv::Mat img)
 {
-	Model model("models/cpu_gate.pb");
     auto outNames1 = new Tensor(model, "num_detections");
     auto outNames2 = new Tensor(model, "detection_scores");
     auto outNames3 = new Tensor(model, "detection_boxes");

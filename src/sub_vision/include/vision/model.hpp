@@ -36,9 +36,9 @@ class Tensor;
 
 class Model {
 public:
-	explicit Model(const std::string&);
 	~Model();
 
+	void setup(const std::string&);
 	void init();
 	void restore(const std::string& ckpt);
 	void save(const std::string& ckpt);

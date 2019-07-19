@@ -26,7 +26,14 @@
 #include "vision/model.hpp"
 
 
-Model::Model(const std::string& model_filename) {
+Model::~Model() {
+    TF_DeleteSession(this->session, this->status);
+    TF_DeleteGraph(this->graph);
+    this->status_check(true);
+    TF_DeleteStatus(this->status);
+}
+
+void Model::setup(const std::string& model_filename) {
 
     this->status = TF_NewStatus();
     this->graph = TF_NewGraph();
@@ -56,14 +63,6 @@ Model::Model(const std::string& model_filename) {
 
     this->status_check(true);
 }
-
-Model::~Model() {
-    TF_DeleteSession(this->session, this->status);
-    TF_DeleteGraph(this->graph);
-    this->status_check(true);
-    TF_DeleteStatus(this->status);
-}
-
 
 void Model::init() {
     TF_Operation* init_op[1] = {TF_GraphOperationByName(this->graph, "init")};

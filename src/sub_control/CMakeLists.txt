@@ -3,7 +3,7 @@ project(control)
 
 add_compile_options(-std=c++11)
 
-find_package(catkin REQUIRED COMPONENTS vision roscpp std_msgs genmsg
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs genmsg
 	message_generation)
 
 add_service_files(FILES ControlAlive.srv ControlState.srv ControlWrite.srv 

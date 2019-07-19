@@ -3,11 +3,13 @@
  *
  *  @author David Zhang
  */
-#ifndef COMMON_STATE_HPP 
-#define COMMON_STATE_HPP 
+#ifndef CONTROL_STATE_HPP 
+#define CONTROL_STATE_HPP 
 
 #include <string>
 #include <sstream>
+
+const bool SIM = false;
 
 const int X = 0;
 const int Y = 1;

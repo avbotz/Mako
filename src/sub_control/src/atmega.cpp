@@ -7,7 +7,6 @@
 #include <cmath>
 #include <thread>
 #include "control/atmega.hpp"
-#include "vision/config.hpp"
 
 
 namespace atmega 

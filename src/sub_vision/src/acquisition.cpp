@@ -1,24 +1,3 @@
-//=============================================================================
-// Copyright � 2015 Point Grey Research, Inc. All Rights Reserved.
-//
-// This software is the confidential and proprietary information of 
-// Point Grey Research, Inc. ("Confidential Information"). You shall not
-// disclose such Confidential Information and shall use it only in 
-// accordance with the terms of the "License Agreement" that you 
-// entered into with PGR in connection with this software.
-//
-// UNLESS OTHERWISE SET OUT IN THE LICENSE AGREEMENT, THIS SOFTWARE IS 
-// PROVIDED ON AN �AS-IS� BASIS AND POINT GREY RESEARCH INC. MAKES NO 
-// REPRESENTATIONS OR WARRANTIES ABOUT THE SOFTWARE, EITHER EXPRESS 
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OR 
-// CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR 
-// NON-INFRINGEMENT. POINT GREY RESEARCH INC. SHALL NOT BE LIABLE FOR ANY 
-// DAMAGES, INCLUDING BUT NOT LIMITED TO ANY DIRECT, INDIRECT, INCIDENTAL, 
-// SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES, OR ANY LOSS OF PROFITS, 
-// REVENUE, DATA OR DATA USE, ARISING OUT OF OR IN CONNECTION WITH THIS 
-// SOFTWARE OR OTHERWISE SUFFERED BY YOU AS A RESULT OF USING, MODIFYING 
-// OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
-//=============================================================================
 /** @file acquisition.cpp
  *  @brief Main node runner for acquiring front camera images with Spinnaker.
  *
@@ -36,48 +15,21 @@ using namespace Spinnaker::GenApi;
 using namespace Spinnaker::GenICam;
 
 
-int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice)
+void acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice)
 {
-	int result = 0;
+	// Setup ROS publishers.
 	ROS_INFO("Beginning acquisition node.");
-
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
-	image_transport::Publisher pub = it.advertise("front_camera", 1);
+	image_transport::Publisher front_pub = it.advertise("front_camera", 1);
+	image_transport::Publisher down_pub = it.advertise("down_camera", 1);
 
 	try
 	{
-		//
-		// Set acquisition mode to continuous
-		//
-		// *** NOTES ***
-		// Because the example acquires and saves 10 images, setting acquisition 
-		// mode to continuous lets the example finish. If set to single frame
-		// or multiframe (at a lower number of images), the example would just
-		// hang. This would happen because the example has been written to
-		// acquire 10 images while the camera would have been programmed to 
-		// retrieve less than that.
-		// 
-		// Setting the value of an enumeration node is slightly more complicated
-		// than other node types. Two nodes must be retrieved: first, the 
-		// enumeration node is retrieved from the nodemap; and second, the entry
-		// node is retrieved from the enumeration node. The integer value of the
-		// entry node is then set as the new value of the enumeration node.
-		//
-		// Notice that both the enumeration and the entry nodes are checked for
-		// availability and readability/writability. Enumeration nodes are
-		// generally readable and writable whereas their entry nodes are only
-		// ever readable.
-		// 
-		// Retrieve enumeration node from nodemap
 		CEnumerationPtr ptrAcquisitionMode = nodeMap.GetNode("AcquisitionMode");
 		if (!IsAvailable(ptrAcquisitionMode) || !IsWritable(ptrAcquisitionMode))
-		{
-			std::cout << "Unable to set acquisition to continuous." << std::endl;
 			return -1;
-		}
 
-		// Retrieve entry node from enumeration node
 		CEnumEntryPtr ptrAcquisitionModeContinuous = 
 			ptrAcquisitionMode->GetEntryByName("Continuous");
 		if (!IsAvailable(ptrAcquisitionModeContinuous) ||
@@ -87,47 +39,23 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
 			return -1;
 		}
 
+		// Set exposure settings.
 		Spinnaker::GenApi::CEnumerationPtr exposureAuto = pCam->GetNodeMap().GetNode("ExposureAuto");
 		exposureAuto->SetIntValue(exposureAuto->GetEntryByName("Off")->GetValue());
-
 		Spinnaker::GenApi::CEnumerationPtr exposureMode = pCam->GetNodeMap().GetNode("ExposureMode");
 		exposureMode->SetIntValue(exposureMode->GetEntryByName("Timed")->GetValue());
-
 		Spinnaker::GenApi::CFloatPtr exposureTime = pCam->GetNodeMap().GetNode("ExposureTime");
 		exposureTime->SetValue(1305);
 
-		// Retrieve integer value from entry node
+		// Set acquisition mode to continuous.
 		int64_t acquisitionModeContinuous = ptrAcquisitionModeContinuous->GetValue();
-
-		// Set integer value from entry node as new value of enumeration node
 		ptrAcquisitionMode->SetIntValue(acquisitionModeContinuous);
 
-		std::cout << "Set acquisition to continuous." << std::endl;
-
-		//
-		// Begin acquiring images
-		//
-		// *** NOTES ***
-		// What happens when the camera begins acquiring images depends on the
-		// acquisition mode. Single frame captures only a single image, multi 
-		// frame catures a set number of images, and continuous captures a 
-		// continuous stream of images. Because the example calls for the 
-		// retrieval of 10 images, continuous mode has been set.
-		// 
-		// *** LATER ***
-		// Image acquisition must be ended when no more images are needed.
-		//
+		// Begin acquisition for camera.
 		pCam->BeginAcquisition();
-		std::cout << "Beginning acquistion." << std::endl;
+		ROS_INFO("Beginning acquisition.");
 
-		//
-		// Retrieve device serial number for filename
-		//
-		// *** NOTES ***
-		// The device serial number is retrieved in order to keep cameras from 
-		// overwriting one another. Grabbing image IDs could also accomplish
-		// this.
-		//
+		// Get serial number.
 		gcstring deviceSerialNumber("");
 		CStringPtr ptrStringSerial = nodeMapTLDevice.GetNode("DeviceSerialNumber");
 		if (IsAvailable(ptrStringSerial) && IsReadable(ptrStringSerial))
@@ -136,39 +64,15 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
 			std::cout << "Serial number: " << deviceSerialNumber << std::endl;
 		}
 
-		// Retrieve, convert, and save images
-		const unsigned int k_numImages = 10;
-
-		// for (unsigned int imageCnt = 0; imageCnt < k_numImages; imageCnt++)
 		while (ros::ok())
 		{
 			try
 			{
-				//
-				// Retrieve next received image
-				//
-				// *** NOTES ***
-				// Capturing an image houses images on the camera buffer. Trying
-				// to capture an image that does not exist will hang the camera.
-				//
-				// *** LATER ***
-				// Once an image from the buffer is saved and/or no longer 
-				// needed, the image must be released in order to keep the 
-				// buffer from filling up.
-				//
 				std::cout << std::endl << "Attempting to get next image." << std::endl;
 				ImagePtr pResultImage = pCam->GetNextImage();
 				std::cout << "Next image received." << std::endl;
 
-				//
-				// Ensure image completion
-				//
-				// *** NOTES ***
-				// Images can easily be checked for completion. This should be
-				// done whenever a complete image is expected or required.
-				// Further, check image status for a little more insight into
-				// why an image is incomplete.
-				//
+				// Ensure image completion.
 				if (pResultImage->IsIncomplete())
 				{
 
@@ -177,29 +81,11 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
 				}
 				else
 				{
-					//
-					// Print image information; height and width recorded in pixels
-					//
-					// *** NOTES ***
-					// Images have quite a bit of available metadata including
-					// things such as CRC, image status, and offset values, to
-					// name a few.
-					//
+					// Get image information.
 					size_t width = pResultImage->GetWidth();
 					size_t height = pResultImage->GetHeight();
 
-					//
-					// Convert images to OpenCV
-					//
-					// *** NOTES ***
-					// Images can be converted between pixel formats by using 
-					// the appropriate enumeration value. Unlike the original 
-					// image, the converted one does not need to be released as 
-					// it does not affect the camera buffer.
-					//
-					// When converting images, color processing algorithm is an
-					// optional parameter.
-					// 
+					// Convert to OpenCV.
 					ImagePtr convertedImage = pResultImage->Convert(Spinnaker::PixelFormat_BGR8,
 							Spinnaker::HQ_LINEAR); 
 					cv::Mat img(convertedImage->GetHeight(), convertedImage->GetWidth(), 
@@ -210,134 +96,65 @@ int acquireImages(CameraPtr pCam, INodeMap & nodeMap, INodeMap & nodeMapTLDevice
 					// Publish image.
 					sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(),
 							"bgr8", out).toImageMsg();
-					pub.publish(msg);
+					front_pub.publish(msg);
 				}
-				//
-				// Release image
-				//
-				// *** NOTES ***
-				// Images retrieved directly from the camera (i.e. non-converted
-				// images) need to be released in order to keep from filling the
-				// buffer.
-				//
+
+				// Release image to prevent buffer overflow.
 				pResultImage->Release();
 			}
 			catch (Spinnaker::Exception &e)
 			{
 				std::cout << "Error: " << e.what() << std::endl;
-				result = -1;
 			}
 		}
 
-		//
-		// End acquisition
-		//
-		// *** NOTES ***
-		// Ending acquisition appropriately helps ensure that devices clean up
-		// properly and do not need to be power-cycled to maintain integrity.
-		//
+		// End acquisition ensures that cameras do not have to be powered cycled
+		// to run again.
 		pCam->EndAcquisition();
 	}
 	catch (Spinnaker::Exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
-		result = -1;
 	}
 
-	return result;
 }
 
-// This function prints the device information of the camera from the transport
-// layer; please see NodeMapInfo example for more in-depth comments on printing
-// device information from the nodemap.
-int printDeviceInfo(INodeMap & nodeMap)
+void runCameras(CameraPtr down_cam, CameraPtr front_cam)
 {
-	int result = 0;
-
-	std::cout << std::endl << "*** DEVICE INFORMATION ***" << std::endl << std::endl;
 	try
 	{
-		FeatureList_t features;
-		CCategoryPtr category = nodeMap.GetNode("DeviceInformation");
-		if (IsAvailable(category) && IsReadable(category))
-		{
-			category->GetFeatures(features);
-			FeatureList_t::const_iterator it;
-			for (it = features.begin(); it != features.end(); ++it)
-			{
-				CNodePtr pfeatureNode = *it;
-				std::cout << pfeatureNode->GetName() << " : ";
-				CValuePtr pValue = (CValuePtr)pfeatureNode;
-				std::cout << (IsReadable(pValue) ? pValue->ToString() : "Node not readable");
-				std::cout << std::endl;
-			}
-		}
-		else
-		{
-			std::cout << "Device control information not available." << std::endl;
-		}
+		// Acquire images from both cameras.
+		INodeMap &inm2 = down_cam->GetTLDeviceNodeMap();
+		INodeMap &inm1 = front_cam->GetTLDeviceNodeMap();
+		down_cam->Init();
+		front_cam->Init();
+		INodeMap &nm1 = down_cam->GetNodeMap();
+		INodeMap &nm2 = front_cam->GetNodeMap();
+		acquireImages(pCam, nodeMap, nodeMapTLDevice);
+
+		// Deinitialize cameras.
+		down_cam->DeInit();
+		front_cam->DeInit();
 	}
 	catch (Spinnaker::Exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
-		result = -1;
 	}
-
-	return result;
 }
 
-// This function acts as the body of the example; please see NodeMapInfo example 
-// for more in-depth comments on setting up cameras.
-int runSingleCamera(CameraPtr pCam)
-{
-	int result = 0;
-	try
-	{
-		// Retrieve TL device nodemap and print device information
-		INodeMap & nodeMapTLDevice = pCam->GetTLDeviceNodeMap();
-		// result = printDeviceInfo(nodeMapTLDevice);
-
-		// Initialize camera
-		pCam->Init();
-
-		// Retrieve GenICam nodemap
-		INodeMap & nodeMap = pCam->GetNodeMap();
-
-		// Acquire images
-		result = result | acquireImages(pCam, nodeMap, nodeMapTLDevice);
-
-		// Deinitialize camera
-		pCam->DeInit();
-	}
-	catch (Spinnaker::Exception &e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-		result = -1;
-	}
-	return result;
-}
-
-// Example entry point; please see Enumeration example for more in-depth 
-// comments on preparing and cleaning up the system.
 int main(int argc, char** argv)
 {
 	int result = 0;
-	ros::init(argc, argv, "acquisition");
+	ros::init(argc, argv, "vision_acquisition_node");
 
-	// Retrieve singleton reference to system object
 	SystemPtr system = System::GetInstance();
+	CameraList cameras = system->GetCameras();
+	int num_cameras = cameras.GetSize();
+	ROS_INFO("Number of cameras: %i", num_cameras);
 
-	// Retrieve list of cameras from the system
-	CameraList camList = system->GetCameras();
-	unsigned int numCameras = camList.GetSize();
-	std::cout << "Number of cameras detected: " << numCameras << std::endl;
-
-	// Finish if there are no cameras
-	if (numCameras == 0)
+	if (num_cameras == 0)
 	{
-		// Clear camera list before releasing system
-		camList.Clear();
-		// Release system
+		cameras.Clear();
 		system->ReleaseInstance();
 		std::cout << "Not enough cameras!" << std::endl;
 		std::cout << "Done! Press Enter to exit..." << std::endl;
@@ -346,44 +163,17 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
-	//
-	// Create shared pointer to camera
-	//
-	// *** NOTES ***
-	// The CameraPtr object is a shared pointer, and will generally clean itself
-	// up upon exiting its scope. However, if a shared pointer is created in the
-	// same scope that a system object is explicitly released (i.e. this scope),
-	// the reference to the shared point must be broken manually.
-	//
-	// *** LATER ***
-	// Shared pointers can be terminated manually by assigning them to NULL.
-	// This keeps releasing the system from throwing an exception.
-	//
-	CameraPtr pCam = NULL;
-	// Run example on each camera
-	for (unsigned int i = 0; i < numCameras; i++)
-	{
-		// Select camera
-		pCam = camList.GetByIndex(i);
+	CameraPtr down_cam = NULL;
+	CameraPtr front_cam = cameras.GetByIndex(0);
+	if (num_cameras == 2)
+		down_cam = cameras.GetByIndex(1);
+	runCameras(down_cam, front_cam);
 
-		// Run example
-		result = result | runSingleCamera(pCam);
-	}
-
-	//
-	// Release reference to the camera
-	//
-	// *** NOTES ***
-	// Had the CameraPtr object been created within the for-loop, it would not
-	// be necessary to manually break the reference because the shared pointer
-	// would have automatically cleaned itself up upon exiting the loop.
-	//
-	pCam = NULL;
-	// Clear camera list before releasing system
-	camList.Clear();
-	// Release system
+	down_cam = NULL;
+	front_cam = NULL;
+	cameras.Clear();
 	system->ReleaseInstance();
-	std::cout << std::endl << "Done! Press Enter to exit..." << std::endl;
+	ROS_INFO("Press enter to exit.");
 	getchar();
 	return result;
 }

@@ -5,7 +5,6 @@
  */
 #include <ros/ros.h>
 #include "vision/service.hpp"
-#include "vision/camera.hpp"
 
 
 int main(int argc, char** argv)
@@ -28,8 +27,9 @@ int main(int argc, char** argv)
 			&VisionService::captureCallback, &service);
 
 	// Setup down camera to receive images.
-	Camera down;
-	bool isdown = down.init(1);
+	// Deprecated with Spinnaker.
+	// Camera down;
+	// bool isdown = down.init(1);
 
 	// Create directory to log images. 
 	init(); 
@@ -44,11 +44,12 @@ int main(int argc, char** argv)
 				break;
 			case CameraMode::LIVE:
 
-				// Updates front camera.
+				// Updates front and down camera.
 				ros::spinOnce();
 
 				// Read down camera without using ROS.
-				if (isdown) service.down = down.capture(false);
+				// Deprecated with Spinnaker.
+				// if (isdown) service.down = down.capture(false);
 
 				break;
 		}

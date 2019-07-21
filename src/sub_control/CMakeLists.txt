@@ -15,11 +15,10 @@ catkin_package(CATKIN_DEPENDS std_msgs
                DEPENDS Boost
                INCLUDE_DIRS include)
 
-include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(control_node src/control.cpp src/service.cpp src/atmega.cpp)
-target_link_libraries(control_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
-    flycapture)
+target_link_libraries(control_node ${catkin_LIBRARIES})
 add_dependencies(control_node control_gencpp)
 
 add_library(control src/atmega.cpp)

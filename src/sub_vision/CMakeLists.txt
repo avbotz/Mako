@@ -7,7 +7,7 @@ set(SPINNAKER_LIB_DIR "/usr/lib" CACHE PATH "Spinnaker Libs Directory")
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg cv_bridge
     image_transport message_generation geometry_msgs)
 find_package(OpenCV)
-find_library(FLYCAPTURE2 flycapture)
+# find_library(FLYCAPTURE2 flycapture)
 
 add_service_files(FILES Vision.srv)
 
@@ -22,10 +22,13 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS}
 link_directories(${SPINNAKER_LIB_DIR})
 
 # Executables
-add_executable(vision_node src/vision.cpp src/camera.cpp src/service.cpp
-    src/filters.cpp src/log.cpp src/gate.cpp src/model.cpp src/tensor.cpp)
+# add_executable(vision_node src/vision.cpp src/camera.cpp src/service.cpp
+#     src/filters.cpp src/log.cpp src/gate.cpp src/model.cpp src/tensor.cpp)
+add_executable(vision_node src/vision.cpp src/service.cpp src/filters.cpp 
+	src/log.cpp src/gate.cpp src/model.cpp src/tensor.cpp)
 target_link_libraries(vision_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
-    flycapture -ltensorflow)
+	-ltensorflow)
+#     flycapture -ltensorflow)
 add_dependencies(vision_node vision_gencpp)
 
 add_executable(mock_camera_node src/mock_camera.cpp)

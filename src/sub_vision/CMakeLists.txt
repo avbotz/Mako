@@ -39,7 +39,7 @@ add_executable(mock_detect_node src/mock_detect.cpp)
 target_link_libraries(mock_detect_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(mock_detect_node vision_gencpp)
 
-add_executable(acquisition_node src/acquisition.cpp)
+add_executable(acquisition_node src/acquisition.cpp src/log.cpp)
 target_link_libraries(acquisition_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
     Spinnaker)
 add_dependencies(acquisition_node vision_gencpp)

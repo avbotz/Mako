@@ -9,6 +9,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include "vision/acquisition.hpp"
+#include "vision/log.hpp"
+#include "vision/config.hpp"
 
 using namespace Spinnaker;
 using namespace Spinnaker::GenApi;
@@ -113,7 +115,7 @@ void runCamera(CameraPtr camera, std::string channel)
 		{
 			// Down camera is too fast, slow it down a bit.
 			if (channel == "down_camera")
-				ros::Duration(0.25).sleep();
+				ros::Duration(0.20).sleep();
 
 			// Camera will hang here if buffer has nothing.
 			// ROS_INFO("Attempt for %s channel.", channel.c_str());
@@ -138,6 +140,12 @@ void runCamera(CameraPtr camera, std::string channel)
 						CV_8UC3, ip->GetData(), ip->GetStride()); 
 				cv::Mat out;
 				img.copyTo(out);
+
+				// Log images as needed.
+				if (FAST_LOG && channel == "down_camera")
+					log(out, 'd');
+				if (FAST_LOG && channel == "front_camera")
+					log(out, 'f');
 
 				// Publish image.
 				sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(),
@@ -169,6 +177,9 @@ void runCamera(CameraPtr camera, std::string channel)
 int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "vision_acquisition_node");
+
+	// Setup log folder if needed.
+	init();
 
 	// Find connected cameras from system.
 	SystemPtr system = System::GetInstance();

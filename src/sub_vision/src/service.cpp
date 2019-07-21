@@ -16,13 +16,7 @@ void VisionService::frontCaptureCallback(const sensor_msgs::ImageConstPtr &msg)
 		cv::Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
 		image.copyTo(this->front);
 		if (LOG) 
-		{
 			log(this->front, 'f');
-		}
-		else 
-		{
-			// ROS_INFO("Received image from acquisition.");
-		}
 	}
 	catch (cv_bridge::Exception &e)
 	{
@@ -38,13 +32,7 @@ void VisionService::downCaptureCallback(const sensor_msgs::ImageConstPtr &msg)
 		cv::Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
 		image.copyTo(this->down);
 		if (LOG) 
-		{
 			log(this->down, 'd');
-		}
-		else 
-		{
-			// ROS_INFO("Received image from acquisition.");
-		}
 	}
 	catch (cv_bridge::Exception &e)
 	{

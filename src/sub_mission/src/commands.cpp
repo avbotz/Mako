@@ -13,12 +13,13 @@ float align(int attempts, Task task, int camera)
 	float average = 0.0f;
 	for (int i = 0; i < attempts; i++)
 	{
+		State current_state = control_client::state();
 		Observation obs = vision_client::vision(task, camera);
 		ROS_INFO("Observation @ %s", obs.text().c_str());
 		
 		if (obs.prob > 0.5)
 		{
-			average += control_client::state().axis[YAW];
+			average += current_state.axis[YAW];
 			average += obs.hangle; 
 		}
 		ros::Duration(2.0).sleep();

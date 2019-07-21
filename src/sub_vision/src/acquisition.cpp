@@ -104,14 +104,21 @@ void runCamera(CameraPtr camera, std::string channel)
 	camera->BeginAcquisition();
 	ROS_INFO("Beginning acquisition for %s channel.", channel.c_str());
 
+	// Setup FPS logger.
+	ros::Time tracker = ros::Time::now();
+
 	while (ros::ok())
 	{
 		try
 		{
+			// Down camera is too fast, slow it down a bit.
+			if (channel == "down_camera")
+				ros::Duration(0.25).sleep();
+
 			// Camera will hang here if buffer has nothing.
-			ROS_INFO("Attempt for %s channel.", channel.c_str());
+			// ROS_INFO("Attempt for %s channel.", channel.c_str());
 			ImagePtr img_ptr = camera->GetNextImage();
-			ROS_INFO("Completed attempt for %s channel.", channel.c_str());
+			// ROS_INFO("Completed attempt for %s channel.", channel.c_str());
 
 			// Ensure image completion.
 			if (img_ptr->IsIncomplete())
@@ -140,6 +147,13 @@ void runCamera(CameraPtr camera, std::string channel)
 
 			// Release image to prevent buffer overflow.
 			img_ptr->Release();
+
+			// Calculate FPS.
+			ros::Time temp = ros::Time::now();
+			double dt = (temp-tracker).toSec();
+			double fps = 1./dt;
+			tracker = ros::Time::now();
+			ROS_INFO("FPS for %s: %f", channel.c_str(), fps);
 		}
 		catch (Spinnaker::Exception &e)
 		{
@@ -184,7 +198,7 @@ int main(int argc, char** argv)
 	{
 		front_cam = cameras.GetByIndex(0);
 		setupContinuousAcquisition(front_cam, 1305);
-		runCamera(front_cam, "front_cam");
+		runCamera(front_cam, "front_camera");
 	}
 	if (num_cameras == 2)
 	{
@@ -192,8 +206,8 @@ int main(int argc, char** argv)
 		front_cam = cameras.GetByIndex(1);
 		setupContinuousAcquisition(down_cam);
 		setupContinuousAcquisition(front_cam, 1305);
-		std::thread t1(runCamera, down_cam, "down_cam");
-		std::thread t2(runCamera, front_cam, "front_cam");
+		std::thread t1(runCamera, down_cam, "down_camera");
+		std::thread t2(runCamera, front_cam, "front_camera");
 		t1.join();
 		t2.join();
 	}

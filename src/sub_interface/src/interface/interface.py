@@ -93,4 +93,4 @@ def index():
 
 def main():
     ros.init_node('inference_node')
-    app.run()
+    app.run(host='0.0.0.0')

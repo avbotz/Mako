@@ -63,7 +63,7 @@ void acquireImages(CameraPtr down_cam, CameraPtr front_cam, INodeMap &nm1,
 		exp_mode_2->SetIntValue(exp_mode_2->GetEntryByName("Timed")->GetValue());
 		Spinnaker::GenApi::CFloatPtr exp_time_2 = 
 			front_cam->GetNodeMap().GetNode("ExposureTime");
-		exp_time_2->SetValue(2305);
+		exp_time_2->SetValue(1305);
 
 		// Set acquisition mode to continuous.
 		int64_t acq_cont_val2 = acq_mode_cont2->GetValue();
@@ -79,7 +79,7 @@ void acquireImages(CameraPtr down_cam, CameraPtr front_cam, INodeMap &nm1,
 		if (IsAvailable(string_serial_2) && IsReadable(string_serial_2))
 		{
 			serial_no_2 = string_serial_2->GetValue();
-			ROS_INFO("Front Serial Number: %s", serial_no_2);
+			std::cout << "Front Cam Serial Number: " << serial_no_2 << std::endl;
 		}
 
 		// Check if down camera is plugged in.
@@ -128,7 +128,7 @@ void acquireImages(CameraPtr down_cam, CameraPtr front_cam, INodeMap &nm1,
 			if (IsAvailable(string_serial_1) && IsReadable(string_serial_1))
 			{
 				serial_no_1 = string_serial_1->GetValue();
-				ROS_INFO("Down Serial Number: %s", serial_no_1);
+				std::cout << "Down Cam Serial Number: " << serial_no_1 << std::endl;
 			}
 		}
 
@@ -224,24 +224,27 @@ void runCameras(CameraPtr down_cam, CameraPtr front_cam)
 {
 	try
 	{
-		INodeMap &nm2 = front_cam->GetTLDeviceNodeMap();
+		INodeMap &nm_device2 = front_cam->GetTLDeviceNodeMap();
 		front_cam->Init();
-		INodeMap &nm_device2 = front_cam->GetNodeMap();
+		INodeMap &nm2 = front_cam->GetNodeMap();
 
 		if (down_cam != NULL)
 		{
-			INodeMap &nm1 = down_cam->GetTLDeviceNodeMap();
+			ROS_INFO("Running two camera setup.");
+			INodeMap &nm_device1 = down_cam->GetTLDeviceNodeMap();
 			down_cam->Init();
-			INodeMap &nm_device1 = down_cam->GetNodeMap();
+			INodeMap &nm1 = down_cam->GetNodeMap();
 			acquireImages(down_cam, front_cam, nm1, nm2, nm_device1, nm_device2);
 		}
 		else 
 		{
-			/** References need to be tied to a variable, so this bad solution
-			 *  exists. The gist is that I tied the down cam references to the
-			 *  front cam, but since acquireImages() should notice that the down
-			 *  cam is set to NULL, it won't interfere with them.
+			/* 
+			 * References need to be tied to a variable, so this bad solution
+			 * exists. The gist is that I tied the down cam references to the
+			 * front cam, but since acquireImages() should notice that the down
+			 * cam is set to NULL, it won't interfere with them.
 			 */
+			ROS_INFO("Running one camera setup.");
 			INodeMap &nm1 = front_cam->GetTLDeviceNodeMap();
 			front_cam->Init();
 			INodeMap &nm_device1 = front_cam->GetNodeMap();
@@ -279,10 +282,11 @@ int main(int argc, char** argv)
 		return 0;
 	}
 
-	/** The camera serial numbers make this code a bit of a headache. Since the
-	 *  down camera SN is less than the front camera, it shows up first.
-	 *  However, if the down camera isn't connected, which happens often, then
-	 *  the front camera has the lowest SN.
+	/*  
+	 * The camera serial numbers make this code a bit of a headache. Since the
+	 * down camera SN is less than the front camera, it shows up first.
+	 * However, if the down camera isn't connected, which happens often, then
+	 * the front camera has the lowest SN.
 	 */
 	CameraPtr down_cam = NULL;
 	CameraPtr front_cam = NULL;

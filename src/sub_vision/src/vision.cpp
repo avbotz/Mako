@@ -23,8 +23,10 @@ int main(int argc, char** argv)
 
 	// Setup front camera to receive images. 
 	image_transport::ImageTransport it(node);
-	image_transport::Subscriber sub = it.subscribe("front_camera", 1, 
-			&VisionService::captureCallback, &service);
+	image_transport::Subscriber front_sub = it.subscribe("front_camera", 1, 
+			&VisionService::frontCaptureCallback, &service);
+	image_transport::Subscriber down_cam = it.subscribe("down_camera", 1, 
+			&VisionService::downCaptureCallback, &service);
 
 	// Setup down camera to receive images.
 	// Deprecated with Spinnaker.

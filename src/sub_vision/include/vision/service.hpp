@@ -29,7 +29,8 @@ class VisionService
 
 		bool detectCallback(vision::Vision::Request &, 
 				vision::Vision::Response &);
-		void captureCallback(const sensor_msgs::ImageConstPtr &);
+		void frontCaptureCallback(const sensor_msgs::ImageConstPtr &);
+		void downCaptureCallback(const sensor_msgs::ImageConstPtr &);
 		Observation findGate(const cv::Mat &);
 		Observation findGateML(cv::Mat);
 };

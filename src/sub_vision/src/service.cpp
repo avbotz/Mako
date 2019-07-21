@@ -8,7 +8,7 @@
 #include "vision/service.hpp"
 
 
-void VisionService::captureCallback(const sensor_msgs::ImageConstPtr &msg)
+void VisionService::frontCaptureCallback(const sensor_msgs::ImageConstPtr &msg)
 {
 	// Read front camera data from ROS Spinnaker publisher.
 	try 
@@ -18,6 +18,28 @@ void VisionService::captureCallback(const sensor_msgs::ImageConstPtr &msg)
 		if (LOG) 
 		{
 			log(this->front, 'f');
+		}
+		else 
+		{
+			// ROS_INFO("Received image from acquisition.");
+		}
+	}
+	catch (cv_bridge::Exception &e)
+	{
+		ROS_ERROR("Could not read image from Spinnaker publisher.");
+	}
+}
+
+void VisionService::downCaptureCallback(const sensor_msgs::ImageConstPtr &msg)
+{
+	// Read front camera data from ROS Spinnaker publisher.
+	try 
+	{
+		cv::Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
+		image.copyTo(this->down);
+		if (LOG) 
+		{
+			log(this->down, 'd');
 		}
 		else 
 		{

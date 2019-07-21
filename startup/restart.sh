@@ -47,3 +47,4 @@ sleep 2
 tmux send-keys "rosrun mission restart_node" C-m 
 
 tmux a
+

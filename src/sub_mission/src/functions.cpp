@@ -18,7 +18,7 @@ void gate()
 	State initial = control_client::state();
 	ROS_INFO("State @ %s.", initial.text().c_str());
 	move(initial);
-	ros::Duration(6.0).sleep();
+	ros::Duration(4.0).sleep();
 
 	ROS_INFO("Turn towards gate.");
 	ROS_INFO("State @ %s.", control_client::state().text().c_str());

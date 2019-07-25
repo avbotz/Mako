@@ -30,6 +30,7 @@ namespace control_client
 	ros::ServiceClient state_client;
 	ros::ServiceClient write_client;
 	ros::ServiceClient write_state_client;
+	ros::ServiceClient write_depth_client;
 
 	bool alive()
 	{
@@ -66,5 +67,13 @@ namespace control_client
 		req.P = state.axis[PITCH];
 		req.R = state.axis[ROLL];
 		write_state_client.call(req, rep);
+	}
+	
+	void writeDepth(float dist)
+	{
+		control::ControlWriteDepth::Request req;
+		control::ControlWriteDepth::Response rep;
+		req.dist = dist;
+		write_depth_client.call(req, rep);
 	}
 };

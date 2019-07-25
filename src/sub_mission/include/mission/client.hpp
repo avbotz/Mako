@@ -11,6 +11,7 @@
 #include <control/ControlState.h>
 #include <control/ControlWrite.h>
 #include <control/ControlWriteState.h>
+#include <control/ControlWriteDepth.h>
 #include <vision/Vision.h>
 #include "control/state.hpp"
 #include "vision/observation.hpp"
@@ -28,11 +29,13 @@ namespace control_client
 	extern ros::ServiceClient state_client;
 	extern ros::ServiceClient write_client;
 	extern ros::ServiceClient write_state_client;
+	extern ros::ServiceClient write_depth_client;
 
 	bool alive();
 	State state();
 	void write(std::string);
 	void writeState(const State &);
+	void writeDepth(float);
 };
 
 #endif

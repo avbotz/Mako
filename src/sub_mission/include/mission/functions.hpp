@@ -10,6 +10,7 @@
 #include <vision/Vision.h>
 
 void gate();
+void bins();
 void octagon();
 
 #endif

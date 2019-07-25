@@ -43,5 +43,6 @@ int main(int argc, char** argv)
 
 	// Run mission functions.
 	gate();
+	bins();
 	octagon(); 
 }

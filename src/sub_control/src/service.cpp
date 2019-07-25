@@ -50,3 +50,11 @@ bool writeState(control::ControlWriteState::Request &request,
 	return true;
 }
 
+bool writeDepth(control::ControlWriteDepth::Request &request,
+		control::ControlWriteDepth::Response &response)
+{
+	std::string data = "z " + std::to_string(request.dist);
+	ROS_INFO("Received write depth request. Depth @ %s", data.c_str());
+	atmega::write(data);
+	return true;
+}

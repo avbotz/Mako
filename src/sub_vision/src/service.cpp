@@ -65,7 +65,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 		setResponse(obs, res);
 		return true;
 	}
-	if (req.task == Task::GATE_ML)
+	else if (req.task == Task::GATE_ML)
 	{
 		Observation obs = this->findGateML(this->front);
 		obs.calcAngles(FRONT);
@@ -73,7 +73,23 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 		setResponse(obs, res);
 		return true;
 	}
-	if (req.task == Task::OCTAGON) 
+	else if (req.task == Task::BINS)
+	{
+		Observation obs = this->findBins(this->down);
+		obs.calcAngles(FRONT);
+		ROS_INFO("Sending observation @ %s", obs.text().c_str());
+		setResponse(obs, res);
+		return true;
+	}
+	else if (req.task == Task::BINS_ML)
+	{
+		Observation obs = this->findBins(this->down);
+		obs.calcAngles(FRONT);
+		ROS_INFO("Sending observation @ %s", obs.text().c_str());
+		setResponse(obs, res);
+		return true;
+	}
+	else if (req.task == Task::OCTAGON) 
 	{
 
 	}

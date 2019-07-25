@@ -20,6 +20,8 @@ int main(int argc, char** argv)
 		node.advertiseService("control_write", write); 
 	ros::ServiceServer control_write_state = 
 		node.advertiseService("control_write_state", writeState); 
+	ros::ServiceServer control_write_depth = 
+		node.advertiseService("control_write_depth", writeDepth); 
 
 	while (ros::ok())
 	{

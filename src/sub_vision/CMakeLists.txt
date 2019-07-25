@@ -25,7 +25,7 @@ link_directories(${SPINNAKER_LIB_DIR})
 # add_executable(vision_node src/vision.cpp src/camera.cpp src/service.cpp
 #     src/filters.cpp src/log.cpp src/gate.cpp src/model.cpp src/tensor.cpp)
 add_executable(vision_node src/vision.cpp src/service.cpp src/filters.cpp 
-	src/log.cpp src/gate.cpp src/model.cpp src/tensor.cpp)
+	src/log.cpp src/gate.cpp src/bins.cpp src/model.cpp src/tensor.cpp)
 target_link_libraries(vision_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
 	-ltensorflow)
 #     flycapture -ltensorflow)

@@ -14,6 +14,8 @@ enum Task {
 	NONE,
 	GATE,
 	GATE_ML,
+	BINS,
+	BINS_ML,
 	OCTAGON
 };
 const CameraMode CAMERA_MODE = CameraMode::LIVE;
@@ -21,6 +23,8 @@ const bool LOG = false;
 const bool FAST_LOG = false;
 const float HFOV = 83;
 const float VFOV = 90;
+const float DOWN_HFOV = 83;
+const float DOWN_VFOV = 90;
 const int FRONT = 0;
 const int DOWN = 1;
 const float FIMG_DIM[2] = { 3648, 5472 };

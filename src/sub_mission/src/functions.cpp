@@ -53,11 +53,26 @@ void bins()
 	move(initial);
 	ros::Duration(3.0).sleep();
 
-	ROS_INFO("Turn towards gate.");
-	ROS_INFO("State @ %s.", control_client::state().text().c_str());
-	std::pair<float, float> offset = down_align(3, dist, Task::GATE, FRONT);
-	ROS_INFO("Offset @ %f, %f.", offset.first, offset.second);
+	ROS_INFO("Set initial depth.");
+	control_client::writeDepth(1.);
 
+	ROS_INFO("Find offsets for bins.");
+	ROS_INFO("State @ %s.", control_client::state().text().c_str());
+	std::pair<float, float> coordinate = down_align(3, dist, Task::BINS, DOWN);
+	ROS_INFO("Offset @ %f, %f.", coordinate.first, coordinate.second);
+	State move1 = control_client::state();
+	move1.axis[X] = coordinate.first;
+	move1.axis[Y] = coordinate.second;
+	ROS_INFO("New State @ %s.", move1.text().c_str());
+	move(move1);
+	ros::Duration(3.0).sleep();
+
+	/*
+	 * TODO Add code to drop into bins.
+	 */
+
+	ROS_INFO("Reset depth.");
+	control_client::writeDepth(-1.);
 }
 
 void octagon()

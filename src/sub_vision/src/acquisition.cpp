@@ -158,8 +158,8 @@ void runCamera(CameraPtr camera, std::string channel)
 
 			// Calculate FPS.
 			ros::Time temp = ros::Time::now();
-			double dt = (temp-tracker).toSec();
-			double fps = 1./dt;
+			float dt = (temp-tracker).toSec();
+			float fps = 1./dt;
 			tracker = ros::Time::now();
 			ROS_INFO("FPS for %s: %f", channel.c_str(), fps);
 		}

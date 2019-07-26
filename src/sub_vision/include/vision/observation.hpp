@@ -55,6 +55,11 @@ struct Observation
 			this->vangle = (r-FIMG_DIM[0]/2.0)/FIMG_DIM[0]*VFOV;
 			this->hangle = (c-FIMG_DIM[1]/2.0)/FIMG_DIM[1]*HFOV;
 		}
+		else if (camera == DOWN)
+		{   
+			this->vangle = (r-DIMG_DIM[0]/2.0)/DIMG_DIM[0]*DOWN_VFOV;
+			this->hangle = (c-DIMG_DIM[1]/2.0)/DIMG_DIM[1]*DOWN_HFOV;
+		}
 	}
 
 	std::string text()

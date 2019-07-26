@@ -88,7 +88,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 	else if (req.task == Task::BINS)
 	{
 		Observation obs = this->findBins(this->down);
-		obs.calcAngles(FRONT);
+		obs.calcAngles(DOWN);
 		ROS_INFO("Sending observation @ %s", obs.text().c_str());
 		setResponse(obs, res);
 		return true;
@@ -96,7 +96,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 	else if (req.task == Task::BINS_ML)
 	{
 		Observation obs = this->findBins(this->down);
-		obs.calcAngles(FRONT);
+		obs.calcAngles(DOWN);
 		ROS_INFO("Sending observation @ %s", obs.text().c_str());
 		setResponse(obs, res);
 		return true;

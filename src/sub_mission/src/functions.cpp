@@ -44,7 +44,7 @@ void gate()
 void bins()
 {
 	ROS_INFO("Beginning BINS function.");
-	float dist = 1.;
+	float dist = 1.8;
 	
 	ROS_INFO("Set initial state.");
 	// State initial(3.28, 2.95, 1.37, 28.12, 5.12, 3.12);
@@ -54,11 +54,11 @@ void bins()
 	ros::Duration(3.0).sleep();
 
 	ROS_INFO("Set initial depth.");
-	control_client::writeDepth(1.);
+	control_client::writeDepth(dist);
 
 	ROS_INFO("Find offsets for bins.");
 	ROS_INFO("State @ %s.", control_client::state().text().c_str());
-	std::pair<float, float> coordinate = down_align(3, dist, Task::BINS, DOWN);
+	std::pair<float, float> coordinate = down_align(5, dist, Task::BINS, DOWN);
 	ROS_INFO("Offset @ %f, %f.", coordinate.first, coordinate.second);
 	State move1 = control_client::state();
 	move1.axis[X] = coordinate.first;
@@ -66,6 +66,9 @@ void bins()
 	ROS_INFO("New State @ %s.", move1.text().c_str());
 	move(move1);
 	ros::Duration(3.0).sleep();
+	
+	ROS_INFO("Set dropping depth.");
+	control_client::writeDepth(0.6);
 
 	/*
 	 * TODO Add code to drop into bins.

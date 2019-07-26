@@ -39,10 +39,10 @@ int main(int argc, char** argv)
 		else 
 			start = true;
 	}
-	control_client::write("p 0.25\n");
+	control_client::write("p 0.2\n");
 
 	// Run mission functions.
-	gate();
+	// gate();
 	bins();
 	octagon(); 
 }

@@ -62,7 +62,8 @@ Observation VisionService::findBins(const cv::Mat &input)
 				const cv::Rect &b) -> bool { return a.area() > b.area(); });
 	for (int i = 0; i < rectangles.size(); i++)
 	{
-		float rect_ratio = (float)(rectangles[i].height)/(float)(rectangles[i].width);
+		float rect_ratio = 
+			(float)(rectangles[i].height)/(float)(rectangles[i].width);
 		if (rect_ratio < 2. && rect_ratio > 0.5)
 		{
 			cv::rectangle(cdst, rectangles[i].tl(), rectangles[i].br(), 
@@ -79,3 +80,6 @@ Observation VisionService::findBins(const cv::Mat &input)
 	// prone to picking up noise instead of nothing at all.
 	return Observation(0, 0, 0, 0);
 }
+
+
+

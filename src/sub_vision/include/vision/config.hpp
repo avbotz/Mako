@@ -9,7 +9,12 @@
 /*
  * TODO Rewrite config using parameters.
  */
+
+/*
+ * Deprecated. Use mock_camera_node instead.
+ */
 enum class CameraMode { MOCK, LIVE };
+
 enum Task { 
 	NONE,
 	GATE,

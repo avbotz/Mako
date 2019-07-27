@@ -29,6 +29,8 @@ int main(int argc, char** argv)
 		node.serviceClient<control::ControlWrite>("control_write");
 	control_client::write_state_client = 
 		node.serviceClient<control::ControlWriteState>("control_write_state");
+	control_client::write_depth_client = 
+		node.serviceClient<control::ControlWriteDepth>("control_write_depth");
 
 	// Wait until kill switch is flipped.
 	bool start = false;

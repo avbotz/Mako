@@ -71,7 +71,8 @@ cv::Mat homomorphic(const cv::Mat &src)
 	// Apply Butterworth HPS.
 	cv::Mat filter = butterworth(fftimg, 10, 4, 100, 30);
 	cv::Mat bimg;
-	cv::Mat bchannels[] = {cv::Mat_<float>(filter), cv::Mat::zeros(filter.size(), CV_32F)};
+	cv::Mat bchannels[] = {cv::Mat_<float>(filter), 
+		cv::Mat::zeros(filter.size(), CV_32F)};
 	cv::merge(bchannels, 2, bimg);
 	cv::mulSpectrums(fftimg, bimg, fftimg, 0);
 

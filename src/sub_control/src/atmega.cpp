@@ -13,7 +13,7 @@ namespace atmega
 {    
 	FILE* in = fopen(PORT, "r+");
 	FILE* out = fopen(PORT, "w+");
-	State sim_state(0, 0, 0, 0, 0, 0);
+	State sim_state(0., 0., 0., 0., 0., 0.);
 
 	void write(std::string command)
 	{

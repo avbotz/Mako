@@ -10,20 +10,10 @@
 #include "Spinnaker.h"
 #include "SpinGenApi/SpinnakerGenApi.h"
 
-/** @brief Sets up camera to continuous acquisition.
- *
- *  @param camera Camera to setup.
- */
 void setupContinuousAcquisition(Spinnaker::CameraPtr camera);
 
-/** @brief Sets up camera to continuous acquisition with custom exposure time.
- *
- *  @param camera Camera to setup.
- */
 void setupContinuousAcquisition(Spinnaker::CameraPtr camera, int exposure_time);
 
-/** @brief Runs camera with current settings and publishes to ROS channel.
- */
 void runCamera(Spinnaker::CameraPtr camera, std::string channel);
 
 #endif

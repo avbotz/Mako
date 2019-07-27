@@ -11,7 +11,7 @@
 
 float align(int attempts, Task task, int camera)
 {
-	float average = 0.0f;
+	float average = 0.;
 	for (int i = 0; i < attempts; i++)
 	{
 		State current_state = control_client::state();
@@ -27,7 +27,7 @@ float align(int attempts, Task task, int camera)
 		{
 			attempts -= 1;
 		}
-		ros::Duration(2.0).sleep();
+		ros::Duration(2.).sleep();
 	}
 
 	if (attempts == 0)
@@ -39,8 +39,8 @@ float align(int attempts, Task task, int camera)
 std::pair<float, float> down_align(int attempts, float dist, Task task, 
 		int camera)
 {
-	float x_avg = 0.0f;
-	float y_avg = 0.0f;
+	float x_avg = 0.;
+	float y_avg = 0.;
 	for (int i = 0; i < attempts; i++)
 	{
 		State state = control_client::state();
@@ -55,7 +55,8 @@ std::pair<float, float> down_align(int attempts, float dist, Task task,
 
 			// Convert body offsets to inertial frame.
 			float input[3] = {x, y, 0.};
-			float angles[3] = {state.axis[YAW], state.axis[PITCH], state.axis[ROLL]};
+			float angles[3] = {state.axis[YAW], state.axis[PITCH], 
+				state.axis[ROLL]};
 			float output[3];
 			bodyToInertial(input, angles, output);
 
@@ -68,7 +69,7 @@ std::pair<float, float> down_align(int attempts, float dist, Task task,
 		{
 			attempts -= 1;
 		}
-		ros::Duration(1.0).sleep();
+		ros::Duration(1.).sleep();
 	}
 
 	if (attempts == 0)
@@ -85,15 +86,15 @@ void move(const State &dest)
 	while (!quit && ros::ok())
 	{
 		State now = control_client::state();
-		if (std::fabs(dest.axis[X]-now.axis[X]) > 1.0f)
-			ros::Duration(3.0).sleep();
-		else if (std::fabs(dest.axis[Y]-now.axis[Y]) > 1.0f)
-			ros::Duration(3.0).sleep();
-		else if (std::fabs(dest.axis[YAW]-now.axis[YAW]) > 5.0f)
-			ros::Duration(3.0).sleep();
+		if (std::fabs(dest.axis[X]-now.axis[X]) > 1.)
+			ros::Duration(3.).sleep();
+		else if (std::fabs(dest.axis[Y]-now.axis[Y]) > 1.)
+			ros::Duration(3.).sleep();
+		else if (std::fabs(dest.axis[YAW]-now.axis[YAW]) > 5.)
+			ros::Duration(3.).sleep();
 		else
 		{
-			ros::Duration(3.0).sleep();
+			ros::Duration(3.).sleep();
 			quit = true; 
 		}
 	}

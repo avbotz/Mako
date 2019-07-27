@@ -1,6 +1,9 @@
 /** @file camera.cpp
  *  @brief Camera function definitions for FlyCapture based cameras.
  *
+ *  This code is deprecated because the new Spinnaker SDK is
+ *  backwards-compatible.
+ *
  *  @author Surya Ramesh
  */
 #include "vision/camera.hpp"

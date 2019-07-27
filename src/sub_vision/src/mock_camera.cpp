@@ -18,9 +18,13 @@ int main(int argc, char** argv)
 	// publish that instead.
 	image_transport::ImageTransport it(node);
 	image_transport::Publisher pub = it.advertise("front_camera", 1);
+	image_transport::Publisher down_pub = it.advertise("down_camera", 1);
 	cv::Mat image = cv::imread("test_image.png", CV_LOAD_IMAGE_COLOR);
+	cv::Mat down_image = cv::imread("test_image_down.png", CV_LOAD_IMAGE_COLOR);
 	sensor_msgs::ImagePtr msg = 
 		cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
+	sensor_msgs::ImagePtr down_msg = 
+		cv_bridge::CvImage(std_msgs::Header(), "bgr8", down_image).toImageMsg();
 
 	ros::Rate rate(5);
 	while (node.ok()) 
@@ -28,6 +32,7 @@ int main(int argc, char** argv)
 		ROS_INFO("Published image.");
 		ros::Duration(0.5).sleep();
 		pub.publish(msg);
+		down_pub.publish(down_msg);
 		ros::spinOnce();
 	}
 }

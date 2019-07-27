@@ -71,7 +71,7 @@ Observation VisionService::findBins(const cv::Mat &input)
 			int y = (rectangles[i].tl().y+rectangles[i].br().y)/2;
 			cv::circle(cdst, cv::Point(x, y), 4, cv::Scalar(255, 0, 255), 3);
 			log(cdst, 'e');
-			return Observation(0.8, x, y, 0);
+			return Observation(0.8, y, x, 0);
 		}
 	}
 

@@ -10,17 +10,20 @@ Wrapper namespaces for using R\+OS clients.
 {\ttfamily \#include $<$control/\+Control\+State.\+h$>$}\newline
 {\ttfamily \#include $<$control/\+Control\+Write.\+h$>$}\newline
 {\ttfamily \#include $<$control/\+Control\+Write\+State.\+h$>$}\newline
+{\ttfamily \#include $<$control/\+Control\+Write\+Depth.\+h$>$}\newline
 {\ttfamily \#include $<$vision/\+Vision.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}control/state.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}vision/observation.\+hpp\char`\"{}}\newline
-Include dependency graph for client.\+hpp\+:\nopagebreak
+Include dependency graph for client.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{client_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -44,6 +47,9 @@ void {\bfseries control\+\_\+client\+::write} (std\+::string)
 \item 
 \mbox{\Hypertarget{client_8hpp_ae5b5378396735164a81dfb5650332d56}\label{client_8hpp_ae5b5378396735164a81dfb5650332d56}} 
 void {\bfseries control\+\_\+client\+::write\+State} (const \hyperlink{structState}{State} \&)
+\item 
+\mbox{\Hypertarget{client_8hpp_a2033407e86ac3be6f3ca6ea6e97d0d0a}\label{client_8hpp_a2033407e86ac3be6f3ca6ea6e97d0d0a}} 
+void {\bfseries control\+\_\+client\+::write\+Depth} (float)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -62,6 +68,9 @@ ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::write\+\_\+client}
 \item 
 \mbox{\Hypertarget{client_8hpp_a86f1dd68b90c714865ec38c5ffe4e367}\label{client_8hpp_a86f1dd68b90c714865ec38c5ffe4e367}} 
 ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::write\+\_\+state\+\_\+client}
+\item 
+\mbox{\Hypertarget{client_8hpp_a4badc54a75589d24181b7ac25deedbd3}\label{client_8hpp_a4badc54a75589d24181b7ac25deedbd3}} 
+ros\+::\+Service\+Client {\bfseries control\+\_\+client\+::write\+\_\+depth\+\_\+client}
 \end{DoxyCompactItemize}
 
 

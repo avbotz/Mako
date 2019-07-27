@@ -71,7 +71,8 @@ $(function() {
 
 <p>Function definitions for generic competition actions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;ros/ros.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;tuple&gt;</code><br />
+<code>#include &lt;ros/ros.h&gt;</code><br />
 <code>#include &lt;vision/Vision.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="state_8hpp_source.html">control/state.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="observation_8hpp_source.html">vision/observation.hpp</a>&quot;</code><br />
@@ -80,9 +81,9 @@ Include dependency graph for commands.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="commands_8hpp__incl.png" border="0" usemap="#src_2sub__mission_2include_2mission_2commands_8hpp" alt=""/></div>
 <map name="src_2sub__mission_2include_2mission_2commands_8hpp" id="src_2sub__mission_2include_2mission_2commands_8hpp">
-<area shape="rect" id="node4" href="state_8hpp.html" title="State struct and constant definitions. " alt="" coords="235,95,353,121"/>
-<area shape="rect" id="node7" href="observation_8hpp.html" title="Observation struct definition that represents the results from an object detection function..." alt="" coords="554,95,706,121"/>
-<area shape="rect" id="node11" href="config_8hpp.html" title="Vision configuration that is used in other packages as well. " alt="" coords="963,169,1083,196"/>
+<area shape="rect" id="node5" href="state_8hpp.html" title="State struct and constant definitions. " alt="" coords="310,95,429,121"/>
+<area shape="rect" id="node8" href="observation_8hpp.html" title="Observation struct definition that represents the results from an object detection function..." alt="" coords="629,95,781,121"/>
+<area shape="rect" id="node12" href="sub__vision_2include_2vision_2config_8hpp_source.html" title="vision/config.hpp" alt="" coords="1039,169,1159,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -103,6 +104,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aae4d42d26c0351a68c7af7cdfbd96798"><td class="memItemLeft" align="right" valign="top"><a id="aae4d42d26c0351a68c7af7cdfbd96798"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>align</b> (int, Task, int)</td></tr>
 <tr class="separator:aae4d42d26c0351a68c7af7cdfbd96798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a845107a07d26b3fcde5fb75deb7ccb"><td class="memItemLeft" align="right" valign="top"><a id="a3a845107a07d26b3fcde5fb75deb7ccb"></a>
+std::pair&lt; float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>down_align</b> (int, float, Task, int)</td></tr>
+<tr class="separator:a3a845107a07d26b3fcde5fb75deb7ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab558e6d0f7ffc29c227d195d0ad0f5aa"><td class="memItemLeft" align="right" valign="top"><a id="ab558e6d0f7ffc29c227d195d0ad0f5aa"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (const <a class="el" href="structState.html">State</a> &amp;)</td></tr>
 <tr class="separator:ab558e6d0f7ffc29c227d195d0ad0f5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>

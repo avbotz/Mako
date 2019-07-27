@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['runcameras',['runCameras',['../acquisition_8cpp.html#aed1152e1cd1af7422ab13bc7a27574c9',1,'acquisition.cpp']]]
+  ['runcamera',['runCamera',['../acquisition_8hpp.html#a28b32cb2b071661084efade3da48a52f',1,'acquisition.hpp']]]
 ];

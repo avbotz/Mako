@@ -79,15 +79,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40b83115dc945cfa9ed16fdfa3c99ba5"><td class="memItemLeft" align="right" valign="top"><a id="a40b83115dc945cfa9ed16fdfa3c99ba5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>detectCallback</b> (vision::Vision::Request &amp;, vision::Vision::Response &amp;)</td></tr>
 <tr class="separator:a40b83115dc945cfa9ed16fdfa3c99ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02a14fd32cf867b31c7d711a7b64691f"><td class="memItemLeft" align="right" valign="top"><a id="a02a14fd32cf867b31c7d711a7b64691f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>captureCallback</b> (const sensor_msgs::ImageConstPtr &amp;)</td></tr>
-<tr class="separator:a02a14fd32cf867b31c7d711a7b64691f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae629573b0360b177650972208d80e961"><td class="memItemLeft" align="right" valign="top"><a id="ae629573b0360b177650972208d80e961"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>frontCaptureCallback</b> (const sensor_msgs::ImageConstPtr &amp;)</td></tr>
+<tr class="separator:ae629573b0360b177650972208d80e961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604bddf91a9a712bcc4edd1929e49b25"><td class="memItemLeft" align="right" valign="top"><a id="a604bddf91a9a712bcc4edd1929e49b25"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>downCaptureCallback</b> (const sensor_msgs::ImageConstPtr &amp;)</td></tr>
+<tr class="separator:a604bddf91a9a712bcc4edd1929e49b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1395f4513469c69074c2f7e16da68c13"><td class="memItemLeft" align="right" valign="top"><a id="a1395f4513469c69074c2f7e16da68c13"></a>
 <a class="el" href="structObservation.html">Observation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>findGate</b> (const cv::Mat &amp;)</td></tr>
 <tr class="separator:a1395f4513469c69074c2f7e16da68c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa294fde48d52b528ca2082910f7cce2f"><td class="memItemLeft" align="right" valign="top"><a id="aa294fde48d52b528ca2082910f7cce2f"></a>
 <a class="el" href="structObservation.html">Observation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>findGateML</b> (cv::Mat)</td></tr>
 <tr class="separator:aa294fde48d52b528ca2082910f7cce2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfc6ebed6b051551441b5476e5318c3"><td class="memItemLeft" align="right" valign="top"><a id="aedfc6ebed6b051551441b5476e5318c3"></a>
+<a class="el" href="structObservation.html">Observation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>findBins</b> (const cv::Mat &amp;)</td></tr>
+<tr class="separator:aedfc6ebed6b051551441b5476e5318c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -106,6 +112,7 @@ Task&#160;</td><td class="memItemRight" valign="bottom"><b>task</b></td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/sub_vision/include/vision/<a class="el" href="sub__vision_2include_2vision_2service_8hpp_source.html">service.hpp</a></li>
+<li>src/sub_vision/src/<a class="el" href="bins_8cpp.html">bins.cpp</a></li>
 <li>src/sub_vision/src/<a class="el" href="gate_8cpp.html">gate.cpp</a></li>
 <li>src/sub_vision/src/<a class="el" href="sub__vision_2src_2service_8cpp.html">service.cpp</a></li>
 </ul>

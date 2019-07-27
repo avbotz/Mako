@@ -5,13 +5,16 @@
 Main node runner for acquiring front camera images with Spinnaker.  
 
 
+{\ttfamily \#include $<$thread$>$}\newline
 {\ttfamily \#include $<$ros/ros.\+h$>$}\newline
 {\ttfamily \#include $<$image\+\_\+transport/image\+\_\+transport.\+h$>$}\newline
 {\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
 {\ttfamily \#include $<$cv\+\_\+bridge/cv\+\_\+bridge.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}Spinnaker.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Spin\+Gen\+Api/\+Spinnaker\+Gen\+Api.\+h\char`\"{}}\newline
-Include dependency graph for acquisition.\+cpp\+:\nopagebreak
+{\ttfamily \#include \char`\"{}vision/acquisition.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vision/log.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vision/config.\+hpp\char`\"{}}\newline
+Include dependency graph for acquisition.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,38 +24,23 @@ Include dependency graph for acquisition.\+cpp\+:\nopagebreak
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{acquisition_8cpp_a1c7e5ecbfffd705265f953ae72b674dd}\label{acquisition_8cpp_a1c7e5ecbfffd705265f953ae72b674dd}} 
-void {\bfseries acquire\+Images} (Camera\+Ptr down\+\_\+cam, Camera\+Ptr front\+\_\+cam, I\+Node\+Map \&nm1, I\+Node\+Map \&nm2, I\+Node\+Map \&nm\+\_\+device1, I\+Node\+Map \&nm\+\_\+device2)
+\mbox{\Hypertarget{acquisition_8cpp_a2045a0210b1e4c4dbe7ecfee636630c8}\label{acquisition_8cpp_a2045a0210b1e4c4dbe7ecfee636630c8}} 
+void {\bfseries setup\+Continuous\+Acquisition} (Camera\+Ptr camera)
 \item 
-void \hyperlink{acquisition_8cpp_aed1152e1cd1af7422ab13bc7a27574c9}{run\+Cameras} (Camera\+Ptr down\+\_\+cam, Camera\+Ptr front\+\_\+cam)
+\mbox{\Hypertarget{acquisition_8cpp_a743b142228a7c5c07784211a4cec9678}\label{acquisition_8cpp_a743b142228a7c5c07784211a4cec9678}} 
+void {\bfseries setup\+Continuous\+Acquisition} (Camera\+Ptr camera, int exposure\+\_\+time)
 \item 
-int \hyperlink{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\mbox{\Hypertarget{acquisition_8cpp_aea3f9cf24b14aa4cc7fdd6ab4438d14f}\label{acquisition_8cpp_aea3f9cf24b14aa4cc7fdd6ab4438d14f}} 
+void {\bfseries run\+Camera} (Camera\+Ptr camera, std\+::string channel)
+\item 
+\mbox{\Hypertarget{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Main node runner for acquiring front camera images with Spinnaker. 
 
-The naming conventions behind this code might seem off at first glance, but they are (somewhat) justified. Under conventional logic, it makes sense that the down camera variables are labeled with a 2, since we don\textquotesingle{}t use the down camera each run. However, its serial number is smaller than front cam, so it makes more sense to suffix it with a 1.
-
-Someone should also multithread this code so the down camera is slowed down because of the front camera\textquotesingle{}s low F\+PS. However, don\textquotesingle{}t forget to release pointers to all of the camera buffers, otherwise they will need to be power cycled.
-
 \begin{DoxyAuthor}{Author}
 David Zhang 
 \end{DoxyAuthor}
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{acquisition_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
-\index{acquisition.\+cpp@{acquisition.\+cpp}!main@{main}}
-\index{main@{main}!acquisition.\+cpp@{acquisition.\+cpp}}
-\subsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
-
-The camera serial numbers make this code a bit of a headache. Since the down camera SN is less than the front camera, it shows up first. However, if the down camera isn\textquotesingle{}t connected, which happens often, then the front camera has the lowest SN.\mbox{\Hypertarget{acquisition_8cpp_aed1152e1cd1af7422ab13bc7a27574c9}\label{acquisition_8cpp_aed1152e1cd1af7422ab13bc7a27574c9}} 
-\index{acquisition.\+cpp@{acquisition.\+cpp}!run\+Cameras@{run\+Cameras}}
-\index{run\+Cameras@{run\+Cameras}!acquisition.\+cpp@{acquisition.\+cpp}}
-\subsubsection{\texorpdfstring{run\+Cameras()}{runCameras()}}
-{\footnotesize\ttfamily void run\+Cameras (\begin{DoxyParamCaption}\item[{Camera\+Ptr}]{down\+\_\+cam,  }\item[{Camera\+Ptr}]{front\+\_\+cam }\end{DoxyParamCaption})}
-
-References need to be tied to a variable, so this bad solution exists. The gist is that I tied the down cam references to the front cam, but since acquire\+Images() should notice that the down cam is set to N\+U\+LL, it won\textquotesingle{}t interfere with them.

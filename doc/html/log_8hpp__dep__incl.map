@@ -1,7 +1,9 @@
 <map id="src/sub_vision/include/vision/log.hpp" name="src/sub_vision/include/vision/log.hpp">
-<area shape="rect" id="node2" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="146,95,297,136"/>
-<area shape="rect" id="node6" href="$log_8cpp.html" title="Logging functions for images or text. " alt="" coords="321,95,449,136"/>
-<area shape="rect" id="node3" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="5,184,133,225"/>
-<area shape="rect" id="node4" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="157,184,285,225"/>
-<area shape="rect" id="node5" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="309,184,437,225"/>
+<area shape="rect" id="node2" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="222,95,373,136"/>
+<area shape="rect" id="node7" href="$acquisition_8cpp.html" title="Main node runner for acquiring front camera images with Spinnaker. " alt="" coords="397,95,525,136"/>
+<area shape="rect" id="node8" href="$log_8cpp.html" title="Logging functions for images or text. " alt="" coords="549,95,677,136"/>
+<area shape="rect" id="node3" href="$bins_8cpp.html" title="Vision functions to detect the bins. " alt="" coords="5,184,133,225"/>
+<area shape="rect" id="node4" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="157,184,285,225"/>
+<area shape="rect" id="node5" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="309,184,437,225"/>
+<area shape="rect" id="node6" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="461,184,589,225"/>
 </map>

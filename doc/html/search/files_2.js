@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['filters_2ecpp',['filters.cpp',['../filters_8cpp.html',1,'']]],
-  ['filters_2ehpp',['filters.hpp',['../filters_8hpp.html',1,'']]],
-  ['functions_2ecpp',['functions.cpp',['../functions_8cpp.html',1,'']]],
-  ['functions_2ehpp',['functions.hpp',['../functions_8hpp.html',1,'']]]
+  ['camera_2ecpp',['camera.cpp',['../camera_8cpp.html',1,'']]],
+  ['camera_2ehpp',['camera.hpp',['../camera_8hpp.html',1,'']]],
+  ['client_2ecpp',['client.cpp',['../client_8cpp.html',1,'']]],
+  ['client_2ehpp',['client.hpp',['../client_8hpp.html',1,'']]],
+  ['commands_2ecpp',['commands.cpp',['../commands_8cpp.html',1,'']]],
+  ['commands_2ehpp',['commands.hpp',['../commands_8hpp.html',1,'']]],
+  ['control_2ecpp',['control.cpp',['../control_8cpp.html',1,'']]]
 ];

@@ -1,9 +1,10 @@
 <map id="src/sub_vision/include/vision/tensor.hpp" name="src/sub_vision/include/vision/tensor.hpp">
-<area shape="rect" id="node2" href="$model_8hpp.html" title="TF Object Detection API C++ wrapper for models. " alt="" coords="259,95,410,136"/>
-<area shape="rect" id="node3" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="146,184,297,225"/>
-<area shape="rect" id="node8" href="$tensor_8cpp.html" title="TF Object Detection API C++ wrapper for tensors. " alt="" coords="435,95,563,136"/>
-<area shape="rect" id="node7" href="$model_8cpp.html" title="TF Object Detection API C++ wrapper for models. " alt="" coords="321,184,449,225"/>
-<area shape="rect" id="node4" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="5,273,133,315"/>
-<area shape="rect" id="node5" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="157,273,285,315"/>
-<area shape="rect" id="node6" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="309,273,437,315"/>
+<area shape="rect" id="node2" href="$model_8hpp.html" title="TF Object Detection API C++ wrapper for models. " alt="" coords="335,95,486,136"/>
+<area shape="rect" id="node3" href="$sub__vision_2include_2vision_2service_8hpp.html" title="Wrapper class to handle the different vision callbacks. " alt="" coords="222,184,373,225"/>
+<area shape="rect" id="node9" href="$tensor_8cpp.html" title="TF Object Detection API C++ wrapper for tensors. " alt="" coords="511,95,639,136"/>
+<area shape="rect" id="node8" href="$model_8cpp.html" title="TF Object Detection API C++ wrapper for models. " alt="" coords="397,184,525,225"/>
+<area shape="rect" id="node4" href="$bins_8cpp.html" title="Vision functions to detect the bins. " alt="" coords="5,273,133,315"/>
+<area shape="rect" id="node5" href="$gate_8cpp.html" title="Vision functions to detect the gate. " alt="" coords="157,273,285,315"/>
+<area shape="rect" id="node6" href="$sub__vision_2src_2service_8cpp.html" title="Wrapper definitions to handle the different vision callbacks. " alt="" coords="309,273,437,315"/>
+<area shape="rect" id="node7" href="$vision_8cpp.html" title="Main node runner for vision. " alt="" coords="461,273,589,315"/>
 </map>

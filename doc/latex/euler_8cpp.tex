@@ -1,0 +1,53 @@
+\hypertarget{euler_8cpp}{}\section{src/sub\+\_\+mission/src/euler.cpp File Reference}
+\label{euler_8cpp}\index{src/sub\+\_\+mission/src/euler.\+cpp@{src/sub\+\_\+mission/src/euler.\+cpp}}
+
+
+Function definitions to convert between frames of reference.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}mission/euler.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mission/config.\+hpp\char`\"{}}\newline
+Include dependency graph for euler.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{euler_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{euler_8cpp_a8db46d84888418fbdad1380e802270a8}{body\+To\+Inertial} (float $\ast$input, float $\ast$angles, float $\ast$output)
+\begin{DoxyCompactList}\small\item\em Converts values between body and inertial frame of reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function definitions to convert between frames of reference. 
+
+\begin{DoxyAuthor}{Author}
+David Zhang 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{euler_8cpp_a8db46d84888418fbdad1380e802270a8}\label{euler_8cpp_a8db46d84888418fbdad1380e802270a8}} 
+\index{euler.\+cpp@{euler.\+cpp}!body\+To\+Inertial@{body\+To\+Inertial}}
+\index{body\+To\+Inertial@{body\+To\+Inertial}!euler.\+cpp@{euler.\+cpp}}
+\subsubsection{\texorpdfstring{body\+To\+Inertial()}{bodyToInertial()}}
+{\footnotesize\ttfamily void body\+To\+Inertial (\begin{DoxyParamCaption}\item[{float $\ast$}]{input,  }\item[{float $\ast$}]{angles,  }\item[{float $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Converts values between body and inertial frame of reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to where the values of the body frame are. \\
+\hline
+{\em angles} & Current euler angles. \\
+\hline
+{\em output} & Pointer to where the values of the inertial frame will be stored. \\
+\hline
+\end{DoxyParams}

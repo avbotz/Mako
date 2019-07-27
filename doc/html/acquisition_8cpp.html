@@ -71,93 +71,44 @@ $(function() {
 
 <p>Main node runner for acquiring front camera images with Spinnaker.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;ros/ros.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;ros/ros.h&gt;</code><br />
 <code>#include &lt;image_transport/image_transport.h&gt;</code><br />
 <code>#include &lt;opencv2/highgui/highgui.hpp&gt;</code><br />
 <code>#include &lt;cv_bridge/cv_bridge.h&gt;</code><br />
-<code>#include &quot;Spinnaker.h&quot;</code><br />
-<code>#include &quot;SpinGenApi/SpinnakerGenApi.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="acquisition_8hpp_source.html">vision/acquisition.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8hpp_source.html">vision/log.hpp</a>&quot;</code><br />
+<code>#include &quot;vision/config.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for acquisition.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="acquisition_8cpp__incl.png" border="0" usemap="#src_2sub__vision_2src_2acquisition_8cpp" alt=""/></div>
+<map name="src_2sub__vision_2src_2acquisition_8cpp" id="src_2sub__vision_2src_2acquisition_8cpp">
+<area shape="rect" id="node7" href="acquisition_8hpp.html" title="Function definitions for image acquisition from BlackFly cameras. " alt="" coords="365,102,512,129"/>
+<area shape="rect" id="node11" href="log_8hpp.html" title="Logging function definitions for images or text. " alt="" coords="761,102,863,129"/>
+<area shape="rect" id="node14" href="sub__vision_2include_2vision_2config_8hpp_source.html" title="vision/config.hpp" alt="" coords="888,102,1008,129"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1c7e5ecbfffd705265f953ae72b674dd"><td class="memItemLeft" align="right" valign="top"><a id="a1c7e5ecbfffd705265f953ae72b674dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>acquireImages</b> (CameraPtr down_cam, CameraPtr front_cam, INodeMap &amp;nm1, INodeMap &amp;nm2, INodeMap &amp;nm_device1, INodeMap &amp;nm_device2)</td></tr>
-<tr class="separator:a1c7e5ecbfffd705265f953ae72b674dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed1152e1cd1af7422ab13bc7a27574c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="acquisition_8cpp.html#aed1152e1cd1af7422ab13bc7a27574c9">runCameras</a> (CameraPtr down_cam, CameraPtr front_cam)</td></tr>
-<tr class="separator:aed1152e1cd1af7422ab13bc7a27574c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="acquisition_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memitem:a2045a0210b1e4c4dbe7ecfee636630c8"><td class="memItemLeft" align="right" valign="top"><a id="a2045a0210b1e4c4dbe7ecfee636630c8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setupContinuousAcquisition</b> (CameraPtr camera)</td></tr>
+<tr class="separator:a2045a0210b1e4c4dbe7ecfee636630c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743b142228a7c5c07784211a4cec9678"><td class="memItemLeft" align="right" valign="top"><a id="a743b142228a7c5c07784211a4cec9678"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setupContinuousAcquisition</b> (CameraPtr camera, int exposure_time)</td></tr>
+<tr class="separator:a743b142228a7c5c07784211a4cec9678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3f9cf24b14aa4cc7fdd6ab4438d14f"><td class="memItemLeft" align="right" valign="top"><a id="aea3f9cf24b14aa4cc7fdd6ab4438d14f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>runCamera</b> (CameraPtr camera, std::string channel)</td></tr>
+<tr class="separator:aea3f9cf24b14aa4cc7fdd6ab4438d14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top"><a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main node runner for acquiring front camera images with Spinnaker. </p>
-<p>The naming conventions behind this code might seem off at first glance, but they are (somewhat) justified. Under conventional logic, it makes sense that the down camera variables are labeled with a 2, since we don't use the down camera each run. However, its serial number is smaller than front cam, so it makes more sense to suffix it with a 1.</p>
-<p>Someone should also multithread this code so the down camera is slowed down because of the front camera's low FPS. However, don't forget to release pointers to all of the camera buffers, otherwise they will need to be power cycled.</p>
 <dl class="section author"><dt>Author</dt><dd>David Zhang </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>argv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The camera serial numbers make this code a bit of a headache. Since the down camera SN is less than the front camera, it shows up first. However, if the down camera isn't connected, which happens often, then the front camera has the lowest SN.</p>
-
-</div>
-</div>
-<a id="aed1152e1cd1af7422ab13bc7a27574c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed1152e1cd1af7422ab13bc7a27574c9">&#9670;&nbsp;</a></span>runCameras()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void runCameras </td>
-          <td>(</td>
-          <td class="paramtype">CameraPtr&#160;</td>
-          <td class="paramname"><em>down_cam</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">CameraPtr&#160;</td>
-          <td class="paramname"><em>front_cam</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>References need to be tied to a variable, so this bad solution exists. The gist is that I tied the down cam references to the front cam, but since acquireImages() should notice that the down cam is set to NULL, it won't interfere with them.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

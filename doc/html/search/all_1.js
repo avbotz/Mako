@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['camera',['Camera',['../structCamera.html',1,'']]],
-  ['camera_2ecpp',['camera.cpp',['../camera_8cpp.html',1,'']]],
-  ['camera_2ehpp',['camera.hpp',['../camera_8hpp.html',1,'']]],
-  ['client_2ecpp',['client.cpp',['../client_8cpp.html',1,'']]],
-  ['client_2ehpp',['client.hpp',['../client_8hpp.html',1,'']]],
-  ['commands_2ecpp',['commands.cpp',['../commands_8cpp.html',1,'']]],
-  ['commands_2ehpp',['commands.hpp',['../commands_8hpp.html',1,'']]],
-  ['config_2ehpp',['config.hpp',['../config_8hpp.html',1,'']]],
-  ['control_2ecpp',['control.cpp',['../control_8cpp.html',1,'']]]
+  ['bins_2ecpp',['bins.cpp',['../bins_8cpp.html',1,'']]],
+  ['bodytoinertial',['bodyToInertial',['../euler_8hpp.html#a8db46d84888418fbdad1380e802270a8',1,'bodyToInertial(float *input, float *angles, float *output):&#160;euler.cpp'],['../euler_8cpp.html#a8db46d84888418fbdad1380e802270a8',1,'bodyToInertial(float *input, float *angles, float *output):&#160;euler.cpp']]]
 ];

@@ -8,7 +8,9 @@ Functions for generic competition actions.
 {\ttfamily \#include \char`\"{}mission/commands.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}mission/functions.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}mission/client.\+hpp\char`\"{}}\newline
-Include dependency graph for commands.\+cpp\+:\nopagebreak
+{\ttfamily \#include \char`\"{}mission/euler.\+hpp\char`\"{}}\newline
+Include dependency graph for commands.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,6 +22,9 @@ Include dependency graph for commands.\+cpp\+:\nopagebreak
 \item 
 \mbox{\Hypertarget{commands_8cpp_ae404cd53ccf2a8ea8e667a9aa2f161b2}\label{commands_8cpp_ae404cd53ccf2a8ea8e667a9aa2f161b2}} 
 float {\bfseries align} (int attempts, Task task, int camera)
+\item 
+\mbox{\Hypertarget{commands_8cpp_a1b0f0c621035cac2eaef91483eab556e}\label{commands_8cpp_a1b0f0c621035cac2eaef91483eab556e}} 
+std\+::pair$<$ float, float $>$ {\bfseries down\+\_\+align} (int attempts, float dist, Task task, int camera)
 \item 
 \mbox{\Hypertarget{commands_8cpp_abf1424cfe4b42134ae29ddcc70b4bff7}\label{commands_8cpp_abf1424cfe4b42134ae29ddcc70b4bff7}} 
 void {\bfseries move} (const \hyperlink{structState}{State} \&dest)

@@ -15,14 +15,20 @@ Collaboration diagram for Vision\+Service\+:\nopagebreak
 \mbox{\Hypertarget{classVisionService_a40b83115dc945cfa9ed16fdfa3c99ba5}\label{classVisionService_a40b83115dc945cfa9ed16fdfa3c99ba5}} 
 bool {\bfseries detect\+Callback} (vision\+::\+Vision\+::\+Request \&, vision\+::\+Vision\+::\+Response \&)
 \item 
-\mbox{\Hypertarget{classVisionService_a02a14fd32cf867b31c7d711a7b64691f}\label{classVisionService_a02a14fd32cf867b31c7d711a7b64691f}} 
-void {\bfseries capture\+Callback} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&)
+\mbox{\Hypertarget{classVisionService_ae629573b0360b177650972208d80e961}\label{classVisionService_ae629573b0360b177650972208d80e961}} 
+void {\bfseries front\+Capture\+Callback} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&)
+\item 
+\mbox{\Hypertarget{classVisionService_a604bddf91a9a712bcc4edd1929e49b25}\label{classVisionService_a604bddf91a9a712bcc4edd1929e49b25}} 
+void {\bfseries down\+Capture\+Callback} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&)
 \item 
 \mbox{\Hypertarget{classVisionService_a1395f4513469c69074c2f7e16da68c13}\label{classVisionService_a1395f4513469c69074c2f7e16da68c13}} 
 \hyperlink{structObservation}{Observation} {\bfseries find\+Gate} (const cv\+::\+Mat \&)
 \item 
 \mbox{\Hypertarget{classVisionService_aa294fde48d52b528ca2082910f7cce2f}\label{classVisionService_aa294fde48d52b528ca2082910f7cce2f}} 
 \hyperlink{structObservation}{Observation} {\bfseries find\+Gate\+ML} (cv\+::\+Mat)
+\item 
+\mbox{\Hypertarget{classVisionService_aedfc6ebed6b051551441b5476e5318c3}\label{classVisionService_aedfc6ebed6b051551441b5476e5318c3}} 
+\hyperlink{structObservation}{Observation} {\bfseries find\+Bins} (const cv\+::\+Mat \&)
 \end{DoxyCompactItemize}
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
@@ -44,5 +50,6 @@ Task {\bfseries task}
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 src/sub\+\_\+vision/include/vision/\hyperlink{sub__vision_2include_2vision_2service_8hpp}{service.\+hpp}\item 
+src/sub\+\_\+vision/src/\hyperlink{bins_8cpp}{bins.\+cpp}\item 
 src/sub\+\_\+vision/src/\hyperlink{gate_8cpp}{gate.\+cpp}\item 
 src/sub\+\_\+vision/src/\hyperlink{sub__vision_2src_2service_8cpp}{service.\+cpp}\end{DoxyCompactItemize}

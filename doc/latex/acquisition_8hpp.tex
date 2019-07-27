@@ -1,0 +1,77 @@
+\hypertarget{acquisition_8hpp}{}\section{src/sub\+\_\+vision/include/vision/acquisition.hpp File Reference}
+\label{acquisition_8hpp}\index{src/sub\+\_\+vision/include/vision/acquisition.\+hpp@{src/sub\+\_\+vision/include/vision/acquisition.\+hpp}}
+
+
+Function definitions for image acquisition from Black\+Fly cameras.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Spinnaker.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Spin\+Gen\+Api/\+Spinnaker\+Gen\+Api.\+h\char`\"{}}\newline
+Include dependency graph for acquisition.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{acquisition_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{acquisition_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{acquisition_8hpp_a616edcfe1eabbe9408a591d87d3bcb72}{setup\+Continuous\+Acquisition} (Spinnaker\+::\+Camera\+Ptr camera)
+\begin{DoxyCompactList}\small\item\em Sets up camera to continuous acquisition. \end{DoxyCompactList}\item 
+void \hyperlink{acquisition_8hpp_aa98c5e741c7cd2d52771b43911630ae2}{setup\+Continuous\+Acquisition} (Spinnaker\+::\+Camera\+Ptr camera, int exposure\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Sets up camera to continuous acquisition with custom exposure time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{acquisition_8hpp_a28b32cb2b071661084efade3da48a52f}\label{acquisition_8hpp_a28b32cb2b071661084efade3da48a52f}} 
+void \hyperlink{acquisition_8hpp_a28b32cb2b071661084efade3da48a52f}{run\+Camera} (Spinnaker\+::\+Camera\+Ptr camera, std\+::string channel)
+\begin{DoxyCompactList}\small\item\em Runs camera with current settings and publishes to R\+OS channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function definitions for image acquisition from Black\+Fly cameras. 
+
+\begin{DoxyAuthor}{Author}
+David Zhang 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{acquisition_8hpp_a616edcfe1eabbe9408a591d87d3bcb72}\label{acquisition_8hpp_a616edcfe1eabbe9408a591d87d3bcb72}} 
+\index{acquisition.\+hpp@{acquisition.\+hpp}!setup\+Continuous\+Acquisition@{setup\+Continuous\+Acquisition}}
+\index{setup\+Continuous\+Acquisition@{setup\+Continuous\+Acquisition}!acquisition.\+hpp@{acquisition.\+hpp}}
+\subsubsection{\texorpdfstring{setup\+Continuous\+Acquisition()}{setupContinuousAcquisition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void setup\+Continuous\+Acquisition (\begin{DoxyParamCaption}\item[{Spinnaker\+::\+Camera\+Ptr}]{camera }\end{DoxyParamCaption})}
+
+
+
+Sets up camera to continuous acquisition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \hyperlink{structCamera}{Camera} to setup. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{acquisition_8hpp_aa98c5e741c7cd2d52771b43911630ae2}\label{acquisition_8hpp_aa98c5e741c7cd2d52771b43911630ae2}} 
+\index{acquisition.\+hpp@{acquisition.\+hpp}!setup\+Continuous\+Acquisition@{setup\+Continuous\+Acquisition}}
+\index{setup\+Continuous\+Acquisition@{setup\+Continuous\+Acquisition}!acquisition.\+hpp@{acquisition.\+hpp}}
+\subsubsection{\texorpdfstring{setup\+Continuous\+Acquisition()}{setupContinuousAcquisition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void setup\+Continuous\+Acquisition (\begin{DoxyParamCaption}\item[{Spinnaker\+::\+Camera\+Ptr}]{camera,  }\item[{int}]{exposure\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Sets up camera to continuous acquisition with custom exposure time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \hyperlink{structCamera}{Camera} to setup. \\
+\hline
+\end{DoxyParams}

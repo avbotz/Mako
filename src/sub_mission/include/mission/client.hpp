@@ -3,8 +3,8 @@
  *
  *  @author David Zhang
  */
-#ifndef MISSION_SERVICE_HPP
-#define MISSION_SERVICE_HPP
+#ifndef MISSION_CLIENT_HPP
+#define MISSION_CLIENT_HPP
 
 #include <ros/ros.h>
 #include <control/ControlAlive.h>

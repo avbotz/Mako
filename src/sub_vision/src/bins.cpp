@@ -14,7 +14,9 @@ Observation VisionService::findBins(const cv::Mat &input)
 	 * and white inside. Do not use for competition.
 	 */
 	// Illuminate image using filter.
-	cv::Mat illum = illumination(input);
+	// cv::Mat illum = illumination(input);
+	cv::Mat illum = input;
+	log(illum, 'e');
 
 	// Strong blur to remove noise from image.
 	cv::Mat blur;
@@ -23,7 +25,7 @@ Observation VisionService::findBins(const cv::Mat &input)
 	// Threshold for black.
 	cv::Mat thresh;
 	cv::Mat cdst;
-	cv::inRange(blur, cv::Scalar(0, 0, 0), cv::Scalar(50, 50, 50), thresh);
+	cv::inRange(blur, cv::Scalar(0, 0, 0), cv::Scalar(30, 30, 30), thresh);
 	cv::cvtColor(thresh, cdst, cv::COLOR_GRAY2BGR);
 	// cv::cvtColor(thresh, thresh, cv::COLOR_BGR2GRAY);
 
@@ -44,7 +46,7 @@ Observation VisionService::findBins(const cv::Mat &input)
 	for (int i = 0; i < contours.size(); i++)
 	{
 		cv::approxPolyDP(cv::Mat(contours[i]), contour_polygons[i], 
-				0.1*cv::arcLength(cv::Mat(contours[i]), true), true);
+				0.01*cv::arcLength(cv::Mat(contours[i]), true), true);
 		rectangles[i] = cv::boundingRect(cv::Mat(contour_polygons[i]));
 	}
 	for (int i = 0; i < contours.size(); i++)
@@ -60,8 +62,8 @@ Observation VisionService::findBins(const cv::Mat &input)
 				const cv::Rect &b) -> bool { return a.area() > b.area(); });
 	for (int i = 0; i < rectangles.size(); i++)
 	{
-		double rect_ratio = rectangles[i].height/rectangles[i].width;
-		if (rect_ratio < 3 && rect_ratio > 0.3)
+		float rect_ratio = (float)(rectangles[i].height)/(float)(rectangles[i].width);
+		if (rect_ratio < 2. && rect_ratio > 0.5)
 		{
 			cv::rectangle(cdst, rectangles[i].tl(), rectangles[i].br(), 
 					cv::Scalar(255, 0, 255), 3, 8, 0);		

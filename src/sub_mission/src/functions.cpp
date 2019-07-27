@@ -18,7 +18,7 @@ void gate()
 	State initial = control_client::state();
 	ROS_INFO("State @ %s.", initial.text().c_str());
 	move(initial);
-	ros::Duration(3.0).sleep();
+	ros::Duration(1.0).sleep();
 
 	ROS_INFO("Turn towards gate.");
 	ROS_INFO("State @ %s.", control_client::state().text().c_str());
@@ -44,22 +44,25 @@ void gate()
 void bins()
 {
 	ROS_INFO("Beginning BINS function.");
-	float dist = 1.8;
+	ros::Duration(6.0).sleep();
+	float dist = 1.4;
 	
 	ROS_INFO("Set initial state.");
 	// State initial(3.28, 2.95, 1.37, 28.12, 5.12, 3.12);
 	State initial = control_client::state();
 	ROS_INFO("State @ %s.", initial.text().c_str());
 	move(initial);
-	ros::Duration(3.0).sleep();
+	ros::Duration(1.0).sleep();
 
 	ROS_INFO("Set initial depth.");
-	control_client::writeDepth(dist);
+	control_client::write("z " + std::to_string(dist) + "\n");
+	ros::Duration(6.0).sleep();
+	// control_client::writeDepth(dist);
 
 	ROS_INFO("Find offsets for bins.");
 	ROS_INFO("State @ %s.", control_client::state().text().c_str());
 	std::pair<float, float> coordinate = down_align(5, dist, Task::BINS, DOWN);
-	ROS_INFO("Offset @ %f, %f.", coordinate.first, coordinate.second);
+	ROS_INFO("Body Offset @ %f, %f.", coordinate.first, coordinate.second);
 	State move1 = control_client::state();
 	move1.axis[X] = coordinate.first;
 	move1.axis[Y] = coordinate.second;
@@ -68,14 +71,17 @@ void bins()
 	ros::Duration(3.0).sleep();
 	
 	ROS_INFO("Set dropping depth.");
-	control_client::writeDepth(0.6);
+	// control_client::writeDepth(0.6);
+	control_client::write("z 0.6\n");
+	ros::Duration(6.0).sleep();
 
 	/*
 	 * TODO Add code to drop into bins.
 	 */
 
 	ROS_INFO("Reset depth.");
-	control_client::writeDepth(-1.);
+	control_client::write("z -1\n");
+	ros::Duration(6.0).sleep();
 }
 
 void octagon()

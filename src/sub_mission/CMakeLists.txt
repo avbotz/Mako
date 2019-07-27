@@ -7,7 +7,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp std_msgs message_generation
     vision control)
 find_package(OpenCV)
 
-catkin_package(CATKIN_DEPENDS message_runtime)
+catkin_package(CATKIN_DEPENDS message_runtime INCLUDE_DIRS include)
 
 include_directories(
     include
@@ -16,7 +16,7 @@ include_directories(
 )
 
 add_executable(mission_node src/mission.cpp src/functions.cpp src/commands.cpp
-	src/client.cpp)
+	src/client.cpp src/euler.cpp)
 target_link_libraries(mission_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(mission_node mission_gencpp)
 
@@ -25,6 +25,6 @@ target_link_libraries(restart_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(restart_node mission_gencpp)
 
 add_executable(prelim_node src/prelim.cpp src/functions.cpp src/commands.cpp
-	src/client.cpp)
+	src/client.cpp src/euler.cpp)
 target_link_libraries(prelim_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(prelim_node mission_gencpp)

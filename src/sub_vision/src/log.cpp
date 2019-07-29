@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <ros/ros.h>
 #include "vision/log.hpp"
+#include "vision/config.hpp"
 
 
 void log(const cv::Mat &img, char ending)
@@ -24,7 +25,11 @@ void log(const cv::Mat &img, char ending)
 	std::strftime(date, sizeof(date), "%Y_%m_%d", &now);
 	std::strftime(name, sizeof(name), "%H_%M_%S", &now);
 	std::string loc = "logs/" + std::string(date) + "/" + std::string(name) + 
-		"_" + std::string(1, ending) + "_" + std::to_string(i) + ".png";
+		"_" + std::string(1, ending) + "_" + std::to_string(i);
+	if (FAST_LOG) 
+		loc += ".bmp";
+	else 
+		loc += ".png";
 	ROS_INFO("%s", loc.c_str());
 
 	// Create directory if it doesn't exist.

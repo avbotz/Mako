@@ -142,9 +142,9 @@ void runCamera(CameraPtr camera, std::string channel)
 				img.copyTo(out);
 
 				// Log images as needed.
-				if (FAST_LOG && channel == "down_camera")
+				if (LOG_DOWN && FAST_LOG && channel == "down_camera")
 					log(out, 'd');
-				if (FAST_LOG && channel == "front_camera")
+				if (LOG_FRONT && FAST_LOG && channel == "front_camera")
 					log(out, 'f');
 
 				// Publish image.

@@ -68,6 +68,20 @@ namespace atmega
 		return kill != 0;			
 	}
 
+	float depth()
+	{
+		if (SIM) return 1.;
+
+		// Request for kill. 
+		write("w\n");
+
+		// Read from in pipe.
+		float d;
+		fscanf(in, "%f", &d);
+
+		return d;			
+	}
+
 	State state()
 	{	
 		if (SIM) return sim_state;

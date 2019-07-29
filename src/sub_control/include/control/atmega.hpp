@@ -24,6 +24,7 @@ namespace atmega
 	void write(const State &);
 	void relative(const State &);
 	bool alive();
+	float depth();
 	State state();
 }
 

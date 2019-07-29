@@ -28,6 +28,7 @@ namespace control_client
 {
 	ros::ServiceClient alive_client;
 	ros::ServiceClient state_client;
+	ros::ServiceClient depth_client;
 	ros::ServiceClient write_client;
 	ros::ServiceClient write_state_client;
 	ros::ServiceClient write_depth_client;
@@ -46,6 +47,14 @@ namespace control_client
 		control::ControlState::Response rep;
 		state_client.call(req, rep);
 		return State(rep.F, rep.H, rep.V, rep.Y, rep.P, rep.R);
+	}
+	
+	float depth()
+	{
+		control::ControlDepth::Request req;
+		control::ControlDepth::Response rep;
+		depth_client.call(req, rep);
+		return rep.depth;
 	}
 
 	void write(std::string input)

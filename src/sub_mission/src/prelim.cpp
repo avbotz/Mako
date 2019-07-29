@@ -21,6 +21,8 @@ int main(int argc, char** argv)
 		node.serviceClient<control::ControlAlive>("control_alive");
 	control_client::state_client = 
 		node.serviceClient<control::ControlState>("control_state");
+	control_client::depth_client = 
+		node.serviceClient<control::ControlDepth>("control_depth");
 	control_client::write_client = 
 		node.serviceClient<control::ControlWrite>("control_write");
 	control_client::write_state_client = 

@@ -11,6 +11,12 @@ tmux selectp -t 5
 tmux split-window -v
 tmux selectp -t 6
 tmux split-window -h 
+tmux selectp -t 6
+tmux split-window -h 
+
+# Setup roscore.
+tmux selectp -t 7
+tmux send-keys "source workspace.sh && roscore" C-m 
 
 # Setup Nautical restart.
 tmux selectp -t 6
@@ -29,23 +35,23 @@ tmux selectp -t 5
 tmux send-keys "source workspace.sh" C-m 
 tmux selectp -t 6
 tmux send-keys "source workspace.sh" C-m 
-tmux selectp -t 7
+tmux selectp -t 8
 tmux send-keys "source workspace.sh" C-m 
 
 # Start standard Mako commands.
 tmux selectp -t 1
 tmux send-keys "vim -c NERDTree" C-m 
-tmux selectp -t 7
-tmux send-keys "roscore" C-m 
-tmux selectp -t 5
 sleep 2
+tmux selectp -t 8
+tmux send-keys "rosrun interface interface_node" C-m 
+tmux selectp -t 5
 tmux send-keys "rosrun vision acquisition_node" C-m 
 tmux selectp -t 2
 tmux send-keys "rosrun vision vision_node" C-m 
 tmux selectp -t 4
 tmux send-keys "rosrun control control_node" C-m 
-tmux selectp -t 3
 sleep 2
+tmux selectp -t 3
 tmux send-keys "rosrun mission restart_node" C-m 
 
 tmux a

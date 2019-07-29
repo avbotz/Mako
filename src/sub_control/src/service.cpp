@@ -31,6 +31,15 @@ bool state(control::ControlState::Request &request,
 	return true;
 }
 
+bool depth(control::ControlDepth::Request &request, 
+		control::ControlDepth::Response &response)
+{
+	float d = atmega::depth();	
+	ROS_INFO("Received depth request. Depth @ %f", d);
+	response.depth = d;
+	return true;
+}
+
 bool write(control::ControlWrite::Request &request, 
 		control::ControlWrite::Response &response)
 {

@@ -8,6 +8,7 @@
 
 #include "control/ControlAlive.h"
 #include "control/ControlState.h"
+#include "control/ControlDepth.h"
 #include "control/ControlWrite.h"
 #include "control/ControlWriteState.h"
 #include "control/ControlWriteDepth.h"
@@ -15,6 +16,8 @@
 bool alive(control::ControlAlive::Request &, control::ControlAlive::Response &);
 
 bool state(control::ControlState::Request &, control::ControlState::Response &);
+
+bool depth(control::ControlDepth::Request &, control::ControlDepth::Response &);
 
 bool write(control::ControlWrite::Request &, control::ControlWrite::Response &);
 

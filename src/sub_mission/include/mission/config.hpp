@@ -6,8 +6,8 @@
 #ifndef MISSION_CONFIG_HPP
 #define MISSION_CONFIG_HPP
 
-const float D2R = 180./M_PI;
+const float D2R = M_PI/180.;
 
-const float R2D = M_PI/180.;
+const float R2D = 180./M_PI;
 
 #endif

@@ -16,6 +16,8 @@ int main(int argc, char** argv)
 		node.advertiseService("control_alive", alive); 
 	ros::ServiceServer control_state = 
 		node.advertiseService("control_state", state); 
+	ros::ServiceServer control_depth = 
+		node.advertiseService("control_depth", depth); 
 	ros::ServiceServer control_write = 
 		node.advertiseService("control_write", write); 
 	ros::ServiceServer control_write_state = 

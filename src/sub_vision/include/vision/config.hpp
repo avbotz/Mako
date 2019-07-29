@@ -19,6 +19,8 @@ enum Task {
 	NONE,
 	GATE,
 	GATE_ML,
+	TARGET,
+	TARGET_ML,
 	BINS,
 	BINS_ML,
 	OCTAGON

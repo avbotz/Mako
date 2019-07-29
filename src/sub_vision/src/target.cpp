@@ -1,17 +1,17 @@
-/** @file bins.cpp
- *  @brief Vision functions to detect the bins
+/** @file target.cpp
+ *  @brief Vision functions to detect the target.
  *
  *  @author David Zhang
  */
+#include <ros/ros.h>
 #include "vision/service.hpp"
-#include "vision/filters.hpp"
 
 
-Observation VisionService::findBins(const cv::Mat &input)
+Observation VisionService::findTarget(const cv::Mat &input)
 {
 	/*
-	 * This bins code is meant to be run at Suhas' pool, with a black outline
-	 * and white inside. Do not use for competition.
+	 * This target code is meant to be run at Suhas' pool, with a black outline.
+	 * Do not use for competition.
 	 */
 	// Illuminate image using filter.
 	// cv::Mat illum = illumination(input);
@@ -25,7 +25,7 @@ Observation VisionService::findBins(const cv::Mat &input)
 	// Threshold for black.
 	cv::Mat thresh;
 	cv::Mat cdst;
-	cv::inRange(blur, cv::Scalar(0, 0, 0), cv::Scalar(46, 36, 36), thresh);
+	cv::inRange(blur, cv::Scalar(0, 0, 0), cv::Scalar(60, 50, 50), thresh);
 	cv::cvtColor(thresh, cdst, cv::COLOR_GRAY2BGR);
 	// cv::cvtColor(thresh, thresh, cv::COLOR_BGR2GRAY);
 
@@ -65,9 +65,9 @@ Observation VisionService::findBins(const cv::Mat &input)
 		float height = rectangles[i].height;
 		float width = rectangles[i].width;
 		float rect_ratio = height/width;
-		if (rect_ratio < 2. && rect_ratio > 0.5 && 
-				rectangles[i].tl().x+width/2. > 150 && 
-				rectangles[i].br().x+height/2. < 1138)
+		if (rect_ratio < 4. && rect_ratio > 0.25 && 
+				rectangles[i].tl().x+width/2. > 456 && 
+				rectangles[i].br().x+height/2. < 5016)
 		{
 			cv::rectangle(cdst, rectangles[i].tl(), rectangles[i].br(), 
 					cv::Scalar(255, 0, 255), 3, 8, 0);		
@@ -75,7 +75,9 @@ Observation VisionService::findBins(const cv::Mat &input)
 			int y = (rectangles[i].tl().y+rectangles[i].br().y)/2;
 			cv::circle(cdst, cv::Point(x, y), 4, cv::Scalar(255, 0, 255), 3);
 			log(cdst, 'e');
-			return Observation(0.8, y, x, 0);
+			float dist = 2250./rectangles[i].width;
+			if (dist > 10.) dist = 10.;
+			return Observation(0.8, y, x, dist);
 		}
 	}
 
@@ -83,6 +85,3 @@ Observation VisionService::findBins(const cv::Mat &input)
 	// prone to picking up noise instead of nothing at all.
 	return Observation(0, 0, 0, 0);
 }
-
-
-

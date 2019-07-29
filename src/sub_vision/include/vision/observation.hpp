@@ -58,7 +58,7 @@ struct Observation
 		else if (camera == DOWN)
 		{   
 			this->vangle = (DIMG_DIM[0]/2.0-r)/DIMG_DIM[0]*DOWN_VFOV;
-			this->hangle = (DIMG_DIM[1]/2.0-c)/DIMG_DIM[1]*DOWN_HFOV;
+			this->hangle = (c-DIMG_DIM[1]/2.0)/DIMG_DIM[1]*DOWN_HFOV;
 		}
 	}
 

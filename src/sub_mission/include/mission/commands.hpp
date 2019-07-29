@@ -13,7 +13,8 @@
 #include "vision/observation.hpp"
 
 float align(int, Task, int);
-std::pair<float, float> down_align(int, float, Task, int);
+float distance(int, Task, int);
+std::pair<float, float> down_align(int, Task, int);
 void move(const State &); 
 
 #endif

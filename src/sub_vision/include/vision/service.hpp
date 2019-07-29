@@ -33,6 +33,7 @@ class VisionService
 		void downCaptureCallback(const sensor_msgs::ImageConstPtr &);
 		Observation findGate(const cv::Mat &);
 		Observation findGateML(cv::Mat);
+		Observation findTarget(const cv::Mat &);
 		Observation findBins(const cv::Mat &);
 };
 

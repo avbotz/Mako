@@ -1,96 +1,105 @@
 #!/usr/bin/env python
 from flask import *
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge, CvBridgeError
 import rospy as ros
 import cv2
-import glob
 import os
 import time
 
 app = Flask(__name__)
 
-# set this to the path (including glob) of front camera images
-FRONT_GLOB = "logs/2019_07_29/*.jpg"
-# set this to the resolution of the front camera images
-FRONTX_RAW = 1920
-FRONTY_RAW = 1080
-# tune these to your liking, but beware that currently more than 2x480p images or 1x720p image is laggy
-FRONTX_GOAL = 1280
+FRONTX_RAW = 5472
+FRONTY_RAW = 3648
+FRONTX_GOAL = 1080
 FRONTY_GOAL = 720
-FRONTX_SCALE = FRONTX_GOAL/FRONTX_RAW
-FRONTY_SCALE = FRONTY_GOAL/FRONTY_RAW
 
-# set this to the path (including glob) of down camera images
-DOWN_GLOB = "logs/*.jpg"
-# set this to the resolution of the down camera images
-DOWNX_RAW = 1920
-DOWNY_RAW = 1080
-# tune these to your liking, but beware that currently more than 2x480p images or 1x720p image is laggy
-DOWNX_GOAL = 1280
-DOWNY_GOAL = 720
-DOWNX_SCALE = DOWNX_GOAL/DOWNX_RAW
-DOWNY_SCALE = DOWNY_GOAL/DOWNY_RAW
+DOWNX_RAW = 1288
+DOWNY_RAW = 964
+DOWNX_GOAL = 640
+DOWNY_GOAL = 480
+
+image_converter = None
 
 
-# generates a flask stream of content with yield, special MIME type used
-# to replace existing content with each new frame. See front_stream()
-def generate_front_stream():
-    while True:
-        list_of_files = glob.glob(FRONT_GLOB)
-        latest_file = max(list_of_files, key=os.path.getctime)
-        img = cv2.imread(latest_file, 1)
-        img = cv2.resize(img, None, fx=FRONTX_SCALE, fy = FRONTY_SCALE)
-        # don't change the following format, it is for web motion jpeg and has nothing
-        # to do with input format. For changing file format to read images, change the
-        # FRONT_GLOB and DOWN_GLOB global vars
-        ret, frame = cv2.imencode(".jpg", img) 
-        frame = frame.tobytes()
-        # '--frame' is the boundary that marks replacing the existing content
-        yield (b'--frame\r\n'
-                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+class ImageConverter:
+
+    def __init__(self):
+        self.bridge = CvBridge()
+        self.front_pub = ros.Subscriber("front_camera", Image, self.set_front)
+        self.down_pub = ros.Subscriber("down_camera", Image, self.set_down)
+        self.front_img = None
+        self.down_img = None
+
+    def set_front(self, data):
+        self.front_img = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        print("Generating front image.")
+    
+    def set_down(self, data):
+        self.down_img = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        print("Generating down image.")
+
+    def convert_front_stream(self):
+        print("Beginning front stream.")
+        while not ros.is_shutdown():
+            front_img_cv = self.front_img
+            front_img_cv = cv2.resize(front_img_cv, (FRONTX_GOAL, FRONTY_GOAL))
+            # Don't change the following format, it is for web motion jpeg and has nothing
+            # to do with input format. 
+            ret, frame = cv2.imencode(".jpg", front_img_cv) 
+            frame = frame.tobytes()
+            # '--frame' is the boundary that marks replacing the existing content
+            yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+    def convert_down_stream(self):
+        print("Beginning down stream.")
+        while not ros.is_shutdown():
+            down_img_cv = self.down_img
+            down_img_cv = cv2.resize(down_img_cv, (DOWNX_GOAL, DOWNY_GOAL))
+            # Don't change the following format, it is for web motion jpeg and has nothing
+            # to do with input format. 
+            ret, frame = cv2.imencode(".jpg", down_img_cv) 
+            frame = frame.tobytes()
+            # '--frame' is the boundary that marks replacing the existing content
+            yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
-# generates a flask stream of content with yield, special MIME type used
-# to replace existing content with each new frame. See front_stream()
-def generate_down_stream():
-    while True:
-        list_of_files = glob.glob(DOWN_GLOB)
-        latest_file = max(list_of_files, key=os.path.getctime)
-        img = cv2.imread(latest_file, 1)
-        img = cv2.resize(img, None, fx=DOWNX_SCALE, fy = DOWNY_SCALE)
-        # don't change the following format, it is for web motion jpeg and has nothing
-        # to do with input format. For changing file format to read images, change the
-        # FRONT_GLOB and DOWN_GLOB global vars
-        ret, frame = cv2.imencode(".jpg", img) 
-        frame = frame.tobytes()
-        # '--frame' is the boundary that marks replacing the existing content
-        yield (b'--frame\r\n'
-                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-
-# creates a response wrapper around the stream and routes to localhost:PORT/front_stream
+# Creates a response wrapper around the stream and routes to localhost:PORT/front_stream
 # MIME type of multipart/x-mixed-replace replaces existing content with new stream data
-# every time '--<boundary>' ('--frame') is displayed
+# every time '--<boundary>' ('--frame') is displayed.
 # HINT: go to localhost:PORT/front_stream to see just the front stream
 @app.route("/front_stream")
 def front_stream():
-    return Response(generate_front_stream(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    global image_converter
+    return Response(image_converter.convert_front_stream(), 
+            mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-# creates a response wrapper around the stream and routes to localhost:PORT/down_stream
+# Creates a response wrapper around the stream and routes to localhost:PORT/down_stream
 # MIME type of multipart/x-mixed-replace replaces existing content with new stream data
-# every time '--<boundary>' ('--frame') is displayed
-@app.route("/down_stream")
+# every time '--<boundary>' ('--frame') is displayed.
 # HINT: go to localhost:PORT/down_stream to see just the down stream
+@app.route("/down_stream")
 def down_stream():
-    return Response(generate_down_stream(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    global image_converter
+    return Response(image_converter.convert_down_stream(), 
+            mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-# index.html references both the streams
+# index.html references both the streams.
 @app.route("/")
 def index():
     print("Beginning interfacing server.")
     return render_template("index.html")
 
+
 def main():
-    ros.init_node('inference_node')
+    global image_converter
+    ros.init_node('interface_node')
+    image_converter = ImageConverter()
     app.run(host='0.0.0.0')
+    ros.spin()
+
+

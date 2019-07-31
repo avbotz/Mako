@@ -35,6 +35,7 @@ class VisionService
 		Observation findGateML(cv::Mat);
 		Observation findTarget(const cv::Mat &);
 		Observation findBins(const cv::Mat &);
+		Observation findBinsML(cv::Mat);
 };
 
 void setResponse(const Observation &, vision::Vision::Response &);

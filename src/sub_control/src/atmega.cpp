@@ -70,7 +70,7 @@ namespace atmega
 
 	float depth()
 	{
-		if (SIM) return 1.;
+		if (SIM) return 3.;
 
 		// Request for kill. 
 		write("w\n");

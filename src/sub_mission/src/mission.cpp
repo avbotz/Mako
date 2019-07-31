@@ -47,8 +47,8 @@ int main(int argc, char** argv)
 
 	// Run mission functions.
 	// gate();
-	gate_extra();
-	// bins();
+	// gate_extra();
+	bins();
+	// target();
 	// octagon(); 
-	target();
 }

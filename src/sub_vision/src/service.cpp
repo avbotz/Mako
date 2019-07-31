@@ -51,7 +51,15 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 		{
 			ROS_INFO("Starting to setup gate model.");
 			this->model.setup("models/cpu_gate.pb");
+			this->task = Task::GATE_ML;
 			ROS_INFO("Done setting up gate model.");
+		}
+		else if (req.task == Task::BINS_ML)
+		{
+			ROS_INFO("Starting to setup bins model.");
+			this->model.setup("models/gpu_bins.pb");
+			this->task = Task::BINS_ML;
+			ROS_INFO("Done settings up bins model.");
 		}
 	}
 
@@ -99,7 +107,7 @@ bool VisionService::detectCallback(vision::Vision::Request &req,
 	}
 	else if (req.task == Task::BINS_ML)
 	{
-		Observation obs = this->findBins(this->down);
+		Observation obs = this->findBinsML(this->down);
 		obs.calcAngles(DOWN);
 		ROS_INFO("Sending observation @ %s", obs.text().c_str());
 		setResponse(obs, res);

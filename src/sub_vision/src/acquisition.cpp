@@ -96,6 +96,26 @@ void setupContinuousAcquisition(CameraPtr camera, int exposure_time)
 	}
 }
 
+void setupFramerate(CameraPtr camera, float framerate)
+{
+	try 
+	{
+		INodeMap &nm = camera->GetNodeMap();
+		CBooleanPtr framerate_option = nm.GetNode("AcquisitionFrameRateEnable");
+		if (!IsAvailable(framerate_option) || !IsReadable(framerate_option))
+		{
+			ROS_ERROR("Unable to set framerate.");
+			return;
+		}
+		framerate_option->SetValue(1);
+		camera->AcquisitionFrameRate.SetValue(framerate);
+	}
+	catch (Spinnaker::Exception &e)
+	{
+		ROS_ERROR("Error: %s", e.what());
+	}
+}
+
 void runCamera(CameraPtr camera, std::string channel)
 {
 	ros::NodeHandle nh;
@@ -113,10 +133,6 @@ void runCamera(CameraPtr camera, std::string channel)
 	{
 		try
 		{
-			// Down camera is too fast, slow it down a bit.
-			if (channel == "down_camera")
-				ros::Duration(0.20).sleep();
-
 			// Camera will hang here if buffer has nothing.
 			// ROS_INFO("Attempt for %s channel.", channel.c_str());
 			ImagePtr img_ptr = camera->GetNextImage();
@@ -208,7 +224,7 @@ int main(int argc, char** argv)
 	if (num_cameras == 1)
 	{
 		front_cam = cameras.GetByIndex(0);
-		setupContinuousAcquisition(front_cam, 1305);
+		setupContinuousAcquisition(front_cam, 5500);
 		runCamera(front_cam, "front_camera");
 	}
 	if (num_cameras == 2)
@@ -216,7 +232,8 @@ int main(int argc, char** argv)
 		down_cam = cameras.GetByIndex(0);
 		front_cam = cameras.GetByIndex(1);
 		setupContinuousAcquisition(down_cam);
-		setupContinuousAcquisition(front_cam, 1305);
+		// setupFramerate(down_cam, 6.);
+		setupContinuousAcquisition(front_cam, 15500);
 		std::thread t1(runCamera, down_cam, "down_camera");
 		std::thread t2(runCamera, front_cam, "front_camera");
 		t1.join();

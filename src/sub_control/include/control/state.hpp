@@ -9,7 +9,7 @@
 #include <string>
 #include <sstream>
 
-const bool SIM = false;
+const bool SIM = true;
 
 const int X = 0;
 const int Y = 1;

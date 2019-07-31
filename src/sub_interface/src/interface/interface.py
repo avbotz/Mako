@@ -1,13 +1,20 @@
 #!/usr/bin/env python
 from flask import *
+from flask_socketio import *
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import rospy as ros
+import base64
+import eventlet
 import cv2
 import os
 import time
 
+eventlet.sleep(0)
+eventlet.monkey_patch()
+
 app = Flask(__name__)
+socket = SocketIO(app)
 
 FRONTX_RAW = 5472
 FRONTY_RAW = 3648
@@ -20,72 +27,42 @@ DOWNX_GOAL = 640
 DOWNY_GOAL = 480
 
 image_converter = None
+bridge = None
 
 
-class ImageConverter:
+class FrontImageConverter:
 
     def __init__(self):
-        self.bridge = CvBridge()
         self.front_pub = ros.Subscriber("front_camera", Image, self.set_front)
-        self.down_pub = ros.Subscriber("down_camera", Image, self.set_down)
-        self.front_img = None
-        self.down_img = None
 
     def set_front(self, data):
-        self.front_img = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        # global socket
+        global bridge
+        front_img = bridge.imgmsg_to_cv2(data, "bgr8")
+        front_img_cv = cv2.resize(front_img, (FRONTX_GOAL, FRONTY_GOAL))
+        _, buf = cv2.imencode(".jpg", front_img_cv, 
+                [int(cv2.IMWRITE_JPEG_QUALITY), 90])  
+        buf_encoded = base64.b64encode(buf)
+        socket.emit('front_img', buf_encoded, broadcast=True)
+        socket.sleep(0)
         print("Generating front image.")
+
+class DownImageConverter:
     
+    def __init__(self):
+        self.down_pub = ros.Subscriber("down_camera", Image, self.set_down)
+
     def set_down(self, data):
-        self.down_img = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        # global socket
+        global bridge
+        down_img = bridge.imgmsg_to_cv2(data, "bgr8")
+        down_img_cv = cv2.resize(down_img, (DOWNX_GOAL, DOWNY_GOAL))
+        _, buf = cv2.imencode(".jpg", down_img_cv, 
+                [int(cv2.IMWRITE_JPEG_QUALITY), 90])  
+        buf_encoded = base64.b64encode(buf)
+        socket.emit('down_img', buf_encoded, broadcast=True)
+        socket.sleep(0)
         print("Generating down image.")
-
-    def convert_front_stream(self):
-        print("Beginning front stream.")
-        while not ros.is_shutdown():
-            front_img_cv = self.front_img
-            front_img_cv = cv2.resize(front_img_cv, (FRONTX_GOAL, FRONTY_GOAL))
-            # Don't change the following format, it is for web motion jpeg and has nothing
-            # to do with input format. 
-            ret, frame = cv2.imencode(".jpg", front_img_cv) 
-            frame = frame.tobytes()
-            # '--frame' is the boundary that marks replacing the existing content
-            yield (b'--frame\r\n'
-                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-    def convert_down_stream(self):
-        print("Beginning down stream.")
-        while not ros.is_shutdown():
-            down_img_cv = self.down_img
-            down_img_cv = cv2.resize(down_img_cv, (DOWNX_GOAL, DOWNY_GOAL))
-            # Don't change the following format, it is for web motion jpeg and has nothing
-            # to do with input format. 
-            ret, frame = cv2.imencode(".jpg", down_img_cv) 
-            frame = frame.tobytes()
-            # '--frame' is the boundary that marks replacing the existing content
-            yield (b'--frame\r\n'
-                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-
-# Creates a response wrapper around the stream and routes to localhost:PORT/front_stream
-# MIME type of multipart/x-mixed-replace replaces existing content with new stream data
-# every time '--<boundary>' ('--frame') is displayed.
-# HINT: go to localhost:PORT/front_stream to see just the front stream
-@app.route("/front_stream")
-def front_stream():
-    global image_converter
-    return Response(image_converter.convert_front_stream(), 
-            mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
-# Creates a response wrapper around the stream and routes to localhost:PORT/down_stream
-# MIME type of multipart/x-mixed-replace replaces existing content with new stream data
-# every time '--<boundary>' ('--frame') is displayed.
-# HINT: go to localhost:PORT/down_stream to see just the down stream
-@app.route("/down_stream")
-def down_stream():
-    global image_converter
-    return Response(image_converter.convert_down_stream(), 
-            mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 # index.html references both the streams.
@@ -96,10 +73,11 @@ def index():
 
 
 def main():
-    global image_converter
+    global bridge
     ros.init_node('interface_node')
-    image_converter = ImageConverter()
-    app.run(host='0.0.0.0')
+    bridge = CvBridge()
+    image_converter = FrontImageConverter()
+    image_converter1 = DownImageConverter()
+    # app.run(host='0.0.0.0')
+    socket.run(app, host='0.0.0.0', port=5000, debug=True)
     ros.spin()
-
-

@@ -12,9 +12,20 @@
 #include "control/state.hpp"
 #include "vision/observation.hpp"
 
+typedef std::pair<float, float> Coordinate;
+
+float angleDifference(float, float);
+float angleAdd(float, float);
 float align(int, Task, int);
 float distance(int, Task, int);
-std::pair<float, float> down_align(int, Task, int);
+Coordinate downAlign(int, Task, int);
+void setForward(float);
+void setAngle(float);
+void addAngle(float);
+void setCoordinate(Coordinate);
+void addCoordinate(Coordinate);
+bool isValidOffsetCoordinate(Coordinate);
+bool isValidCoordinate(Coordinate);
 void move(const State &); 
 
 #endif

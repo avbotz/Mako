@@ -3,8 +3,10 @@
  *
  *  @author David Zhang
  */
+#include <ros/ros.h>
 #include "vision/service.hpp"
 #include "vision/filters.hpp"
+#include "vision/log.hpp"
 
 
 Observation VisionService::findBins(const cv::Mat &input)
@@ -85,4 +87,67 @@ Observation VisionService::findBins(const cv::Mat &input)
 }
 
 
+Observation VisionService::findBinsML(cv::Mat img)
+{
+	// log(img, 'e');
 
+	auto outNames1 = new Tensor(model, "num_detections");
+	auto outNames2 = new Tensor(model, "detection_scores");
+	auto outNames3 = new Tensor(model, "detection_boxes");
+	auto outNames4 = new Tensor(model, "detection_classes");
+	auto inpName = new Tensor(model, "image_tensor");
+
+	int rows = img.rows;
+	int cols = img.cols;
+
+	cv::Mat inp;
+	cv::Mat temp;
+	img.copyTo(temp);
+	cv::cvtColor(img, inp, CV_BGR2RGB);
+
+	// Put image in tensor.
+	std::vector<uint8_t > img_data;
+	img_data.assign(inp.data, inp.data + inp.total()*inp.channels());
+	inpName->set_data(img_data, { 1, DIMG_DIM[0], DIMG_DIM[1], 3 });
+
+	model.run(inpName, { outNames1, outNames2, outNames3, outNames4 });
+
+	// Visualize detected bounding boxes.
+	int num_detections = (int)outNames1->get_data<float>()[0];
+	for (int i = 0; i < num_detections; i++) 
+	{
+		int class_id = (int)outNames4->get_data<float>()[i];
+		float score = outNames2->get_data<float>()[i];
+		auto bbox_data = outNames3->get_data<float>();
+		std::vector<float> bbox = { bbox_data[i*4], bbox_data[i*4+1], 
+			bbox_data[i*4+2], bbox_data[i*4+3] };
+		if (score > 0.3) 
+		{
+			float x = bbox[1]*cols;
+			float y = bbox[0]*rows;
+			float right = bbox[3]*cols;
+			float bottom = bbox[2]*rows;
+
+			if (class_id == 2 || class_id == 3)
+			{
+				if (class_id == 2)
+					ROS_INFO("Found wolf bin.");
+				if (class_id == 3)
+					ROS_INFO("Found bat bin.");
+				cv::rectangle(temp, {(int)x, (int)y}, {(int)right, (int)bottom}, 
+						{255, 0, 255}, 5);
+				log(temp, 'e');
+				return Observation(score, (y+bottom)/2, (x+right)/2, 0);
+			}
+			else if (class_id == 1)
+			{
+				cv::rectangle(temp, {(int)x, (int)y}, {(int)right, (int)bottom}, 
+						{0, 255, 0}, 5);
+				log(temp, 'e');
+				ROS_INFO("Found closed bin and ignoring for now.");
+			}
+		}
+	}
+
+	return Observation(0, 0, 0, 0);
+}

@@ -34,6 +34,8 @@ sleep 2
 tmux send-keys "rosrun vision acquisition_node" C-m 
 tmux selectp -t 2
 tmux send-keys "rosrun vision vision_node" C-m 
+tmux selectp -t 5
+tmux send-keys "rosrun interface interface_node" C-m 
 
 tmux a
 

@@ -33,8 +33,6 @@ tmux selectp -t 4
 tmux send-keys "source workspace.sh" C-m 
 tmux selectp -t 5
 tmux send-keys "source workspace.sh" C-m 
-tmux selectp -t 6
-tmux send-keys "source workspace.sh" C-m 
 tmux selectp -t 8
 tmux send-keys "source workspace.sh" C-m 
 
@@ -42,17 +40,18 @@ tmux send-keys "source workspace.sh" C-m
 tmux selectp -t 1
 tmux send-keys "vim -c NERDTree" C-m 
 sleep 2
-tmux selectp -t 8
-tmux send-keys "rosrun interface interface_node" C-m 
 tmux selectp -t 5
 tmux send-keys "rosrun vision acquisition_node" C-m 
 tmux selectp -t 2
 tmux send-keys "rosrun vision vision_node" C-m 
 tmux selectp -t 4
 tmux send-keys "rosrun control control_node" C-m 
-sleep 2
+sleep 3
 tmux selectp -t 3
 tmux send-keys "rosrun mission restart_node" C-m 
+sleep 3
+tmux selectp -t 8
+tmux send-keys "rosrun interface interface_node" C-m 
 
 tmux a
 

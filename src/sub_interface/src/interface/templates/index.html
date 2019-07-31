@@ -1,9 +1,37 @@
-<!doctype html>
-
 <html>
-	<head>
-		<title>Marlin Live View</title>
-	</head>
-	<body>
-		<img src="{{ url_for('front_stream') }}"></img>
-		<img src="{{ url_for('down_stream') }}"></img>
+<head>
+	<script src="{{url_for('static', filename='js/socket.io.js') }}"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var socket = io("http://" + document.domain + ":" + location.port);
+			socket.on('down_img', function (image) {
+				console.log("Attempting to load down image.");
+				var down_img_old = document.getElementById("down-cam");
+				var down_img_new = new Image();
+				down_img_new.src = 'data:image/jpeg;base64,'+image;
+				down_img_new.id = 'down-cam';
+				down_img_old.parentNode.replaceChild(down_img_new, down_img_old);
+			});
+
+			socket.on('front_img', function (image) {
+				console.log("Attempting to load front image.");
+				var front_img_old = document.getElementById("front-cam");
+				var front_img_new = new Image();
+				front_img_new.src = 'data:image/jpeg;base64,'+image;
+				front_img_new.id = 'front-cam';
+				front_img_old.parentNode.replaceChild(front_img_new, front_img_old);
+			});
+		})
+	</script>
+</head>
+
+<body> 
+	<div id="camera-feeds">
+		<img id="front-cam">
+		<img id="down-cam">
+		<img id="debug-img">
+	</div>
+</body>
+
+</html>
+
